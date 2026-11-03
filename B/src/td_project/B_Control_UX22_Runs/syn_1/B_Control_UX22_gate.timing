@@ -1,0 +1,1514 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:12:14 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 100.00%
+Constraint File     : D:/study/version/FPGA_Projects_A97_B108_HMI14/B/src/user_source/constraints_source/timing.sdc;
+Confidence          : Synthesized
+Check Corner        : Both (Slow and Fast)
+CRPR Enabled        : Yes
+Report Scheme       : 10 end point(s) per path group, 1 path(s) per end point
+
+
+Check Status
+-------------
+
+Corner   | Max      Min     
+------------------------------------
+Slow     | yes      yes     
+Fast     | yes      yes     
+
+
+Timing Status
+--------------------
+	SWNS: -0.482ns, STNS: -6.739ns
+	HWNS: 0.471ns, HTNS: 0.000ns
+	Period Check WNS: 16.600ns
+
+
+Clock Summary
+--------------------
+
+       Clock-Id:       C-Freq       Fanout   Clock-Name
+--------------------------------------------------------------------------------
+           clk0:       50.000        10179   clk
+           clk1:        8.333            0   board_spi_out
+           clk2:        6.250            0   flash_spi_out
+           clk3:       12.500            0   tf_spi_out
+--------------------------------------------------------------------------------
+
+       Name            Type         Rise(ns)   Fall(ns)          C-Period(ns)     C-Freq(MHz)          R-Period(ns)     R-Freq(MHz)         SWNS(ns)   STNS(ns)         HWNS(ns)   HTNS(ns)         Skew(ns)           Fanout        Max-Level        CC-From    CC-To
+       clk0           local            0.000     10.000                20.000          50.000                20.482          48.823           -0.482     -6.739            0.471      0.000            0.000            10179               17             no       no
+       clk1           local            0.000     60.000               120.000           8.333               120.000           8.333            0.000      0.000            0.000      0.000            0.000                0                0             no       no
+       clk2           local            0.000     80.000               160.000           6.250               160.000           6.250            0.000      0.000            0.000      0.000            0.000                0                0             no       no
+       clk3           local            0.000     40.000                80.000          12.500                80.000          12.500            0.000      0.000            0.000      0.000            0.000                0                0             no       no
+
+Notes
+----------
+C-Period  :  constraint period
+C-Freq    :  constraint freq
+R-Period  :  report min period
+R-Freq    :  report fmax
+CC-From   :  has path(s) from cross-domain clock
+CC-To     :  has path(s) to cross-domain clock
+
+
+*   Clock R-Period data only takes intra-clock timing. SWNS/STNS/HWNS/HTNS take both intra-clock and inter-clock timing.
+*   If there is mismatch between R-Period and SWNS, check inter-clock timing of this clock as capture clock.
+*   SWNS/STNS/HWNS/HTNS of timing exception (SMCP/SMD) only counted in global Timing Status, not counted in Clock Summary.
+
+Intra clock domain timing
+--------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     clk -> clk
+Type           :     Self
+From Clock     :     clk
+To Clock       :     clk
+Min Period     :     20.482ns
+Fmax           :     48.823MHz
+
+Statistics:
+Max            : SWNS     -0.482ns, STNS     -6.739ns,        15 Viol Endpoints,     29599 Total Endpoints,    198620 Paths Analyzed
+Min            : HWNS      0.471ns, HTNS      0.000ns,         0 Viol Endpoints,     29599 Total Endpoints,    198620 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : -0.482ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[96].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.366ns (cell 7.280ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=6  LUT5=5  LUT3=3  LUT2=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diagnostic_data_b1[96]_syn_7.a
+LUT5                                    0.424    f    19.686      17  pin: media/u_images/diagnostic_data_b1[96]_syn_7.o
+net (fo=1)                              0.562         20.248          net: media/u_images/diagnostic_data_b1[96],  NOFILE(0)
+                                                                      pin: media/u_images/diagnostic_data_reg[96].d
+SEQ (reg)                               0.118    f    20.366          net: media/u_images/diagnostic_data[96],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.366               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[96].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.482               
+
+Slack               : -0.482ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[104].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.366ns (cell 7.280ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=6  LUT5=5  LUT3=3  LUT2=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_50.a
+LUT5                                    0.424    f    19.686      17  pin: media/u_images/diagnostic_data_b1[104]_syn_50.o
+net (fo=1)                              0.562         20.248          net: media/u_images/diagnostic_data_b1[104],  NOFILE(0)
+                                                                      pin: media/u_images/diagnostic_data_reg[104].d
+SEQ (reg)                               0.118    f    20.366          net: media/u_images/diagnostic_data[104],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.366               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[104].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.482               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[0].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=6  LUT5=4  LUT2=4  LUT3=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diag_notice_word[0]_syn_1.a
+LUT2                                    0.408    f    19.670      17  pin: media/u_images/diag_notice_word[0]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diag_notice_word[0],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(260)
+                                                                      pin: media/u_images/diagnostic_data_reg[0].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[0],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[0].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[1].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=6  LUT5=4  LUT2=4  LUT3=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diag_notice_word[1]_syn_1.a
+LUT2                                    0.408    f    19.670      17  pin: media/u_images/diag_notice_word[1]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diag_notice_word[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(260)
+                                                                      pin: media/u_images/diagnostic_data_reg[1].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[1].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[2].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=6  LUT5=4  LUT2=4  LUT3=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diag_notice_word[2]_syn_1.a
+LUT2                                    0.408    f    19.670      17  pin: media/u_images/diag_notice_word[2]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diag_notice_word[2],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(260)
+                                                                      pin: media/u_images/diagnostic_data_reg[2].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[2],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[2].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[3].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=6  LUT5=4  LUT2=4  LUT3=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diag_notice_word[3]_syn_1.a
+LUT2                                    0.408    f    19.670      17  pin: media/u_images/diag_notice_word[3]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diag_notice_word[3],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(260)
+                                                                      pin: media/u_images/diagnostic_data_reg[3].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[3],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[3].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[32].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=7  LUT5=4  LUT3=3  LUT2=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diagnostic_data_b1[32]_syn_1.a
+LUT4                                    0.408    f    19.670      17  pin: media/u_images/diagnostic_data_b1[32]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diagnostic_data_b1[32],  NOFILE(0)
+                                                                      pin: media/u_images/diagnostic_data_reg[32].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[32],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[32].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[33].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=7  LUT5=4  LUT3=3  LUT2=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diagnostic_data_b1[33]_syn_1.a
+LUT4                                    0.408    f    19.670      17  pin: media/u_images/diagnostic_data_b1[33]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diagnostic_data_b1[33],  NOFILE(0)
+                                                                      pin: media/u_images/diagnostic_data_reg[33].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[33],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[33].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[34].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=7  LUT5=4  LUT3=3  LUT2=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diagnostic_data_b1[34]_syn_1.a
+LUT4                                    0.408    f    19.670      17  pin: media/u_images/diagnostic_data_b1[34]_syn_1.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diagnostic_data_b1[34],  NOFILE(0)
+                                                                      pin: media/u_images/diagnostic_data_reg[34].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[34],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[34].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+Slack               : -0.466ns
+Begin Point         : media/u_images/img_found_count_reg[1].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/u_images/diagnostic_data_reg[35].d (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 20.350ns (cell 7.264ns (35%), net 13.086ns (65%))
+Clock Skew          : 0.000ns
+Logic Level         : 17 ( LUT4=7  LUT5=4  LUT3=3  LUT2=3 )
+Max Fanout          : 144
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/img_found_count_reg[1].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.146    r     0.146          pin: media/u_images/img_found_count_reg[1].q
+net (fo=22)                             1.022          1.168          net: media/u_images/discovered_count[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(26)
+                                                                      pin: media/u_images/scan_paused_reg_syn_20.b
+LUT4                                    0.408    f     1.576       1  pin: media/u_images/scan_paused_reg_syn_20.o
+net (fo=11)                             0.887          2.463          net: media/u_images/scan_paused_reg_syn_21,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_36.a
+LUT4                                    0.408    f     2.871       2  pin: media/u_images/scan_paused_reg_syn_36.o
+net (fo=3)                              0.651          3.522          net: media/u_images/scan_paused_reg_syn_37,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_38.a
+LUT4                                    0.408    f     3.930       3  pin: media/u_images/scan_paused_reg_syn_38.o
+net (fo=1)                              0.562          4.492          net: media/u_images/scan_paused_reg_syn_39,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/scan_paused_reg_syn_48.a
+LUT4                                    0.408    f     4.900       4  pin: media/u_images/scan_paused_reg_syn_48.o
+net (fo=4)                              0.697          5.597          net: media/u_images/scan_paused_reg_syn_49,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_43.a
+LUT3                                    0.408    f     6.005       5  pin: media/u_images/load_failed_reg_syn_43.o
+net (fo=2)                              0.600          6.605          net: media/u_images/load_failed_reg_syn_44,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_50.a
+LUT5                                    0.424    f     7.029       6  pin: media/u_images/load_failed_reg_syn_50.o
+net (fo=144)                            1.360          8.389          net: media/u_images/load_failed_reg_syn_51,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_55.d
+LUT4                                    0.408    f     8.797       7  pin: media/u_images/load_failed_reg_syn_55.o
+net (fo=1)                              0.562          9.359          net: media/u_images/load_failed_reg_syn_56,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(283)
+                                                                      pin: media/u_images/load_failed_reg_syn_57.c
+LUT4                                    0.408    f     9.767       8  pin: media/u_images/load_failed_reg_syn_57.o
+net (fo=1)                              0.562         10.329          net: media/u_images/mux0_syn_9,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(202)
+                                                                      pin: media/u_images/load_failed_reg_syn_58.b
+LUT3                                    0.408    f    10.737       9  pin: media/u_images/load_failed_reg_syn_58.o
+net (fo=7)                              0.800         11.537          net: media/u_images/auto_cnt_b34_n_syn_2,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_198.a
+LUT5                                    0.424    f    11.961      10  pin: media/u_images/mux367_syn_198.o
+net (fo=1)                              0.562         12.523          net: media/u_images/cached_manual_during_prefetch_n1,  NOFILE(0)
+                                                                      pin: media/u_images/mux367_syn_199.a
+LUT5                                    0.424    f    12.947      11  pin: media/u_images/mux367_syn_199.o
+net (fo=2)                              0.600         13.547          net: media/u_images/cached_manual_during_prefetch,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(200)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_34.a
+LUT5                                    0.424    f    13.971      12  pin: media/u_images/diagnostic_data_b1[104]_syn_34.o
+net (fo=2)                              0.600         14.571          net: media/u_images/diag_nav_recover,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(206)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_35.a
+LUT2                                    0.408    f    14.979      13  pin: media/u_images/diagnostic_data_b1[104]_syn_35.o
+net (fo=5)                              0.737         15.716          net: media/u_images/diag_report_select[8],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(226)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_37.a
+LUT2                                    0.408    f    16.124      14  pin: media/u_images/diagnostic_data_b1[104]_syn_37.o
+net (fo=3)                              0.651         16.775          net: media/u_images/diag_report_word[121],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(248)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_39.a
+LUT3                                    0.408    f    17.183      15  pin: media/u_images/diagnostic_data_b1[104]_syn_39.o
+net (fo=5)                              0.737         17.920          net: media/u_images/diag_notice_allowed,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(230)
+                                                                      pin: media/u_images/diagnostic_data_b1[104]_syn_40.a
+LUT2                                    0.408    f    18.328      16  pin: media/u_images/diagnostic_data_b1[104]_syn_40.o
+net (fo=14)                             0.934         19.262          net: media/u_images/diag_notice_select[1],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(231)
+                                                                      pin: media/u_images/diagnostic_data_b1[35]_syn_3.a
+LUT4                                    0.408    f    19.670      17  pin: media/u_images/diagnostic_data_b1[35]_syn_3.o
+net (fo=1)                              0.562         20.232          net: media/u_images/diagnostic_data_b1[35],  NOFILE(0)
+                                                                      pin: media/u_images/diagnostic_data_reg[35].d
+SEQ (reg)                               0.118    f    20.350          net: media/u_images/diagnostic_data[35],  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(17)
+--------------------------------------------------------------------  ---------------
+Arrival                                               20.350               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/diagnostic_data_reg[35].clk
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         19.884               
+clock uncertainty                       0.000         19.884               
+clock pessimism                         0.000         19.884               
+--------------------------------------------------------------------  ---------------
+Required                                              19.884               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.466               
+
+
+Period Check
+----------------------------------------------------------------------------------------------------
+    Type       Setting(ns)      Required(ns)         Slack(ns)   Point
+--------------------------------------------------------------------------------
+    ERAM            20.000             3.400            16.600   services/adaptive_images$path/queue/ramread0_syn_26.clkb
+    ERAM            20.000             3.400            16.600   services/producer/image_fifo/ramread0_syn_26.clkb
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_25.clkb
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_25.clka
+    ERAM            20.000             3.400            16.600   services/adaptive_images$path/queue/ramread0_syn_7.clka
+    ERAM            20.000             3.400            16.600   services/adaptive_images$path/queue/ramread0_syn_7.clkb
+    ERAM            20.000             3.400            16.600   services/producer/image_fifo/ramread0_syn_7.clka
+    ERAM            20.000             3.400            16.600   services/producer/image_fifo/ramread0_syn_7.clkb
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_6.clka
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_6.clkb
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 0.471ns
+Begin Point         : media/u_images/bmp_read_m0/bmp_data_reg[8].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/adaptive_images$path/queue/ramread0_syn_7.dia[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/bmp_read_m0/bmp_data_reg[8].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: media/u_images/bmp_read_m0/bmp_data_reg[8].q
+net (fo=1)                              0.562          0.671          net: media/u_images/bmp_read_m0/bmp_data[8],  ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(11)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_7.dia[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_7.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : media/u_images/bmp_read_m0/bmp_data_reg[17].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/adaptive_images$path/queue/ramread0_syn_7.dib[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/bmp_read_m0/bmp_data_reg[17].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: media/u_images/bmp_read_m0/bmp_data_reg[17].q
+net (fo=1)                              0.562          0.671          net: media/u_images/bmp_read_m0/bmp_data[17],  ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(11)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_7.dib[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_7.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : media/u_images/bmp_read_m0/bmp_data_reg[18].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/adaptive_images$path/queue/ramread0_syn_26.dia[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_images/bmp_read_m0/bmp_data_reg[18].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: media/u_images/bmp_read_m0/bmp_data_reg[18].q
+net (fo=1)                              0.562          0.671          net: media/u_images/bmp_read_m0/bmp_data[18],  ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(11)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_26.dia[0]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_26.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : services/curve/partial_reg[8].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/curve/ramread0_syn_6.dia[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/partial_reg[8].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: services/curve/partial_reg[8].q
+net (fo=1)                              0.562          0.671          net: services/curve/partial[8],  ../../../user_source/hdl_source/redo/b_curve_service.v(12)
+                                                                      pin: services/curve/ramread0_syn_6.dia[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/ramread0_syn_6.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : services/curve/partial_reg[17].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/curve/ramread0_syn_6.dib[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/partial_reg[17].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: services/curve/partial_reg[17].q
+net (fo=1)                              0.562          0.671          net: services/curve/partial[17],  ../../../user_source/hdl_source/redo/b_curve_service.v(12)
+                                                                      pin: services/curve/ramread0_syn_6.dib[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/ramread0_syn_6.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : services/curve/partial_reg[23].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/curve/ramread0_syn_25.dia[5] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/partial_reg[23].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: services/curve/partial_reg[23].q
+net (fo=1)                              0.562          0.671          net: services/curve/partial[23],  ../../../user_source/hdl_source/redo/b_curve_service.v(12)
+                                                                      pin: services/curve/ramread0_syn_25.dia[5]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/ramread0_syn_25.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : services/adaptive_images$path/held_word_reg[16].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/image_fifo/ramread0_syn_7.dia[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/held_word_reg[16].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: services/adaptive_images$path/held_word_reg[16].q
+net (fo=1)                              0.562          0.671          net: services/adaptive_images$path/transport_word[16],  ../../../user_source/hdl_source/redo/b_adaptive_image_scale.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_7.dia[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_7.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : services/adaptive_images$path/held_word_reg[25].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/image_fifo/ramread0_syn_7.dib[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/held_word_reg[25].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: services/adaptive_images$path/held_word_reg[25].q
+net (fo=1)                              0.562          0.671          net: services/adaptive_images$path/transport_word[25],  ../../../user_source/hdl_source/redo/b_adaptive_image_scale.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_7.dib[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_7.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : services/adaptive_images$path/held_word_reg[26].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/image_fifo/ramread0_syn_26.dia[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/held_word_reg[26].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: services/adaptive_images$path/held_word_reg[26].q
+net (fo=1)                              0.562          0.671          net: services/adaptive_images$path/transport_word[26],  ../../../user_source/hdl_source/redo/b_adaptive_image_scale.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_26.dia[0]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_26.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+Slack               : 0.471ns
+Begin Point         : media/u_audio/parser/pcm_left_reg[8].clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/pcm_fifo/ramread0_syn_6.dia[8] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.671ns (cell 0.109ns (16%), net 0.562ns (84%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/u_audio/parser/pcm_left_reg[8].clk
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+SEQ (clk2q)                             0.109    f     0.109          pin: media/u_audio/parser/pcm_left_reg[8].q
+net (fo=1)                              0.562          0.671          net: media/u_audio/parser/pcm_left[8],  ../../../user_source/hdl_source/media/wav_pcm_decoder.v(8)
+                                                                      pin: services/producer/pcm_fifo/ramread0_syn_6.dia[8]
+EMB (reg)                               0.000    f     0.671       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.671               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                                     0.000          0.000          pin: clk_syn_2.di
+net (fo=10179)                          0.000          0.000          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/pcm_fifo/ramread0_syn_6.clka
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          0.200               
+clock uncertainty                       0.000          0.200               
+clock pessimism                         0.000          0.200               
+--------------------------------------------------------------------  ---------------
+Required                                               0.200               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.471               
+
+
+Inter clock domain timing
+--------------------------------------------------
+
+IP timing
+--------------------------------------------------

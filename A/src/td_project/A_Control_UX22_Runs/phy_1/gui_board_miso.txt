@@ -1,0 +1,229 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 21:22:33 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.54%
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     board_spi -> board_spi
+Type           :     Self
+From Clock     :     board_spi
+To Clock       :     board_spi
+Min Period     :     61.424ns
+Fmax           :     16.280MHz
+
+Statistics:
+Max            : SWNS     29.288ns, STNS      0.000ns,         0 Viol Endpoints,         2 Total Endpoints,         2 Paths Analyzed
+Min            : HWNS      9.369ns, HTNS      0.000ns,         0 Viol Endpoints,         2 Total Endpoints,         2 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 29.288ns
+Begin Point         : board_cs_n (falling edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : board_miso (rising edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { board_spi rising@120.000ns - board_spi falling@60.000ns }
+Data Path Delay     : 30.612ns (cell 26.979ns (88%), net 3.633ns (12%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( PAD=2  LUT5=1 )
+Max Fanout          : 11
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+launch edge                            60.000    f    60.000               
+--------------------------------------------------------------------  ---------------
+input               G12                10.000         70.000          pin: board_cs_n
+net (fo=1)                              0.000         70.000          net: board_cs_n,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: board_cs_n_syn_6.ipad
+PAD                 x000y017            1.831    f    71.831       1  pin: board_cs_n_syn_6.di
+net (fo=11)                             2.266         74.097          net: board_cs_n_dup_5,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.a[0]
+LUT5                x020y011z2          0.424    f    74.521       2  pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.f[0]
+net (fo=1)                              1.367         75.888          net: board_miso_syn_2,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso_syn_3.do[0]
+PAD                 x000y017            4.724    f    80.612       3  pin: board_miso_syn_3.opad
+net (fo=1)          G11                 0.000         80.612          net: board_miso,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso
+--------------------------------------------------------------------  ---------------
+Arrival                                               80.612               
+
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+capture edge                          120.000    r   120.000               
+--------------------------------------------------------------------  ---------------
+output              G11               -10.000        110.000               
+clock uncertainty                      -0.100        109.900               
+clock pessimism                         0.000        109.900               
+--------------------------------------------------------------------  ---------------
+Required                                             109.900               
+--------------------------------------------------------------------  ---------------
+Slack                                                 29.288               
+
+Slack               : 96.793ns
+Begin Point         : control_plane/reply_store/snapshot_valid_reg_syn_8.clk (rising edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : board_miso (rising edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 120.000ns { board_spi rising@120.000ns - board_spi rising@0.000ns }
+Data Path Delay     : 18.738ns (cell 15.563ns (83%), net 3.175ns (17%))
+Clock Skew          : 4.369ns
+Logic Level         : 3 ( LUT5=2  PAD=1 )
+Max Fanout          : 2
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+hierarchy                               0.000          0.000          pin: board_sclk_syn_2.ipad
+PAD                 x000y029            1.660          1.660          pin: board_sclk_syn_2.di
+net (fo=1)                              0.000          1.660          net: board_sclk_dup_1,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: board_sclk_syn_3.clki
+GCLK                x001y028z0          0.000          1.660          pin: board_sclk_syn_3.clko
+net (fo=180)                            2.709          4.369          net: board_sclk_syn_4,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: control_plane/reply_store/snapshot_valid_reg_syn_8.clk
+launch edge                             0.000    r     4.369               
+--------------------------------------------------------------------  ---------------
+clk2q               x015y014z0          0.146    r     4.515          pin: control_plane/reply_store/snapshot_valid_reg_syn_8.q[0]
+net (fo=2)                              1.177          5.692          net: control_plane/reply_store/snapshot_valid,  ../../../user_source/hdl_source/redo/a_spi_reply_store6.v(8)
+                                                                      pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[24]_syn_4.d[0]
+LUT5                x023y012z3          0.262    r     5.954       1  pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[24]_syn_4.f[0]
+net (fo=1)                              0.631          6.585          net: board_miso_syn_16,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.b[0]
+LUT5                x020y011z2          0.431    f     7.016       2  pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.f[0]
+net (fo=1)                              1.367          8.383          net: board_miso_syn_2,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso_syn_3.do[0]
+PAD                 x000y017            4.724    f    13.107       3  pin: board_miso_syn_3.opad
+net (fo=1)          G11                 0.000         13.107          net: board_miso,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso
+--------------------------------------------------------------------  ---------------
+Arrival                                               13.107               
+
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+capture edge                          120.000    r   120.000               
+--------------------------------------------------------------------  ---------------
+output              G11               -10.000        110.000               
+clock uncertainty                      -0.100        109.900               
+clock pessimism                         0.000        109.900               
+--------------------------------------------------------------------  ---------------
+Required                                             109.900               
+--------------------------------------------------------------------  ---------------
+Slack                                                 96.793               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 9.369ns
+Begin Point         : control_plane/reply_store/snapshot_valid_reg_syn_8.clk (rising edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : board_miso (rising edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi rising@0.000ns - board_spi rising@0.000ns }
+Data Path Delay     : 6.050ns (cell 3.794ns (62%), net 2.256ns (38%))
+Clock Skew          : 3.419ns
+Logic Level         : 3 ( LUT5=2  PAD=1 )
+Max Fanout          : 2
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+hierarchy                               0.000          0.000          pin: board_sclk_syn_2.ipad
+PAD                 x000y029            1.184          1.184          pin: board_sclk_syn_2.di
+net (fo=1)                              0.000          1.184          net: board_sclk_dup_1,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: board_sclk_syn_3.clki
+GCLK                x001y028z0          0.000          1.184          pin: board_sclk_syn_3.clko
+net (fo=180)                            2.235          3.419          net: board_sclk_syn_4,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: control_plane/reply_store/snapshot_valid_reg_syn_8.clk
+launch edge                             0.000    r     3.419               
+--------------------------------------------------------------------  ---------------
+clk2q               x015y014z0          0.109    f     3.528          pin: control_plane/reply_store/snapshot_valid_reg_syn_8.q[0]
+net (fo=2)                              0.846          4.374          net: control_plane/reply_store/snapshot_valid,  ../../../user_source/hdl_source/redo/a_spi_reply_store6.v(8)
+                                                                      pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[24]_syn_4.d[0]
+LUT5                x023y012z3          0.179    f     4.553       1  pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[24]_syn_4.f[0]
+net (fo=1)                              0.436          4.989          net: board_miso_syn_16,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.b[0]
+LUT5                x020y011z2          0.321    r     5.310       2  pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.f[0]
+net (fo=1)                              0.974          6.284          net: board_miso_syn_2,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso_syn_3.do[0]
+PAD                 x000y017            3.185    r     9.469       3  pin: board_miso_syn_3.opad
+net (fo=1)          G11                 0.000          9.469          net: board_miso,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso
+--------------------------------------------------------------------  ---------------
+Arrival                                                9.469               
+
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+output              G11                 0.000          0.000               
+clock uncertainty                       0.100          0.100               
+clock pessimism                         0.000          0.100               
+--------------------------------------------------------------------  ---------------
+Required                                               0.100               
+--------------------------------------------------------------------  ---------------
+Slack                                                  9.369               
+
+Slack               : 67.141ns
+Begin Point         : board_cs_n (falling edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : board_miso (rising edge triggered by clock board_spi  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 60.000ns { board_spi falling@60.000ns - board_spi rising@0.000ns }
+Data Path Delay     : 7.241ns (cell 4.685ns (64%), net 2.556ns (36%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( PAD=2  LUT5=1 )
+Max Fanout          : 11
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+launch edge                            60.000    f    60.000               
+--------------------------------------------------------------------  ---------------
+input               G12                 0.000         60.000          pin: board_cs_n
+net (fo=1)                              0.000         60.000          net: board_cs_n,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: board_cs_n_syn_6.ipad
+PAD                 x000y017            1.184    r    61.184       1  pin: board_cs_n_syn_6.di
+net (fo=11)                             1.582         62.766          net: board_cs_n_dup_5,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.a[0]
+LUT5                x020y011z2          0.316    r    63.082       2  pin: data_plane/frame_read_write_m0/frame_fifo_read_m0/retired_generation_reg[28]_syn_4.f[0]
+net (fo=1)                              0.974         64.056          net: board_miso_syn_2,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso_syn_3.do[0]
+PAD                 x000y017            3.185    r    67.241       3  pin: board_miso_syn_3.opad
+net (fo=1)          G11                 0.000         67.241          net: board_miso,  ../../../user_source/hdl_source/system/top_a_redo.v(6)
+                                                                      pin: board_miso
+--------------------------------------------------------------------  ---------------
+Arrival                                               67.241               
+
+source latency                          0.000          0.000               
+port                H13                 0.000          0.000          pin: board_sclk
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+output              G11                 0.000          0.000               
+clock uncertainty                       0.100          0.100               
+clock pessimism                         0.000          0.100               
+--------------------------------------------------------------------  ---------------
+Required                                               0.100               
+--------------------------------------------------------------------  ---------------
+Slack                                                 67.141               
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+standard
+***Report Model: top Device: EG4S20BG256***
+
+IO Statistics
+#IO                        17   out of    188    9.04%
+  #input                    7
+  #output                  10
+  #inout                    0
+
+LUT Statistics
+#Total_luts             15270
+  #lut4                 13171
+  #lut5                  2099
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b               0
+
+Utilization Statistics
+#lut                    17668   out of  19600   90.14%
+#reg                    10212   out of  19600   52.10%
+#bram                      30   out of     64   46.88%
+  #bram9k                  30
+  #fifo9k                   0
+#bram32k                    3   out of     16   18.75%
+#dsp                        7   out of     29   24.14%
+#pad                       17   out of    188    9.04%
+  #ireg                     2
+  #oreg                     9
+  #treg                     0
+#pll                        0   out of      4    0.00%
+#gclk                       0   out of     16    0.00%
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------------------------------------+
+|Instance                           |Module                         |lut     |ripple  |seq     |bram    |dsp     |
++----------------------------------------------------------------------------------------------------------------+
+|top                                |top                            |16469   |1199    |10223   |33      |7       |
+|  media                            |b_media_core_control           |4785    |519     |3121    |3       |6       |
+|    metadata_sectors               |b_program_sd_mux               |47      |0       |68      |0       |0       |
+|    programs                       |b_program_player               |849     |78      |670     |2       |0       |
+|    u_audio                        |wav_file_reader                |1285    |152     |805     |1       |0       |
+|      catalog                      |wav_catalog_read               |389     |32      |315     |0       |0       |
+|      parser                       |wav_pcm_decoder                |460     |44      |290     |0       |0       |
+|      source                       |sector_byte_stream             |300     |67      |113     |1       |0       |
+|    u_images                       |b_sd_card_bmp_control          |2148    |242     |1215    |0       |6       |
+|      bmp_read_m0                  |b_bmp_adaptive_read            |956     |195     |610     |0       |6       |
+|    u_shared                       |b_shared_sd_reader             |453     |47      |361     |0       |0       |
+|      arbiter                      |b_sd_read_arbiter              |153     |23      |151     |0       |0       |
+|      driver                       |sd_card_top                    |296     |24      |175     |0       |0       |
+|        sd_card_cmd_m0             |sd_card_cmd                    |170     |15      |51      |0       |0       |
+|        sd_card_sec_read_write_m0  |sd_card_sec_read_write         |62      |0       |83      |0       |0       |
+|        spi_master_m0              |spi_master                     |64      |9       |41      |0       |0       |
+|  services                         |b_board_services               |11485   |680     |7089    |30      |1       |
+|    adaptive_images$path           |b_adaptive_image_scale         |456     |116     |209     |5       |0       |
+|      queue                        |media_block_fifo               |24      |16      |30      |2       |0       |
+|    all_owners                     |b_control_drain_join           |176     |0       |43      |0       |0       |
+|    analysis_packets               |b_spi_pair_router              |3       |0       |3       |0       |0       |
+|    assembler                      |b_spi_request_front            |585     |20      |241     |2       |0       |
+|    cmd22_font                     |b_cmd22_font_ingress           |82      |17      |125     |0       |0       |
+|    curve                          |b_curve_service                |325     |16      |290     |4       |1       |
+|      gamma_calculation$calculator |b_colour_curve_gamma           |125     |16      |101     |2       |1       |
+|        base_curve                 |b_colour_curve                 |119     |16      |86      |0       |1       |
+|    display_source                 |b_menu_display_source          |296     |15      |227     |0       |0       |
+|    echo                           |b_link_proof_echo              |14      |0       |17      |0       |0       |
+|    font_cancel_stage              |b_font_cancel_boundary         |43      |0       |3       |0       |0       |
+|    font_rpc_packets               |b_spi_arg_pair_router          |3       |0       |3       |0       |0       |
+|    font_stream                    |b_font_stream_service          |905     |75      |335     |3       |0       |
+|      packetizer                   |b_font_stream_packetizer       |545     |43      |192     |2       |0       |
+|      utf8                         |b_utf8_codepoint_stream        |131     |9       |60      |0       |0       |
+|    geometry_control$change        |b_image_geometry_control       |71      |0       |47      |0       |0       |
+|    menu_bridge                    |b_menu_bridge                  |551     |41      |264     |0       |0       |
+|      engine                       |b_menu_engine                  |399     |26      |142     |0       |0       |
+|    menu_packets                   |b_spi_pair_router              |3       |0       |3       |0       |0       |
+|    normal                         |b_normal_services              |3596    |155     |2275    |1       |0       |
+|      config_service               |b_config_service               |3264    |146     |2116    |1       |0       |
+|        backend                    |b_parameter_service            |532     |8       |381     |0       |0       |
+|        font_reader                |b_font_reader                  |398     |32      |157     |1       |0       |
+|        storage                    |flash_config_service           |1807    |98      |1039    |0       |0       |
+|          u_flash_mux              |b_flash_font_mux               |496     |45      |243     |0       |0       |
+|            physical               |flash_spi_transport            |400     |45      |179     |0       |0       |
+|              u_byte               |spi_byte_engine                |38      |0       |32      |0       |0       |
+|      joiner                       |b_control_drain_join           |40      |0       |3       |0       |0       |
+|      text_service                 |b_text_rpc_service             |241     |9       |121     |0       |0       |
+|        rpc                        |b_rpc_response_delivery        |241     |9       |119     |0       |0       |
+|    packet_owners                  |b_spi_pair_router              |2       |0       |2       |0       |0       |
+|    persistence_bridge             |b_cmd22_persistence_bridge     |885     |33      |456     |2       |0       |
+|      journal                      |b_cmd22_utf8_journal           |821     |28      |399     |2       |0       |
+|    producer                       |b_media_transport              |1618    |143     |898     |12      |0       |
+|      image_fifo                   |media_block_fifo               |25      |16      |30      |2       |0       |
+|      pcm_fifo                     |media_block_fifo               |24      |16      |30      |2       |0       |
+|    program_packets                |b_spi_pair_router              |3       |0       |3       |0       |0       |
+|    scheduler                      |b_spi6_scheduler               |889     |19      |827     |1       |0       |
+|      master                       |media_spi_master               |869     |19      |735     |1       |0       |
+|    uid_envelope$commands          |b_media_commands32             |915     |16      |555     |0       |0       |
+|    uid_envelope$envelope          |b_media_uid_envelope           |22      |8       |120     |0       |0       |
+|    unsupported                    |b_unsupported_analysis_service |3       |0       |38      |0       |0       |
++----------------------------------------------------------------------------------------------------------------+

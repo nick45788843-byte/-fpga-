@@ -1,0 +1,142 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:34:00 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.77%
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     
+set_multicycle_path -setup -end -from [get_ports {tf_miso}] 2
+set_multicycle_path -hold -end -from [get_ports {tf_miso}] 1
+
+Type           :     MCP
+
+Statistics:
+Max            : SWNS      6.954ns, STNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+Min            : HWNS      5.074ns, HTNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 6.954ns
+Begin Point         : tf_miso (falling edge triggered by clock tf_spi_out  { rise@0.000000ns  fall@40.000000ns  period=80.000000 })
+End Point           : services/display_source/dirty_reg_syn_68.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { clk rising@80.000ns - tf_spi_out falling@40.000ns }
+Data Path Delay     : 28.330ns (cell 27.202ns (96%), net 1.128ns (4%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: tf_sclk_syn_4.osclk
+PAD (clk2q)         x025y071            4.620          8.325          pin: tf_sclk_syn_4.opad
+hierarchy                               0.000          8.325          pin: tf_sclk
+launch edge                            40.000    f    48.325               
+--------------------------------------------------------------------  ---------------
+input               R12                25.000         73.325          pin: tf_miso
+net (fo=1)                              0.000         73.325          net: tf_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(8)
+                                                                      pin: tf_miso_syn_2.ipad
+PAD                 x012y071            1.831    f    75.156       1  pin: tf_miso_syn_2.di
+net (fo=1)                              1.128         76.284          net: tf_miso_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(8)
+                                                                      pin: services/display_source/dirty_reg_syn_68.d[0]
+LUT2 (reg)          x019y056z3          0.371    r    76.655       2  net: media/u_shared/driver/sd_card_cmd_m0/spi_data_out[0],  ../../../user_source/hdl_source/SD/sd_card_cmd.v(25)
+--------------------------------------------------------------------  ---------------
+Arrival                                               76.655               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/display_source/dirty_reg_syn_68.clk
+capture edge                           80.000    r    83.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         83.230               
+clock uncertainty                      -0.100         83.130               
+clock pessimism                         0.479         83.609               
+--------------------------------------------------------------------  ---------------
+Required                                              83.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                  6.954               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 5.074ns
+Begin Point         : tf_miso (falling edge triggered by clock tf_spi_out  { rise@0.000000ns  fall@40.000000ns  period=80.000000 })
+End Point           : services/display_source/dirty_reg_syn_68.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { tf_spi_out falling@40.000ns - clk rising@40.000ns }
+Data Path Delay     : 2.261ns (cell 1.453ns (64%), net 0.808ns (36%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: tf_sclk_syn_4.osclk
+PAD (clk2q)         x025y071            3.143          6.082          pin: tf_sclk_syn_4.opad
+hierarchy                               0.000          6.082          pin: tf_sclk
+launch edge                            40.000    f    46.082               
+--------------------------------------------------------------------  ---------------
+input               R12                 0.000         46.082          pin: tf_miso
+net (fo=1)                              0.000         46.082          net: tf_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(8)
+                                                                      pin: tf_miso_syn_2.ipad
+PAD                 x012y071            1.184    r    47.266       1  pin: tf_miso_syn_2.di
+net (fo=1)                              0.808         48.074          net: tf_miso_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(8)
+                                                                      pin: services/display_source/dirty_reg_syn_68.d[0]
+LUT2 (reg)          x019y056z3          0.269    f    48.343       2  net: media/u_shared/driver/sd_card_cmd_m0/spi_data_out[0],  ../../../user_source/hdl_source/SD/sd_card_cmd.v(25)
+--------------------------------------------------------------------  ---------------
+Arrival                                               48.343               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/display_source/dirty_reg_syn_68.clk
+capture edge                           40.000    r    43.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         43.293               
+clock uncertainty                       0.100         43.393               
+clock pessimism                        -0.124         43.269               
+--------------------------------------------------------------------  ---------------
+Required                                              43.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.074               
+
+
+
+
+
+
+
+
+
+
+

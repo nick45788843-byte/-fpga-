@@ -1,0 +1,6 @@
+5924
+D:/softwore/TD/bin/run.exe
+B_Control_UX22_place.db
+10230376
+B_Control_UX22.tcl
+24172

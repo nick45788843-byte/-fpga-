@@ -1,0 +1,1199 @@
+============================================================
+   Tang Dynasty, V6.2.168116
+   Copyright (c) 2012-2025 Anlogic Inc.
+   Executable = D:/softwore/TD/bin/run.exe
+   Built at =   16:32:07 Jun 12 2025
+   Run by =     Administrator
+   Run Date =   Tue Nov  3 17:57:35 2026
+
+   Run on =     DESKTOP-605V67J
+============================================================
+RUN-1002 : start command "import_device eagle_s20.db -package EG4S20BG256"
+RUN-1001 : Using default speed grade: NA
+ARC-1001 : Device Initialization.
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :            OPTION            |          IO          |   SETTING   
+ARC-1001 : ------------------------------------------------------------------
+ARC-1001 :   cso_b/cclk/mosi/miso/dout  |  T3/R11/T10/P10/S11  |    gpio    
+ARC-1001 :             done             |         P13          |    gpio    
+ARC-1001 :           program_b          |          T2          |  dedicate  
+ARC-1001 :        tdi/tms/tck/tdo       |   C12/A15/C14/E14    |  dedicate  
+ARC-1001 : ------------------------------------------------------------------
+ARC-1004 : Device setting, marked 5 dedicate IOs in total.
+RUN-1002 : start command "open_project B_Control_UX22.prj"
+RUN-1002 : start command "commit_param -step design"
+RUN-1001 : Print Global Property
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   Parameters   |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   enable_seed  |    off     |       off        |        
+RUN-1001 :     message    |  standard  |     standard     |        
+RUN-1001 :   qor_monitor  |     on     |        on        |        
+RUN-1001 :   syn_ip_flow  |    off     |       off        |        
+RUN-1001 :     thread     |    auto    |       auto       |        
+RUN-1001 : --------------------------------------------------------
+RUN-1001 : Print Design Property
+RUN-1001 : ----------------------------------------------------------------
+RUN-1001 :       Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : ----------------------------------------------------------------
+RUN-1001 :   default_reg_initial  |    auto    |       auto       |        
+RUN-1001 :    hdl_warning_level   |   normal   |      normal      |        
+RUN-1001 : ----------------------------------------------------------------
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_adaptive_image_scale.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_board_services.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_colour_curve_gamma.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_config_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_curve_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_media_commands32.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_media_core_control.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_media_transport.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_media_uid_envelope.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_normal_services.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_parameter_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_sd_read_arbiter.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_shared_sd_reader.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_spi6_scheduler.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_spi_arg_pair_router.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_text_rpc_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_unsupported_analysis_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/flash_config_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/media_spi_master.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/system/top_b_redo.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/support/b_control_drain_join.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/support/b_link_proof_echo.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/support/b_rpc_response_delivery.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/config/flash_spi_transport.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/config/spi_byte_engine.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/dual/media_block_fifo.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/media/b_colour_curve.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/media/sector_byte_stream.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/media/wav_catalog_read.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/media/wav_file_reader.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/media/wav_pcm_decoder.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/SD/sd_card_cmd.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/SD/sd_card_sec_read_write.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/SD/sd_card_top.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/SD/spi_master.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_menu_bridge.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_menu_engine.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/support/b_spi_request_front.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_menu_display_source.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_program_player.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_flash_font_mux.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_font_reader.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_cmd22_font_ingress.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_font_stream_service.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_font_stream_packetizer.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_utf8_codepoint_stream.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_spi_pair_router.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_cmd22_utf8_journal.v
+HDL-1007 : analyze verilog file ../../../user_source/hdl_source/redo/b_cmd22_persistence_bridge.v
+PRJ-1401 : Successfully analyzed 51 source files.
+RUN-1002 : start command "set_param gate add_map_lut_struct high"
+RUN-1002 : start command "set_param gate multi_thread_mapping partition"
+RUN-1002 : start command "set_param rtl resource_sharing auto"
+RUN-1002 : start command "set_param rtl shifter_style shifter_reg"
+RUN-1002 : start command "commit_param -step design"
+RUN-1001 : Print Global Property
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   Parameters   |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   enable_seed  |    off     |       off        |        
+RUN-1001 :     message    |  standard  |     standard     |        
+RUN-1001 :   qor_monitor  |     on     |        on        |        
+RUN-1001 :   syn_ip_flow  |    off     |       off        |        
+RUN-1001 :     thread     |    auto    |       auto       |        
+RUN-1001 : --------------------------------------------------------
+RUN-1001 : Print Design Property
+RUN-1001 : ----------------------------------------------------------------
+RUN-1001 :       Parameters       |  Settings  |  Default Values  |  Note  
+RUN-1001 : ----------------------------------------------------------------
+RUN-1001 :   default_reg_initial  |    auto    |       auto       |        
+RUN-1001 :    hdl_warning_level   |   normal   |      normal      |        
+RUN-1001 : ----------------------------------------------------------------
+RUN-1002 : start command "elaborate -top top"
+HDL-1007 : elaborate module top in ../../../user_source/hdl_source/system/top_b_redo.v(4)
+HDL-1007 : elaborate module b_media_core_control(ADAPTIVE_IMAGES=1,IMAGE_PROGRESS_ENABLED=1) in ../../../user_source/hdl_source/redo/b_media_core_control.v(2)
+HDL-1007 : elaborate module b_shared_sd_reader in ../../../user_source/hdl_source/redo/b_shared_sd_reader.v(2)
+HDL-1007 : elaborate module b_sd_read_arbiter in ../../../user_source/hdl_source/redo/b_sd_read_arbiter.v(3)
+HDL-1007 : elaborate module sd_card_top in ../../../user_source/hdl_source/SD/sd_card_top.v(2)
+HDL-1007 : elaborate module sd_card_sec_read_write in ../../../user_source/hdl_source/SD/sd_card_sec_read_write.v(2)
+HDL-1007 : elaborate module sd_card_cmd in ../../../user_source/hdl_source/SD/sd_card_cmd.v(2)
+HDL-1007 : elaborate module spi_master in ../../../user_source/hdl_source/SD/spi_master.v(2)
+HDL-1007 : elaborate module b_sd_card_bmp_control(CLK_FREQ_HZ=50000000,EXTERNAL_SD=1,ADAPTIVE_IMAGES=1,DYNAMIC_SCAN_COUNT=1,COMPACT_HEADERS=1'b1,REFORMAT_ENABLED=1,OUTPUT_PROGRESS_ENABLED=1) in ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(1)
+HDL-1007 : elaborate module key_press_debounce(CLK_FREQ_HZ=50000000) in ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(525)
+HDL-1007 : elaborate module b_bmp_adaptive_read(ADAPTIVE_ENABLED=1,COMPACT_HEADERS=1'b1,SOFT_CANCEL_ENABLED=1) in ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(2)
+HDL-1007 : elaborate module b_program_sd_mux in ../../../user_source/hdl_source/redo/b_program_player.v(190)
+HDL-1007 : elaborate module b_program_player(REFRESH_SUPPORT=1) in ../../../user_source/hdl_source/redo/b_program_player.v(3)
+HDL-1007 : elaborate module EG_PHY_BRAM32K in D:\softwore\TD\arch/eagle_macro.v(323)
+HDL-1007 : elaborate module wav_file_reader in ../../../user_source/hdl_source/media/wav_file_reader.v(3)
+HDL-1007 : elaborate module wav_catalog_read(EXTERNAL_STREAM=1) in ../../../user_source/hdl_source/media/wav_catalog_read.v(2)
+HDL-1007 : elaborate module sector_byte_stream in ../../../user_source/hdl_source/media/sector_byte_stream.v(3)
+HDL-1007 : extracting RAM for identifier 'memory' in ../../../user_source/hdl_source/media/sector_byte_stream.v(14)
+HDL-1007 : elaborate module wav_pcm_decoder in ../../../user_source/hdl_source/media/wav_pcm_decoder.v(3)
+HDL-1007 : elaborate module b_board_services(MEDIA_UID32=1,IMAGE_SCALE_ENABLED=1,ADAPTIVE_IMAGES=1,FONT_SERVICE_ENABLED=1) in ../../../user_source/hdl_source/redo/b_board_services.v(4)
+HDL-1007 : elaborate module b_font_cancel_boundary in ../../../user_source/hdl_source/redo/b_board_services.v(462)
+HDL-1007 : elaborate module b_image_geometry_control in ../../../user_source/hdl_source/redo/b_board_services.v(415)
+HDL-1007 : elaborate module b_adaptive_image_scale(RUNTIME_GEOMETRY=1) in ../../../user_source/hdl_source/redo/b_adaptive_image_scale.v(2)
+HDL-1007 : extracting RAM for identifier 'source_row' in ../../../user_source/hdl_source/redo/b_adaptive_image_scale.v(24)
+HDL-1007 : elaborate module media_block_fifo in ../../../user_source/hdl_source/dual/media_block_fifo.v(3)
+HDL-1007 : extracting RAM for identifier 'words' in ../../../user_source/hdl_source/dual/media_block_fifo.v(5)
+HDL-1007 : elaborate module b_spi_request_front(SHARED_HEADER=1) in ../../../user_source/hdl_source/support/b_spi_request_front.v(5)
+HDL-1007 : extracting RAM for identifier 'body' in ../../../user_source/hdl_source/support/b_spi_request_front.v(34)
+HDL-1007 : extracting RAM for identifier 'last_fragment' in ../../../user_source/hdl_source/support/b_spi_request_front.v(35)
+HDL-1007 : elaborate module b_normal_services(PERSISTENCE_ENABLED=1,AUX_ENABLED=1,GAMMA_ENABLED=1,SCALE_ENABLED=1,FONT_ENABLED=1,JOURNAL_ENABLED=1) in ../../../user_source/hdl_source/redo/b_normal_services.v(4)
+HDL-1007 : elaborate module b_config_service(GAMMA_ENABLED=1,SCALE_ENABLED=1,FONT_ENABLED=1,JOURNAL_ENABLED=1) in ../../../user_source/hdl_source/redo/b_config_service.v(2)
+HDL-1007 : elaborate module flash_config_service(LEGACY_TEXT=0,GAMMA_ENABLED=1,SCALE_ENABLED=1,FONT_ENABLED=1,JOURNAL_ENABLED=1) in ../../../user_source/hdl_source/redo/flash_config_service.v(6)
+HDL-1007 : extracting RAM for identifier 'text_memory' in ../../../user_source/hdl_source/redo/flash_config_service.v(85)
+HDL-1007 : elaborate module b_flash_font_mux(JOURNAL_ENABLED=1) in ../../../user_source/hdl_source/redo/b_flash_font_mux.v(3)
+HDL-1007 : elaborate module flash_spi_transport(STREAM_SUPPORT=1,SNAPSHOT_SUPPORT=0,READ_ONLY_SUPPORT=1,JOURNAL_SUPPORT=1) in ../../../user_source/hdl_source/config/flash_spi_transport.v(2)
+HDL-1007 : elaborate module spi_byte_engine(CLK_DIV=4) in ../../../user_source/hdl_source/config/spi_byte_engine.v(3)
+HDL-5314 WARNING: net 'tx_record[511]' does not have a driver in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+HDL-1007 : elaborate module b_font_reader in ../../../user_source/hdl_source/redo/b_font_reader.v(3)
+HDL-1007 : extracting RAM for identifier 'cache' in ../../../user_source/hdl_source/redo/b_font_reader.v(24)
+HDL-1007 : elaborate module b_parameter_service(GAMMA_ENABLED=1,SCALE_ENABLED=1,APPLY_TIMEOUT_SECONDS=30) in ../../../user_source/hdl_source/redo/b_parameter_service.v(2)
+HDL-1007 : elaborate module b_text_rpc_service(CONFIG_ENABLED=1,PERSISTENCE_ENABLED=1,AUX_ENABLED=1) in ../../../user_source/hdl_source/redo/b_text_rpc_service.v(1)
+HDL-1007 : elaborate module b_rpc_response_delivery(CONTROL_ENABLED=1,RESPONSE_LEASE=1) in ../../../user_source/hdl_source/support/b_rpc_response_delivery.v(4)
+HDL-1007 : elaborate module b_control_drain_join in ../../../user_source/hdl_source/support/b_control_drain_join.v(3)
+HDL-1007 : elaborate module b_cmd22_font_ingress(DEGRADED_FONT_REJECT=1) in ../../../user_source/hdl_source/redo/b_cmd22_font_ingress.v(1)
+HDL-1007 : elaborate module b_cmd22_persistence_bridge(DEGRADED_STARTUP_ENABLED=1) in ../../../user_source/hdl_source/redo/b_cmd22_persistence_bridge.v(4)
+HDL-1007 : elaborate module b_cmd22_utf8_journal in ../../../user_source/hdl_source/redo/b_cmd22_utf8_journal.v(8)
+HDL-1007 : extracting RAM for identifier 'cache' in ../../../user_source/hdl_source/redo/b_cmd22_utf8_journal.v(34)
+HDL-1007 : elaborate module b_font_stream_service(REPLY_TIMEOUT_CYCLES=50000000,MAX_TRANSMISSIONS=4) in ../../../user_source/hdl_source/redo/b_font_stream_service.v(1)
+HDL-1007 : elaborate module b_font_stream_packetizer(REPLY_TIMEOUT_CYCLES=50000000,MAX_TRANSMISSIONS=4) in ../../../user_source/hdl_source/redo/b_font_stream_packetizer.v(13)
+HDL-1007 : extracting RAM for identifier 'staging' in ../../../user_source/hdl_source/redo/b_font_stream_packetizer.v(50)
+HDL-1007 : elaborate module b_utf8_codepoint_stream in ../../../user_source/hdl_source/redo/b_utf8_codepoint_stream.v(1)
+HDL-1007 : elaborate module b_unsupported_analysis_service in ../../../user_source/hdl_source/redo/b_unsupported_analysis_service.v(2)
+HDL-1007 : elaborate module b_curve_service(GAMMA_ENABLED=1) in ../../../user_source/hdl_source/redo/b_curve_service.v(3)
+HDL-1007 : extracting RAM for identifier 'words' in ../../../user_source/hdl_source/redo/b_curve_service.v(14)
+HDL-1007 : elaborate module b_colour_curve_gamma in ../../../user_source/hdl_source/redo/b_colour_curve_gamma.v(3)
+HDL-1007 : extracting RAM for identifier 'gamma_table' in ../../../user_source/hdl_source/redo/b_colour_curve_gamma.v(7)
+HDL-1007 : readmemh: reading from file 'gamma_curve.mem' in ../../../user_source/hdl_source/redo/b_colour_curve_gamma.v(8)
+HDL-1007 : elaborate module b_colour_curve in ../../../user_source/hdl_source/media/b_colour_curve.v(3)
+HDL-5314 WARNING: net 'gamma_table' does not have a driver in ../../../user_source/hdl_source/redo/b_colour_curve_gamma.v(7)
+HDL-1007 : elaborate module b_media_transport(MANAGEMENT=1,COLOUR=1,PROTOCOL_VERSION=6,MEDIA_WORDS=63,MEDIA_UID32=1,CONTROLLED=1,EXTERNAL_REQUEST=1,GAMMA_ENABLED=1,DIMENSIONS_ENABLED=1,IMAGE_SUSPEND_ENABLED=1,GEOMETRY_ENABLED=1) in ../../../user_source/hdl_source/redo/b_media_transport.v(3)
+HDL-1007 : extracting RAM for identifier 'staging' in ../../../user_source/hdl_source/redo/b_media_transport.v(42)
+HDL-1007 : extracting RAM for identifier 'events' in ../../../user_source/hdl_source/redo/b_media_transport.v(103)
+HDL-1007 : elaborate module b_media_commands32(RESTORE_ENABLED=1,RELOAD_START_ACK=1,PROGRAM_START_GUARD=1,ACTUAL_MODE_TAG=1) in ../../../user_source/hdl_source/redo/b_media_commands32.v(4)
+HDL-1007 : elaborate module b_media_uid_envelope in ../../../user_source/hdl_source/redo/b_media_uid_envelope.v(3)
+HDL-1007 : elaborate module b_menu_bridge(IDLE_REFRESH_CYCLES=1000000) in ../../../user_source/hdl_source/redo/b_menu_bridge.v(3)
+HDL-1007 : elaborate module b_menu_engine(BRIDGE_NOTICE_FACTOR=1) in ../../../user_source/hdl_source/redo/b_menu_engine.v(4)
+HDL-1007 : elaborate module b_menu_display_source(MIN_REFRESH_CYCLES=1000000) in ../../../user_source/hdl_source/redo/b_menu_display_source.v(3)
+HDL-1007 : elaborate module b_spi_pair_router in ../../../user_source/hdl_source/redo/b_spi_pair_router.v(3)
+HDL-1007 : elaborate module b_spi_arg_pair_router in ../../../user_source/hdl_source/redo/b_spi_arg_pair_router.v(4)
+HDL-1007 : elaborate module b_spi6_scheduler(HALF_CYCLES=3) in ../../../user_source/hdl_source/redo/b_spi6_scheduler.v(4)
+HDL-1007 : elaborate module media_spi_master(PROTOCOL_VERSION=6,SHORT_POLL=1) in ../../../user_source/hdl_source/redo/media_spi_master.v(3)
+HDL-1007 : extracting RAM for identifier 'received_bytes' in ../../../user_source/hdl_source/redo/media_spi_master.v(21)
+HDL-1007 : elaborate module b_link_proof_echo in ../../../user_source/hdl_source/support/b_link_proof_echo.v(3)
+HDL-1007 : elaborate module b_control_drain_join(SERVICES=8) in ../../../user_source/hdl_source/support/b_control_drain_join.v(3)
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-5001 WARNING: Contains anonymous inst(s) and/or net(s) that have not been renamed
+HDL-1200 : Current top model is top
+HDL-1100 : Inferred 13 RAMs.
+RUN-1003 : finish command "elaborate -top top" in  1.344192s wall, 1.281250s user + 0.062500s system = 1.343750s CPU (100.0%)
+
+RUN-1004 : used memory is 465 MB, reserved memory is 445 MB, peak memory is 465 MB
+RUN-1002 : start command "read_adc ../../../user_source/constraints_source/pin.adc"
+RUN-1002 : start command "set_pin_assignment  clk   LOCATION = R7; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  rst_n   LOCATION = E3; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; "
+RUN-1002 : start command "set_pin_assignment  uart_rx   LOCATION = F12; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; "
+RUN-1002 : start command "set_pin_assignment  uart_tx   LOCATION = D12; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  board_sclk   LOCATION = T4; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  board_mosi   LOCATION = R5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  board_miso   LOCATION = T5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  board_cs_n   LOCATION = T6; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  board_ready   LOCATION = T7; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  tf_sclk   LOCATION = T9; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  tf_cs_n   LOCATION = R9; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  tf_mosi   LOCATION = T12; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  tf_miso   LOCATION = R12; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  flash_cs_n   LOCATION = T13; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  flash_sclk   LOCATION = N5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  flash_mosi   LOCATION = P5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1002 : start command "set_pin_assignment  flash_miso   LOCATION = M6; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; "
+RUN-1001 : Starting of IO setups legality check.
+RUN-1001 : Starting of IO vref setups legality check.
+RUN-1002 : start command "read_sdc ../../../user_source/constraints_source/timing.sdc"
+RUN-1002 : start command "export_db B_Control_UX22_elaborate.db"
+RUN-1001 : Exported flow parameters
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported packer
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported ATMR Setting
+RUN-1001 : Exported timing constraints
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported ChipWatcher
+RUN-1002 : start command "commit_param -step rtl"
+RUN-1001 : Print Global Property
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   Parameters   |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   enable_seed  |    off     |       off        |        
+RUN-1001 :     message    |  standard  |     standard     |        
+RUN-1001 :   qor_monitor  |     on     |        on        |        
+RUN-1001 :   syn_ip_flow  |    off     |       off        |        
+RUN-1001 :     thread     |    auto    |       auto       |        
+RUN-1001 : --------------------------------------------------------
+RUN-1002 : start command "set_param rtl infer_fsm sequential"
+RUN-1002 : start command "set_param rtl min_control_set 4"
+RUN-1001 : Print Rtl Property
+RUN-1001 : ---------------------------------------------------------------------
+RUN-1001 :         Parameters        |   Settings   |  Default Values  |  Note  
+RUN-1001 : ---------------------------------------------------------------------
+RUN-1001 :        fix_undriven       |      0       |        0         |        
+RUN-1001 :   gated_clock_conversion  |     off      |       off        |        
+RUN-1001 :         infer_fsm         |  sequential  |       auto       |   *    
+RUN-1001 :         infer_gsr         |     off      |       off        |        
+RUN-1001 :         infer_rom         |      on      |        on        |        
+RUN-1001 :       keep_hierarchy      |     auto     |       auto       |        
+RUN-1001 :        merge_equal        |      on      |        on        |        
+RUN-1001 :      min_control_set      |      4       |        8         |   *    
+RUN-1001 :       min_ripple_len      |     auto     |       auto       |        
+RUN-1001 :          seq_syn          |      on      |        on        |        
+RUN-1001 : ---------------------------------------------------------------------
+RUN-1002 : start command "insert_debugger"
+RUN-1002 : start command "optimize_rtl"
+RUN-1001 : Open license file D:/softwore/TD/license/Anlogic.lic
+SYN-1001 : Stage 1 | Optimize RTL
+SYN-1001 : Stage 1.1 | Check Design Sanity
+SYN-1001 : End Stage 1.1 | Check Design Sanity; Time: 0.011301s wall, 0.000000s user + 0.000000s system = 0.000000s CPU (n/a%); Memory(MB): used = 488, reserved = 582, peak = 488;
+
+SYN-1079 : finish stage Check Design Sanity. Total instances: 56346, Total nets: 174878.
+
+SYN-1001 : Stage 1.2 | Initialize Design
+SYN-1001 : End Stage 1.2 | Initialize Design; Time: 2.523387s wall, 2.531250s user + 0.000000s system = 2.531250s CPU (100.3%); Memory(MB): used = 488, reserved = 582, peak = 488;
+
+SYN-1079 : finish stage Initialize Design. Total instances: 18086, Total nets: 125113.
+
+SYN-1001 : Stage 1.3 | Flatten Module
+SYN-1011 : Flatten model top
+SYN-1001 : End Stage 1.3 | Flatten Module; Time: 0.433059s wall, 0.421875s user + 0.000000s system = 0.421875s CPU (97.4%); Memory(MB): used = 490, reserved = 582, peak = 490;
+
+SYN-1079 : finish stage Flatten Module. Total instances: 18246, Total nets: 104912.
+
+SYN-1001 : Stage 1.4 | Uniform Instance
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[511]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i518[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i517[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i516[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i515[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i514[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i513[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i512[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[510]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i517[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i516[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i515[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i514[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i513[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i512[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[509]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i516[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i515[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i514[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i513[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i512[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[508]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i515[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i514[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i513[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i512[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[507]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i514[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i513[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i512[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i507[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[506]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i513[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i512[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i507[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i506[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[505]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i512[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i511[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i507[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i506[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i505[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[504]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i511[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i510[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i507[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i506[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i505[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i504[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[503]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i510[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i509[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i507[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i506[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i505[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i504[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i503[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/normal/config_service/storage/u_flash_mux/physical/tx_record[502]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(27)
+		the net's pin: pin "i509[0]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i508[1]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i507[2]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i506[3]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i505[4]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i504[5]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i503[6]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+		the net's pin: pin "i502[7]" in ../../../user_source/hdl_source/config/flash_spi_transport.v(86)
+SYN-5013 Similar messages will be suppressed.
+SYN-5025 WARNING: Using 0 for all undriven pins and nets
+SYN-1001 : End Stage 1.4 | Uniform Instance; Time: 0.073780s wall, 0.078125s user + 0.000000s system = 0.078125s CPU (105.9%); Memory(MB): used = 472, reserved = 563, peak = 490;
+
+SYN-1079 : finish stage Uniform Instance. Total instances: 16743, Total nets: 102891.
+
+SYN-1001 : Stage 1.5 | Optimize Design
+SYN-1066 : Inferred FSM for state register 'media/programs/phase_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+                    11               11
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/programs/phase_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_audio/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   100              100
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_audio/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_audio/parser/sample_index_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+                    11               11
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_audio/parser/sample_index_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_audio/source/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   100              100
+                   101              101
+                   111              110
+                   110              111
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_audio/source/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_images/bmp_read_m0/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   010              001
+                   101              010
+                   011              011
+                   100              100
+                   001              101
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_images/bmp_read_m0/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_shared/arbiter/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_shared/arbiter/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_shared/driver/sd_card_cmd_m0/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                 00000            00000
+                 00010            00001
+                 00001            00010
+                 01001            00011
+                 01010            00100
+                 01011            00101
+                 01100            00110
+                 01101            00111
+                 01110            01000
+                 01111            01001
+                 00110            01010
+                 00011            01011
+                 00111            01100
+                 00100            01101
+                 01000            01110
+                 10001            01111
+                 00101            10000
+                 10000            10001
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_shared/driver/sd_card_cmd_m0/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_shared/driver/sd_card_sec_read_write_m0/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                 00000             0000
+                 00001             0001
+                 00010             0010
+                 00011             0011
+                 00100             0100
+                 10010             0101
+                 10001             0110
+                 00101             0111
+                 00110             1000
+                 10000             1001
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_shared/driver/sd_card_sec_read_write_m0/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'media/u_shared/driver/spi_master_m0/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   010              001
+                   001              010
+                   100              011
+                   011              100
+                   101              101
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'media/u_shared/driver/spi_master_m0/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/adaptive_images$path/read_state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/adaptive_images$path/read_state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/assembler/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   011              010
+                   100              011
+                   010              100
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/assembler/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/curve/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+                    11               11
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/curve/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/curve/gamma_calculation$calculator/base_curve/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   100              100
+                   101              101
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/curve/gamma_calculation$calculator/base_curve/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/display_source/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+                    11               11
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/display_source/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/font_stream/packetizer/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   110              100
+                   100              101
+                   101              110
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/font_stream/packetizer/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/normal/config_service/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+                    11               11
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/normal/config_service/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/normal/config_service/text_state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                  0000                0
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/normal/config_service/text_state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/normal/config_service/backend/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   100              100
+                   101              101
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/normal/config_service/backend/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/normal/config_service/storage/u_flash_mux/physical/u_byte/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/normal/config_service/storage/u_flash_mux/physical/u_byte/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/normal/text_service/rpc/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   100              100
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/normal/text_service/rpc/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/persistence_bridge/save_state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/persistence_bridge/save_state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/producer/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                  0010             0000
+                  0011             0001
+                  0100             0010
+                  0101             0011
+                  0110             0100
+                  0111             0101
+                  0000             0110
+                  1000             0111
+                  0001             1000
+                  1010             1001
+                  1001             1010
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/producer/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/scheduler/master/copy_state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/scheduler/master/copy_state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/scheduler/master/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                   000              000
+                   001              001
+                   010              010
+                   011              011
+                   100              100
+                   101              101
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/scheduler/master/state_reg' using encoding 'sequential' in model 'top'
+SYN-1066 : Inferred FSM for state register 'services/uid_envelope$envelope/state_reg' in module 'top'
+--------------------------------------------
+     Previous Encoding     New Encoding
+--------------------------------------------
+                    00               00
+                    01               01
+                    10               10
+--------------------------------------------
+SYN-1067 : encoded FSM with state register 'services/uid_envelope$envelope/state_reg' using encoding 'sequential' in model 'top'
+SYN-1057 : Inferred 25 FSM(s)
+SYN-1001 : Optimize 11 less-than instances
+SYN-1001 : Optimize 21 less-than instances
+SYN-1032 : 98952/1350 useful/useless nets, 16310/26 useful/useless insts
+SYN-1001 : Bypass 1 mux instances
+SYN-1021 : Optimized 46 onehot mux instances.
+SYN-1068 : Optimized 277 binary mux instances.
+SYN-1019 : Optimized 5 mux instances.
+SYN-1021 : Optimized 20 onehot mux instances.
+SYN-1021 : Optimized 1 onehot mux instances.
+SYN-1021 : Optimized 1 onehot mux instances.
+SYN-1001 : Optimize 4 less-than instances
+SYN-1016 : Merged 2808 instances.
+SYN-1025 : Merged 23 RAM ports.
+SYN-1026 : Infer Logic BRAM(media/u_audio/source/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 512 x 8	 write mode: NORMAL
+	 port b size: 512 x 8	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/adaptive_images$path/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 1024 x 24	 write mode: NORMAL
+	 port b size: 1024 x 24	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/adaptive_images$path/queue/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 512 x 32	 write mode: NORMAL
+	 port b size: 512 x 32	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/assembler/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 256 x 8	 write mode: NORMAL
+	 port b size: 256 x 8	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/assembler/ramread1_syn_4)
+	 port mode: single port
+	 port a size: 32 x 8	 write mode: READBEFOREWRITE
+	 port b size: 32 x 8	 write mode: NORMAL
+SYN-1026 : Infer Logic BRAM(services/curve/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 64 x 32	 write mode: NORMAL
+	 port b size: 64 x 32	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/font_stream/packetizer/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 64 x 32	 write mode: NORMAL
+	 port b size: 64 x 32	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/normal/config_service/font_reader/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 512 x 8	 write mode: NORMAL
+	 port b size: 512 x 8	 write mode: READBEFOREWRITE
+SYN-1025 : Merged 1 RAM ports.
+SYN-1026 : Infer Logic BRAM(services/persistence_bridge/journal/ramread0_syn_44)
+	 port mode: single dual port
+	 port a size: 2048 x 8	 write mode: NORMAL
+	 port b size: 2048 x 8	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/producer/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 4 x 128	 write mode: NORMAL
+	 port b size: 4 x 128	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/producer/ramread1_syn_4)
+	 port mode: single dual port
+	 port a size: 64 x 32	 write mode: NORMAL
+	 port b size: 64 x 32	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/producer/image_fifo/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 512 x 32	 write mode: NORMAL
+	 port b size: 512 x 32	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/producer/pcm_fifo/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 512 x 32	 write mode: NORMAL
+	 port b size: 512 x 32	 write mode: READBEFOREWRITE
+SYN-1026 : Infer Logic BRAM(services/scheduler/master/ramread0_syn_4)
+	 port mode: single dual port
+	 port a size: 64 x 8	 write mode: NORMAL
+	 port b size: 64 x 8	 write mode: READBEFOREWRITE
+SYN-1023 : Infer 0 Logic DRAMs, 15 Logic BRAMs.
+SYN-1001 : Share 21 instances
+SYN-1001 :    use sharing_strategy = 103, sharing_ratio = 1, min_slack = 1000
+SYN-1016 : Merged 3300 instances.
+SYN-1001 : End Stage 1.5 | Optimize Design; Time: 13.043908s wall, 12.343750s user + 0.640625s system = 12.984375s CPU (99.5%); Memory(MB): used = 959, reserved = 948, peak = 959;
+
+SYN-1079 : finish stage Optimize Design. Total instances: 40002, Total nets: 43453.
+
+SYN-1001 : Stage 1.6 | Optimize Iteratively
+SYN-1018 : Transformed 7 mux instances.
+SYN-1019 : Optimized 34 mux instances.
+SYN-1021 : Optimized 67 onehot mux instances.
+SYN-1014 : Optimize round 1
+SYN-1044 : Optimized 166 inv instances.
+SYN-1017 : Remove 52 const input seq instances
+SYN-1019 : Optimized 90 mux instances.
+SYN-1020 : Optimized 4578 distributor mux.
+SYN-1001 : Optimize 93 less-than instances
+SYN-1019 : Optimized 27 mux instances.
+SYN-2595 : bram inst: media/u_audio/source/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/adaptive_images$path/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/adaptive_images$path/queue/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/assembler/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/curve/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/font_stream/packetizer/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/normal/config_service/font_reader/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/persistence_bridge/journal/ramread0_syn_44 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/producer/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/producer/ramread1_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/producer/image_fifo/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/producer/pcm_fifo/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2595 : bram inst: services/scheduler/master/ramread0_syn_4 is set to PDPW/SP from DP for resource saving
+SYN-2593 : bram inst: services/adaptive_images$path/queue/ramread0_syn_4 will be optimized to a new one with A-width 24 due to unused data out
+SYN-1001 : Optimize constant input of 2 erams.
+SYN-1016 : Merged 10806 instances.
+SYN-1015 : Optimize round 1, 26225 better
+SYN-1014 : Optimize round 2
+SYN-1044 : Optimized 116 inv instances.
+SYN-1017 : Remove 15 const input seq instances
+SYN-1019 : Optimized 67 mux instances.
+SYN-1020 : Optimized 183 distributor mux.
+SYN-2593 : bram inst: services/producer/ramread0_syn_4 will be optimized to a new one with A-width 119 due to unused data out
+SYN-2593 : bram inst: services/producer/image_fifo/ramread0_syn_4 will be optimized to a new one with A-width 24 due to unused data out
+SYN-1001 : Optimize constant input of 1 erams.
+SYN-1016 : Merged 391 instances.
+SYN-1015 : Optimize round 2, 932 better
+SYN-5011 WARNING: Undriven pin: model "top" / inst "services/adaptive_images$path/queue/ramread0_syn_4" in ../../../user_source/hdl_source/dual/media_block_fifo.v(13) / pin "bea[0]"
+SYN-5011 WARNING: Undriven pin: model "top" / inst "services/adaptive_images$path/queue/ramread0_syn_4" in ../../../user_source/hdl_source/dual/media_block_fifo.v(13) / pin "beb[0]"
+SYN-5011 WARNING: Undriven pin: model "top" / inst "services/producer/ramread0_syn_4" in ../../../user_source/hdl_source/redo/b_media_transport.v(108) / pin "bea[0]"
+SYN-5011 WARNING: Undriven pin: model "top" / inst "services/producer/ramread0_syn_4" in ../../../user_source/hdl_source/redo/b_media_transport.v(108) / pin "beb[0]"
+SYN-5011 WARNING: Undriven pin: model "top" / inst "services/producer/image_fifo/ramread0_syn_4" in ../../../user_source/hdl_source/dual/media_block_fifo.v(13) / pin "bea[0]"
+SYN-5011 WARNING: Undriven pin: model "top" / inst "services/producer/image_fifo/ramread0_syn_4" in ../../../user_source/hdl_source/dual/media_block_fifo.v(13) / pin "beb[0]"
+SYN-5025 WARNING: Using 0 for all undriven pins and nets
+SYN-3010 : Optimized 300 DFF(s)
+SYN-1014 : Optimize round 1
+SYN-1020 : Optimized 71 distributor mux.
+SYN-1019 : Optimized 9 mux instances.
+SYN-2593 : bram inst: services/producer/ramread0_syn_4 will be optimized to a new one with A-width 102 due to unused data out
+SYN-1016 : Merged 198 instances.
+SYN-1015 : Optimize round 1, 407 better
+SYN-1014 : Optimize round 2
+SYN-1044 : Optimized 3 inv instances.
+SYN-1019 : Optimized 2 mux instances.
+SYN-1020 : Optimized 4 distributor mux.
+SYN-1016 : Merged 4 instances.
+SYN-1015 : Optimize round 2, 13 better
+SYN-1014 : Optimize round 3
+SYN-1015 : Optimize round 3, 0 better
+SYN-1001 : End Stage 1.6 | Optimize Iteratively; Time: 44.534269s wall, 40.531250s user + 0.921875s system = 41.453125s CPU (93.1%); Memory(MB): used = 719, reserved = 719, peak = 959;
+
+SYN-1079 : finish stage Optimize Iteratively. Total instances: 34757, Total nets: 37904.
+
+SYN-1001 : Stage 1.7 | Check Design
+SYN-1001 : End Stage 1.7 | Check Design; Time: 0.006811s wall, 0.015625s user + 0.000000s system = 0.015625s CPU (229.4%); Memory(MB): used = 719, reserved = 719, peak = 959;
+
+SYN-1079 : finish stage Check Design. Total instances: 34757, Total nets: 37904.
+
+SYN-1001 : End Stage 1 | Optimize RTL; Time: 60.628404s wall, 55.921875s user + 1.562500s system = 57.484375s CPU (94.8%); Memory(MB): used = 719, reserved = 719, peak = 959;
+
+SYN-1079 : finish stage Optimize RTL. Total instances: 34757, Total nets: 37904.
+
+RUN-1003 : finish command "optimize_rtl" in  60.636321s wall, 55.937500s user + 1.562500s system = 57.500000s CPU (94.8%)
+
+RUN-1004 : used memory is 719 MB, reserved memory is 719 MB, peak memory is 959 MB
+RUN-1002 : start command "report_area -file B_Control_UX22_rtl.area"
+RUN-1001 : standard
+***Report Model: top Device: EG4S20BG256***
+
+IO Statistics
+#IO                        15
+  #input                    5
+  #output                  10
+  #inout                    0
+
+Gate Statistics
+#Basic gates            26769
+  #and                   4781
+  #nand                     0
+  #or                    2430
+  #nor                      0
+  #xor                    101
+  #xnor                     0
+  #buf                      0
+  #not                   1722
+  #bufif1                   0
+  #MX21                  7497
+  #FADD                     0
+  #DFF                  10238
+  #LATCH                    0
+#MACRO_ADD                528
+#MACRO_EQ                 780
+#MACRO_MULT                11
+#MACRO_MUX               6631
+#MACRO_OTHERS              15
+
+RUN-1002 : start command "export_db B_Control_UX22_rtl.db"
+RUN-1001 : Exported flow parameters
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported packer
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported ATMR Setting
+RUN-1001 : Exported timing constraints
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported ChipWatcher
+RUN-1002 : start command "commit_param -step gate"
+RUN-1001 : Print Global Property
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   Parameters   |  Settings  |  Default Values  |  Note  
+RUN-1001 : --------------------------------------------------------
+RUN-1001 :   enable_seed  |    off     |       off        |        
+RUN-1001 :     message    |  standard  |     standard     |        
+RUN-1001 :   qor_monitor  |     on     |        on        |        
+RUN-1001 :   syn_ip_flow  |    off     |       off        |        
+RUN-1001 :     thread     |    auto    |       auto       |        
+RUN-1001 : --------------------------------------------------------
+RUN-1002 : start command "set_param gate map_mode area_prior"
+RUN-1002 : start command "set_param gate opt_area high"
+RUN-1002 : start command "set_param gate pack_effort high"
+RUN-1001 : Print Gate Property
+RUN-1001 : -------------------------------------------------------------
+RUN-1001 :     Parameters    |   Settings   |  Default Values  |  Note  
+RUN-1001 : -------------------------------------------------------------
+RUN-1001 :     eram_init     |     off      |       off        |        
+RUN-1001 :      map_mode     |  area_prior  |       auto       |   *    
+RUN-1001 :    pack_effort    |     high     |      medium      |   *    
+RUN-1001 :   pack_seq_in_io  |     auto     |       auto       |        
+RUN-1001 :       report      |   standard   |     standard     |        
+RUN-1001 : -------------------------------------------------------------
+RUN-1002 : start command "optimize_gate -packarea B_Control_UX22_gate.area"
+RUN-1001 : Open license file D:/softwore/TD/license/Anlogic.lic
+SYN-1001 : Stage 2 | Optimize Gate
+SYN-1001 : Stage 2.1 | Map Reg
+SYN-1001 : End Stage 2.1 | Map Reg; Time: 0.673657s wall, 0.687500s user + 0.000000s system = 0.687500s CPU (102.1%); Memory(MB): used = 717, reserved = 818, peak = 959;
+
+SYN-1079 : finish stage Map Reg. Total instances: 34757, Total nets: 37904.
+
+SYN-1001 : Stage 2.2 | Map IO
+SYN-2001 : Map 17 IOs to PADs of model 'top'
+SYN-1001 : End Stage 2.2 | Map IO; Time: 0.080005s wall, 0.093750s user + 0.000000s system = 0.093750s CPU (117.2%); Memory(MB): used = 717, reserved = 818, peak = 959;
+
+SYN-1001 : Stage 2.3 | Map Macro
+RUN-1002 : start command "update_pll_param -module top"
+SYN-2501 : Processed 0 LOGIC_BUF instances.
+SYN-6562 WARNING: The init value of "media/u_audio/source/ramread0_syn_4(../../../user_source/hdl_source/media/sector_byte_stream.v(23))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/adaptive_images$path/queue/ramread0_syn_4(../../../user_source/hdl_source/dual/media_block_fifo.v(13))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/assembler/ramread0_syn_4(../../../user_source/hdl_source/support/b_spi_request_front.v(59))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/assembler/ramread1_syn_4(../../../user_source/hdl_source/support/b_spi_request_front.v(59))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/curve/ramread0_syn_4(../../../user_source/hdl_source/redo/b_curve_service.v(45))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/font_stream/packetizer/ramread0_syn_4(../../../user_source/hdl_source/redo/b_font_stream_packetizer.v(64))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/normal/config_service/font_reader/ramread0_syn_4(../../../user_source/hdl_source/redo/b_font_reader.v(69))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/persistence_bridge/journal/ramread0_syn_44(../../../user_source/hdl_source/redo/b_cmd22_utf8_journal.v(125))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/producer/ramread0_syn_4(../../../user_source/hdl_source/redo/b_media_transport.v(108))" will be ignored since gate eram_init is set to off
+SYN-6562 WARNING: The init value of "services/producer/ramread1_syn_4(../../../user_source/hdl_source/redo/b_media_transport.v(121))" will be ignored since gate eram_init is set to off
+SYN-6562 Similar messages will be suppressed.
+SYN-2571 : Map 11 macro multiplier
+SYN-2571 : Optimize after map_dsp, round 1
+SYN-2571 : Optimize after map_dsp, round 1, 0 better
+SYN-1001 : Throwback 396 control mux instances
+SYN-1001 : Generate 8 bigger adders
+SYN-1001 : Convert 1 adder
+SYN-1001 : Optimize 37 adders
+SYN-2501 : Optimize round 1
+SYN-1016 : Merged 1863 instances.
+SYN-2501 : Optimize round 1, 6756 better
+SYN-2501 : Optimize round 2
+SYN-2501 : Optimize round 2, 1 better
+SYN-2501 : Optimize round 1
+SYN-1016 : Merged 7 instances.
+SYN-2501 : Optimize round 1, 9 better
+SYN-2501 : Optimize round 2
+SYN-2501 : Optimize round 2, 0 better
+SYN-2501 : Map 523 macro adder(s)
+SYN-1019 : Optimized 600 mux instances.
+SYN-1016 : Merged 3132 instances.
+SYN-5013 WARNING: Undriven net: model "top" / net "services/menu_bridge/add2_syn_22" in ../../../user_source/hdl_source/redo/b_menu_bridge.v(34)
+		the net's pin: pin "a[0]" in ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(206)
+SYN-5013 WARNING: Undriven net: model "top" / net "services/menu_bridge/add2_syn_24" in ../../../user_source/hdl_source/redo/b_menu_bridge.v(34)
+		the net's pin: pin "a[1]" in ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(206)
+SYN-5025 WARNING: Using 0 for all undriven pins and nets
+SYN-1001 : End Stage 2.3 | Map Macro; Time: 7.483023s wall, 7.437500s user + 0.015625s system = 7.453125s CPU (99.6%); Memory(MB): used = 783, reserved = 876, peak = 959;
+
+SYN-1079 : finish stage Map Macro. Total instances: 54196, Total nets: 57205.
+
+SYN-1001 : Stage 2.4 | Map Gate
+SYN-3001 : Collect 11678 PI 6297 PO (4 timing unconstrained) for mapping
+SYN-2581 : Mapping with K=5, #lut = 16015 (3.53), #lev = 18 (5.78), #crit_level = 0
+SYN-2551 : Post LUT mapping optimization.
+SYN-2551 : extra runtime-consuming opt
+SYN-2551 : progress: 0%
+SYN-2551 : progress: 12%
+SYN-2551 : progress: 25%
+SYN-2551 : progress: 37%
+SYN-2551 : progress: 50%
+SYN-2551 : progress: 62%
+SYN-2551 : progress: 75%
+SYN-2551 : progress: 87%
+SYN-2551 : progress: 100%
+SYN-2581 : Mapping with K=5, #lut = 15270 (3.48), #lev = 17 (5.73), #crit_level = 0
+SYN-3001 : Logic optimization opt = 6.13 sec, map = 1.99 sec, post map opt = 747.38 sec.
+SYN-3001 : Mapper removed 1 lut buffers
+SYN-1001 : End Stage 2.4 | Map Gate; Time: 780.313893s wall, 726.625000s user + 6.640625s system = 733.265625s CPU (94.0%); Memory(MB): used = 940, reserved = 1020, peak = 959;
+
+SYN-1001 : Packing model "top" ...
+SYN-4010 : Pack lib has 59 rtl pack models with 26 top pack blocks
+SYN-1014 : Optimize round 1
+SYN-1015 : Optimize round 1, 0 better
+SYN-4002 : Packing 10212 DFF/LATCH to SEQ ...
+SYN-4009 : Pack 50 carry chain into lslice
+SYN-4007 : Packing 1504 adder to BLE ...
+SYN-4008 : Packed 1504 adder and 234 SEQ to BLE.
+SYN-4007 : Packing 0 gate4 to BLE ...
+SYN-4008 : Packed 0 gate4 and 0 SEQ to BLE.
+RUN-1002 : start command "report_qor -step gate -file gate.qor"
+RUN-1002 : start command "start_timer"
+RUN-1003 : finish command "start_timer" in  2.613609s wall, 2.593750s user + 0.000000s system = 2.593750s CPU (99.2%)
+
+RUN-1004 : used memory is 934 MB, reserved memory is 1014 MB, peak memory is 959 MB
+-----------------------------------------------------------
+| QoR metrics               |         value               |
+-----------------------------------------------------------
+| Timing                    |                             |
+|     Setup WNS             |         -482                |
+|     Setup TNS             |        -6739                |
+|     Num of violated S-EP  |           15                |
+|     Hold WNS              |          471                |
+|     Hold TNS              |            0                |
+|     Num of violated H-EP  |            0                |
+-----------------------------------------------------------
+| Utilization               |                             |
+|     #registers            |         9978                |
+|     #luts                 |        15270                |
+|     #lut1                 |           23                |
+|     #lut1(~A)             |           23                |
+|     #slices               |         1199                |
+|     slices percentage     |       12.23%                |
+|     #RAMs                 |           33                |
+|     #DSPs                 |            7                |
+|     #f7mux                |        0.00%                |
+|     #MACROs               |          183                |
+|     #insts in MACRO       |         1199                |
+-----------------------------------------------------------
+| kept_net                  |                             |
+|     #syn_keep             |            0                |
+|     #keep_hier            |            0                |
+|     #dont_touch           |            0                |
+|     #mark_debug           |            0                |
+|     #max_fanout_keep      |            0                |
+|     #async_reg            |            2                |
+-----------------------------------------------------------
+| Top 10% datanet fanout#   |        42.73                |
+| dff(single fanout)->dff   |          488                |
+| dff(single fanout)->dram  |            0                |
+-----------------------------------------------------------
+| Over-quota path num*      |                             |
+|     Total                 |            0                |
+-----------------------------------------------------------
+| Rent**                    |                             |
+-----------------------------------------------------------
+Note*: Over-quota path shows the over-path-level-threshold path number of each clock.
+       The clock will not be shown if no path is with path level over the threshold.
+       The threshold is defined as worst path_margin / 800ps.
+Note**: Rent shows the rent exponent value of the modules whose rent value exceeds the threshold.
+        Only modules under top are reported, and the threshold is defined as 0.7.
+
+Logic Level Distribution
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Clock          |  Period            |  0      |  1     |  2     |  3     |  4     |  5     |  6     |  7     |  8     |  9     |  10   |  11    |  12   |  13   |  14   |  15   |  16  |  17
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  board_spi_out  |  120.000ns (8MHz)  |  2      |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0    |  0     |  0    |  0    |  0    |  0    |  0   |  0
+  clk            |  20.000ns (50MHz)  |  13661  |  2299  |  1239  |  1168  |  1030  |  1170  |  1335  |  1287  |  1213  |  1208  |  857  |  1075  |  737  |  805  |  320  |  146  |  43  |  18
+  flash_spi_out  |  160.000ns (6MHz)  |  2      |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0    |  0     |  0    |  0    |  0    |  0    |  0   |  0
+  tf_spi_out     |  80.000ns (12MHz)  |  2      |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0     |  0    |  0     |  0    |  0    |  0    |  0    |  0   |  0
+  Total          |  NA                |  13667  |  2299  |  1239  |  1168  |  1030  |  1170  |  1335  |  1287  |  1213  |  1208  |  857  |  1075  |  737  |  805  |  320  |  146  |  43  |  18
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Note: The table count the worst 100000 paths, each endpoint count only one time.(29617 paths analyzed)
+
+Hierarchical Rent Exponent Report
++--------------------------------------------------------------------------+
+|Inst       |Model                  |Rent     |Cell     |Pin     |Term     |
++--------------------------------------------------------------------------+
+|top        |top                    |0.13     |26508    |117341  |17       |
+|  media    |b_media_core_control_1 |0.63     |7852     |34907   |1217     |
+|  services |b_board_services_2     |0.55     |18438    |81561   |979      |
++--------------------------------------------------------------------------+
+Note: Cell represents total number of cells inside module; Pin represents total number of pins
+      which have net connection inside module; Term represents total number of PIs and POs of module.
+      Rent represents the relationship between number of terms and number of cells in module.
+      A module with higher rent corresponds to highly connected logic and strong connectivity with others.
+Report gate stage QoR done.
+
+RUN-1003 : finish command "report_qor -step gate -file gate.qor" in  15.593292s wall, 15.250000s user + 0.062500s system = 15.312500s CPU (98.2%)
+
+RUN-1004 : used memory is 939 MB, reserved memory is 1018 MB, peak memory is 959 MB
+RUN-1002 : start command "report_area -file B_Control_UX22_gate.area"
+RUN-1001 : standard
+***Report Model: top Device: EG4S20BG256***
+
+IO Statistics
+#IO                        17   out of    188    9.04%
+  #input                    7
+  #output                  10
+  #inout                    0
+
+LUT Statistics
+#Total_luts             15270
+  #lut4                 13171
+  #lut5                  2099
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b               0
+
+Utilization Statistics
+#lut                    17668   out of  19600   90.14%
+#reg                    10212   out of  19600   52.10%
+#bram                      30   out of     64   46.88%
+  #bram9k                  30
+  #fifo9k                   0
+#bram32k                    3   out of     16   18.75%
+#dsp                        7   out of     29   24.14%
+#pad                       17   out of    188    9.04%
+  #ireg                     2
+  #oreg                     9
+  #treg                     0
+#pll                        0   out of      4    0.00%
+#gclk                       0   out of     16    0.00%
+
+RUN-1003 : finish command "report_area -file B_Control_UX22_gate.area" in  1.739010s wall, 1.656250s user + 0.000000s system = 1.656250s CPU (95.2%)
+
+RUN-1004 : used memory is 939 MB, reserved memory is 1018 MB, peak memory is 959 MB
+SYN-1001 : End Stage 2 | Optimize Gate; Time: 809.282098s wall, 753.234375s user + 8.625000s system = 761.859375s CPU (94.1%); Memory(MB): used = 939, reserved = 1018, peak = 959;
+
+RUN-1003 : finish command "optimize_gate -packarea B_Control_UX22_gate.area" in  809.304215s wall, 753.250000s user + 8.625000s system = 761.875000s CPU (94.1%)
+
+RUN-1004 : used memory is 939 MB, reserved memory is 1018 MB, peak memory is 959 MB
+RUN-1002 : start command "legalize_phy_inst"
+SYN-1001 : Stage 3 | Legalize Phy Inst
+SYN-1011 : Flatten model top
+SYN-1001 : End Stage 3 | Legalize Phy Inst; Time: 0.256494s wall, 0.234375s user + 0.000000s system = 0.234375s CPU (91.4%); Memory(MB): used = 939, reserved = 1018, peak = 959;
+
+RUN-1002 : start command "update_timing"
+RUN-1002 : start command "start_timer"
+RUN-1003 : finish command "start_timer" in  2.574671s wall, 2.453125s user + 0.031250s system = 2.484375s CPU (96.5%)
+
+RUN-1004 : used memory is 939 MB, reserved memory is 1019 MB, peak memory is 959 MB
+RUN-1003 : finish command "update_timing" in  5.776544s wall, 5.625000s user + 0.031250s system = 5.656250s CPU (97.9%)
+
+RUN-1004 : used memory is 939 MB, reserved memory is 1019 MB, peak memory is 959 MB
+RUN-1002 : start command "report_timing_status -file B_Control_UX22_gate.ts"
+RUN-1002 : start command "report_timing_summary -file B_Control_UX22_gate.timing"
+RUN-1002 : start command "flow_status -file flow.status"
+Location         : D:\study\version\FPGA_Projects_A97_B108_HMI14\B\src\td_project\B_Control_UX22_Runs\syn_1
+Running with     : Tang Dynasty v6.2.168116
+                   Copyright (c) 2012-2025 Anlogic Inc.
+Top Model        : top
+Device           : EG4S20BG256
+Speed            : NA
+
+Timing Mode      : basic
+Setup            : WNS  -482ps  TNS    -6739ps  NUM_FEPS    15
+Hold             : WNS   471ps  TNS        0ps  NUM_FEPS     0
+
+Flow Statistics  :
+RUN-1001 : Flow Statistics:
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1001 :      command     |  #calls  |   wall time   |  cpu time(s)  |  used memory(mb)  |  peak memory(mb)  
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1001 :   optimize_gate  |    1     |  13m29s(93%)  |   761(93%)    |        939        |        959        
+RUN-1001 :   optimize_rtl   |    1     |   1m0s(6%)    |    56(6%)     |        719        |        959        
+RUN-1001 :   import_device  |    1     |    0s(0%)     |     0(0%)     |        99         |        99         
+RUN-1001 :     read_adc     |    1     |    0s(0%)     |     0(0%)     |        465        |        465        
+RUN-1001 :     read_sdc     |    1     |    0s(0%)     |     0(0%)     |        465        |        465        
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1001 :       total      |    5     |    14m29s     |      817      |        939        |        959        
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1002 : start command "export_db B_Control_UX22_gate.db"
+RUN-1001 : Exported flow parameters
+RUN-1001 : Exported /
+RUN-1001 : Exported libs
+RUN-1001 : Exported entities
+RUN-1001 : Exported ports
+RUN-1001 : Exported pins
+RUN-1001 : Exported instances
+RUN-1001 : Exported nets
+RUN-1001 : Exported buses
+RUN-1001 : Exported models
+RUN-1001 : Exported packer
+RUN-1001 : Exported congestions
+RUN-1001 : Exported violations
+RUN-1001 : Exported ATMR Setting
+RUN-1001 : Exported timing constraints
+RUN-1001 : Exported IO constraints
+RUN-1001 : Exported Inst constraints
+RUN-1001 : Exported ChipWatcher
+RUN-1003 : finish command "export_db B_Control_UX22_gate.db" in  1.485608s wall, 1.906250s user + 0.125000s system = 2.031250s CPU (136.7%)
+
+RUN-1004 : used memory is 940 MB, reserved memory is 1018 MB, peak memory is 959 MB
+RUN-1002 : start command "export_flow_status -s read_design -e opt_gate"
+RUN-1002 : start command "flow_status"
+
+Location         : D:\study\version\FPGA_Projects_A97_B108_HMI14\B\src\td_project\B_Control_UX22_Runs\syn_1
+Running with     : Tang Dynasty v6.2.168116
+                   Copyright (c) 2012-2025 Anlogic Inc.
+Top Model        : top
+Device           : EG4S20BG256
+Speed            : NA
+
+Timing Mode      : basic
+Setup            : WNS  -482ps  TNS    -6739ps  NUM_FEPS    15
+Hold             : WNS   471ps  TNS        0ps  NUM_FEPS     0
+
+RUN-1001 : Flow Statistics:
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1001 :      command     |  #calls  |   wall time   |  cpu time(s)  |  used memory(mb)  |  peak memory(mb)  
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1001 :   optimize_gate  |    1     |  13m29s(93%)  |   761(93%)    |        939        |        959        
+RUN-1001 :   optimize_rtl   |    1     |   1m0s(6%)    |    56(6%)     |        719        |        959        
+RUN-1001 :   import_device  |    1     |    0s(0%)     |     0(0%)     |        99         |        99         
+RUN-1001 :     read_adc     |    1     |    0s(0%)     |     0(0%)     |        465        |        465        
+RUN-1001 :     read_sdc     |    1     |    0s(0%)     |     0(0%)     |        465        |        465        
+RUN-1001 : ----------------------------------------------------------------------------------------------------
+RUN-1001 :       total      |    5     |    14m29s     |      817      |        939        |        959        
+RUN-1001 : ----------------------------------------------------------------------------------------------------

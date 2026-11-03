@@ -1,0 +1,133 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:34:00 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.77%
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     
+set_multicycle_path -hold -start -to [get_ports {tf_mosi tf_cs_n}] 2
+
+Type           :     MCP
+
+Statistics:
+Max            : SWNS      9.426ns, STNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+Min            : HWNS     39.501ns, HTNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 9.426ns
+Begin Point         : tf_cs_n_syn_4.osclk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : tf_cs_n (rising edge triggered by clock tf_spi_out  { rise@0.000000ns  fall@40.000000ns  period=80.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { tf_spi_out rising@80.000ns - clk rising@60.000ns }
+Data Path Delay     : 14.620ns (cell 14.620ns (100%), net 0.000ns (0%))
+Clock Skew          : 4.046ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.513          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: tf_cs_n_syn_4.osclk
+launch edge                            60.000    r    63.513               
+--------------------------------------------------------------------  ---------------
+PAD (clk2q)         x022y071            4.620    f    68.133          pin: tf_cs_n_syn_4.opad
+net (fo=1)          R9                  0.000         68.133          net: tf_cs_n,  ../../../user_source/hdl_source/system/top_b_redo.v(8)
+                                                                      pin: tf_cs_n
+--------------------------------------------------------------------  ---------------
+Arrival                                               68.133               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.665          3.158          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: tf_sclk_syn_4.osclk
+PAD (clk2q)         x025y071            4.089          7.247          pin: tf_sclk_syn_4.opad
+hierarchy                               0.000          7.247          pin: tf_sclk
+capture edge                           80.000    r    87.247               
+--------------------------------------------------------------------  ---------------
+output              R9                -10.000         77.247               
+clock uncertainty                       0.000         77.247               
+clock pessimism                         0.312         77.559               
+--------------------------------------------------------------------  ---------------
+Required                                              77.559               
+--------------------------------------------------------------------  ---------------
+Slack                                                  9.426               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 39.501ns
+Begin Point         : tf_cs_n_syn_4.osclk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : tf_cs_n (rising edge triggered by clock tf_spi_out  { rise@0.000000ns  fall@40.000000ns  period=80.000000 })
+Check Type          : hold
+Process             : slow
+Budget              : 40.000ns { clk rising@40.000ns - tf_spi_out rising@0.000ns }
+Data Path Delay     : 4.089ns (cell 4.089ns (100%), net 0.000ns (0%))
+Clock Skew          : 4.588ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.665          3.158          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: tf_cs_n_syn_4.osclk
+launch edge                            40.000    r    43.158               
+--------------------------------------------------------------------  ---------------
+PAD (clk2q)         x022y071            4.089    r    47.247          pin: tf_cs_n_syn_4.opad
+net (fo=1)          R9                  0.000         47.247          net: tf_cs_n,  ../../../user_source/hdl_source/system/top_b_redo.v(8)
+                                                                      pin: tf_cs_n
+--------------------------------------------------------------------  ---------------
+Arrival                                               47.247               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.513          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: tf_sclk_syn_4.osclk
+PAD (clk2q)         x025y071            4.545          8.058          pin: tf_sclk_syn_4.opad
+hierarchy                               0.000          8.058          pin: tf_sclk
+capture edge                            0.000    r     8.058               
+--------------------------------------------------------------------  ---------------
+output              R9                  0.000          8.058               
+clock uncertainty                       0.000          8.058               
+clock pessimism                        -0.312          7.746               
+--------------------------------------------------------------------  ---------------
+Required                                               7.746               
+--------------------------------------------------------------------  ---------------
+Slack                                                 39.501               
+
+
+
+
+

@@ -1,0 +1,149 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 21:22:33 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.54%
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     
+set_multicycle_path -hold -start -to [get_ports {user_flash_mosi user_flash_cs_n}] 4
+
+Type           :     MCP
+
+Statistics:
+Max            : SWNS     29.469ns, STNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+Min            : HWNS    159.544ns, HTNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 29.469ns
+Begin Point         : user_flash_mosi_syn_4.osclk (rising edge triggered by clock video_clk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : user_flash_mosi (rising edge triggered by clock user_flash_spi_out  { rise@0.000000ns  fall@160.000000ns  period=320.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 40.000ns { user_flash_spi_out rising@320.000ns - video_clk rising@280.000ns }
+Data Path Delay     : 14.620ns (cell 14.620ns (100%), net 0.000ns (0%))
+Clock Skew          : 4.089ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=3)          x040y071            0.000          1.660          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: data_plane/video_pll_m0/pll_inst.refclk
+PLL                 x040y071            2.515          4.175          pin: data_plane/video_pll_m0/pll_inst.clkc[0]
+net (fo=1)                              0.000          4.175          net: data_plane/video_pll_m0/clk0_buf,  ../../../user_source/hdl_source/clock_internal/video_pll.v(37)
+                                                                      pin: data_plane/video_pll_m0/bufg_feedback.clki
+GCLK                x039y070z2          0.000          4.175          pin: data_plane/video_pll_m0/bufg_feedback.clko
+net (fo=7126)                           2.201          6.376          net: data_plane/u_osd/title_bitmap/config_clk,  ../../../user_source/hdl_source/redo/a_emergency_bitmap32.v(39)
+                                                                      pin: user_flash_mosi_syn_4.osclk
+launch edge                           280.000    r   286.376               
+--------------------------------------------------------------------  ---------------
+PAD (clk2q)         x020y071            4.620    f   290.996          pin: user_flash_mosi_syn_4.opad
+net (fo=1)          P7                  0.000        290.996          net: user_flash_mosi,  ../../../user_source/hdl_source/system/top_a_redo.v(7)
+                                                                      pin: user_flash_mosi
+--------------------------------------------------------------------  ---------------
+Arrival                                              290.996               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=3)          x040y071            0.000          1.493          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: data_plane/video_pll_m0/pll_inst.refclk
+PLL                 x040y071            2.515          4.008          pin: data_plane/video_pll_m0/pll_inst.clkc[0]
+net (fo=1)                              0.000          4.008          net: data_plane/video_pll_m0/clk0_buf,  ../../../user_source/hdl_source/clock_internal/video_pll.v(37)
+                                                                      pin: data_plane/video_pll_m0/bufg_feedback.clki
+GCLK                x039y070z2          0.000          4.008          pin: data_plane/video_pll_m0/bufg_feedback.clko
+net (fo=7126)                           1.978          5.986          net: data_plane/u_osd/title_bitmap/config_clk,  ../../../user_source/hdl_source/redo/a_emergency_bitmap32.v(39)
+                                                                      pin: user_flash_sclk_syn_6.osclk
+PAD (clk2q)         x020y071            4.089         10.075          pin: user_flash_sclk_syn_6.opad
+hierarchy                               0.000         10.075          pin: user_flash_sclk
+capture edge                          320.000    r   330.075               
+--------------------------------------------------------------------  ---------------
+output              P7                -10.000        320.075               
+clock uncertainty                       0.000        320.075               
+clock pessimism                         0.390        320.465               
+--------------------------------------------------------------------  ---------------
+Required                                             320.465               
+--------------------------------------------------------------------  ---------------
+Slack                                                 29.469               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 159.544ns
+Begin Point         : user_flash_mosi_syn_4.osclk (rising edge triggered by clock video_clk  { rise@0.000000ns  fall@20.000000ns  period=40.000000 })
+End Point           : user_flash_mosi (rising edge triggered by clock user_flash_spi_out  { rise@0.000000ns  fall@160.000000ns  period=320.000000 })
+Check Type          : hold
+Process             : slow
+Budget              : 160.000ns { video_clk rising@160.000ns - user_flash_spi_out rising@0.000ns }
+Data Path Delay     : 4.089ns (cell 4.089ns (100%), net 0.000ns (0%))
+Clock Skew          : 4.545ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=3)          x040y071            0.000          1.493          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: data_plane/video_pll_m0/pll_inst.refclk
+PLL                 x040y071            2.515          4.008          pin: data_plane/video_pll_m0/pll_inst.clkc[0]
+net (fo=1)                              0.000          4.008          net: data_plane/video_pll_m0/clk0_buf,  ../../../user_source/hdl_source/clock_internal/video_pll.v(37)
+                                                                      pin: data_plane/video_pll_m0/bufg_feedback.clki
+GCLK                x039y070z2          0.000          4.008          pin: data_plane/video_pll_m0/bufg_feedback.clko
+net (fo=7126)                           1.978          5.986          net: data_plane/u_osd/title_bitmap/config_clk,  ../../../user_source/hdl_source/redo/a_emergency_bitmap32.v(39)
+                                                                      pin: user_flash_mosi_syn_4.osclk
+launch edge                           160.000    r   165.986               
+--------------------------------------------------------------------  ---------------
+PAD (clk2q)         x020y071            4.089    r   170.075          pin: user_flash_mosi_syn_4.opad
+net (fo=1)          P7                  0.000        170.075          net: user_flash_mosi,  ../../../user_source/hdl_source/system/top_a_redo.v(7)
+                                                                      pin: user_flash_mosi
+--------------------------------------------------------------------  ---------------
+Arrival                                              170.075               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=3)          x040y071            0.000          1.660          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_a_redo.v(5)
+                                                                      pin: data_plane/video_pll_m0/pll_inst.refclk
+PLL                 x040y071            2.515          4.175          pin: data_plane/video_pll_m0/pll_inst.clkc[0]
+net (fo=1)                              0.000          4.175          net: data_plane/video_pll_m0/clk0_buf,  ../../../user_source/hdl_source/clock_internal/video_pll.v(37)
+                                                                      pin: data_plane/video_pll_m0/bufg_feedback.clki
+GCLK                x039y070z2          0.000          4.175          pin: data_plane/video_pll_m0/bufg_feedback.clko
+net (fo=7126)                           2.201          6.376          net: data_plane/u_osd/title_bitmap/config_clk,  ../../../user_source/hdl_source/redo/a_emergency_bitmap32.v(39)
+                                                                      pin: user_flash_sclk_syn_6.osclk
+PAD (clk2q)         x020y071            4.545         10.921          pin: user_flash_sclk_syn_6.opad
+hierarchy                               0.000         10.921          pin: user_flash_sclk
+capture edge                            0.000    r    10.921               
+--------------------------------------------------------------------  ---------------
+output              P7                  0.000         10.921               
+clock uncertainty                       0.000         10.921               
+clock pessimism                        -0.390         10.531               
+--------------------------------------------------------------------  ---------------
+Required                                              10.531               
+--------------------------------------------------------------------  ---------------
+Slack                                                159.544               
+
+
+
+
+

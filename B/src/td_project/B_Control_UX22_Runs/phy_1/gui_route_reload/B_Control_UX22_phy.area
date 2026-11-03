@@ -1,0 +1,140 @@
+standard
+***Report Model: top Device: EG4S20BG256***
+
+IO Statistics
+#IO                        17   out of    188    9.04%
+  #input                    7
+  #output                  10
+  #inout                    0
+
+Utilization Statistics
+#lut                    18193   out of  19600   92.82%
+#reg                    10360   out of  19600   52.86%
+#le                     18193
+  #lut only              7833   out of  18193   43.06%
+  #reg only                 0   out of  18193    0.00%
+  #lut&reg              10360   out of  18193   56.94%
+#bram                      30   out of     64   46.88%
+  #bram9k                  30
+  #fifo9k                   0
+#bram32k                    3   out of     16   18.75%
+#dsp                        7   out of     29   24.14%
+#pad                       17   out of    188    9.04%
+  #ireg                     2
+  #oreg                     9
+  #treg                     0
+#pll                        0   out of      4    0.00%
+#gclk                       0   out of     16    0.00%
+
+
+Detailed IO Report
+
+     Name        Direction    Location    IOStandard    IOType    DriveStrength    PullType    PackReg  
+  board_miso       INPUT         T5        LVCMOS33      PAD           N/A           NONE       IREG    
+  board_ready      INPUT         T7        LVCMOS33      PAD           N/A           NONE       NONE    
+      clk          INPUT         R7        LVCMOS33      PAD           N/A           NONE       NONE    
+  flash_miso       INPUT         M6        LVCMOS33      PAD           N/A           NONE       IREG    
+     rst_n         INPUT         E3        LVCMOS33      PAD           N/A          PULLUP      NONE    
+    tf_miso        INPUT        R12        LVCMOS33      PAD           N/A           NONE       NONE    
+    uart_rx        INPUT        F12        LVCMOS33      PAD           N/A          PULLUP      NONE    
+  board_cs_n      OUTPUT         T6        LVCMOS33      PAD            8            NONE       OREG    
+  board_mosi      OUTPUT         R5        LVCMOS33      PAD            8            NONE       OREG    
+  board_sclk      OUTPUT         T4        LVCMOS33      PAD            8            NONE       OREG    
+  flash_cs_n      OUTPUT        T13        LVCMOS33      PAD            8            NONE       OREG    
+  flash_mosi      OUTPUT         P5        LVCMOS33      PAD            8            NONE       OREG    
+  flash_sclk      OUTPUT         N5        LVCMOS33      PAD            8            NONE       OREG    
+    tf_cs_n       OUTPUT         R9        LVCMOS33      PAD            8            NONE       OREG    
+    tf_mosi       OUTPUT        T12        LVCMOS33      PAD            8            NONE       OREG    
+    tf_sclk       OUTPUT         T9        LVCMOS33      PAD            8            NONE       OREG    
+    uart_tx       OUTPUT        D12        LVCMOS33      PAD            8            NONE       NONE    
+
+Report Clock Domain Luts:
+
+------------------------------------------------------------------------------------------------------------
+  Index   |  Name   |  Frequency   |  LUT As Logic   |  LUT As Shifter   |  LUT As Dram   |  BRAM   |  DSP
+------------------------------------------------------------------------------------------------------------
+  #1      |  clk    |  50MHz       |  8982           |  0                |  0             |  33     |  6
+------------------------------------------------------------------------------------------------------------
+
+Clock Resource Statistics
+Index     ClockNet     Type               DriverType         Driver          Fanout
+#1        clk_dup_1    Global             io                 clk_syn_2.di    6958
+
+Report Hierarchy Area:
++-------------------------------------------------------------------------------------------------------------------------+
+|Instance                           |Module                         |le      |lut     |ripple  |seq     |bram    |dsp     |
++-------------------------------------------------------------------------------------------------------------------------+
+|top                                |top                            |18193   |16994   |1199    |10371   |33      |7       |
+|  media                            |b_media_core_control           |5525    |5006    |519     |3110    |3       |6       |
+|    metadata_sectors               |b_program_sd_mux               |66      |66      |0       |62      |0       |0       |
+|    programs                       |b_program_player               |964     |886     |78      |653     |2       |0       |
+|    u_audio                        |wav_file_reader                |1466    |1314    |152     |828     |1       |0       |
+|      catalog                      |wav_catalog_read               |492     |460     |32      |322     |0       |0       |
+|      parser                       |wav_pcm_decoder                |479     |435     |44      |285     |0       |0       |
+|      source                       |sector_byte_stream             |333     |266     |67      |141     |1       |0       |
+|    u_images                       |b_sd_card_bmp_control          |2443    |2201    |242     |1226    |0       |6       |
+|      bmp_read_m0                  |b_bmp_adaptive_read            |1223    |1028    |195     |579     |0       |6       |
+|    u_shared                       |b_shared_sd_reader             |586     |539     |47      |341     |0       |0       |
+|      arbiter                      |b_sd_read_arbiter              |205     |182     |23      |140     |0       |0       |
+|      driver                       |sd_card_top                    |350     |326     |24      |176     |0       |0       |
+|        sd_card_cmd_m0             |sd_card_cmd                    |210     |195     |15      |71      |0       |0       |
+|        sd_card_sec_read_write_m0  |sd_card_sec_read_write         |70      |70      |0       |68      |0       |0       |
+|        spi_master_m0              |spi_master                     |70      |61      |9       |37      |0       |0       |
+|  services                         |b_board_services               |12517   |11837   |680     |7204    |30      |1       |
+|    adaptive_images$path           |b_adaptive_image_scale         |569     |453     |116     |198     |5       |0       |
+|      queue                        |media_block_fifo               |40      |24      |16      |30      |2       |0       |
+|    all_owners                     |b_control_drain_join           |127     |127     |0       |78      |0       |0       |
+|    analysis_packets               |b_spi_pair_router              |2       |2       |0       |2       |0       |0       |
+|    assembler                      |b_spi_request_front            |465     |445     |20      |250     |2       |0       |
+|    cmd22_font                     |b_cmd22_font_ingress           |149     |132     |17      |101     |0       |0       |
+|    curve                          |b_curve_service                |349     |333     |16      |273     |4       |1       |
+|      gamma_calculation$calculator |b_colour_curve_gamma           |158     |142     |16      |102     |2       |1       |
+|        base_curve                 |b_colour_curve                 |148     |132     |16      |92      |0       |1       |
+|    display_source                 |b_menu_display_source          |333     |318     |15      |217     |0       |0       |
+|    echo                           |b_link_proof_echo              |8       |8       |0       |6       |0       |0       |
+|    font_cancel_stage              |b_font_cancel_boundary         |32      |32      |0       |15      |0       |0       |
+|    font_rpc_packets               |b_spi_arg_pair_router          |2       |2       |0       |2       |0       |0       |
+|    font_stream                    |b_font_stream_service          |920     |845     |75      |417     |3       |0       |
+|      packetizer                   |b_font_stream_packetizer       |581     |538     |43      |246     |2       |0       |
+|      utf8                         |b_utf8_codepoint_stream        |137     |128     |9       |65      |0       |0       |
+|    geometry_control$change        |b_image_geometry_control       |108     |108     |0       |68      |0       |0       |
+|    menu_bridge                    |b_menu_bridge                  |557     |516     |41      |326     |0       |0       |
+|      engine                       |b_menu_engine                  |389     |363     |26      |208     |0       |0       |
+|    normal                         |b_normal_services              |3920    |3765    |155     |2238    |1       |0       |
+|      config_service               |b_config_service               |3573    |3427    |146     |2037    |1       |0       |
+|        backend                    |b_parameter_service            |553     |545     |8       |370     |0       |0       |
+|        font_reader                |b_font_reader                  |463     |431     |32      |164     |1       |0       |
+|        storage                    |flash_config_service           |1982    |1884    |98      |1062    |0       |0       |
+|          u_flash_mux              |b_flash_font_mux               |567     |522     |45      |230     |0       |0       |
+|            physical               |flash_spi_transport            |463     |418     |45      |177     |0       |0       |
+|              u_byte               |spi_byte_engine                |41      |41      |0       |24      |0       |0       |
+|      joiner                       |b_control_drain_join           |12      |12      |0       |7       |0       |0       |
+|      text_service                 |b_text_rpc_service             |289     |280     |9       |157     |0       |0       |
+|        rpc                        |b_rpc_response_delivery        |289     |280     |9       |157     |0       |0       |
+|    packet_owners                  |b_spi_pair_router              |2       |2       |0       |2       |0       |0       |
+|    persistence_bridge             |b_cmd22_persistence_bridge     |994     |961     |33      |431     |2       |0       |
+|      journal                      |b_cmd22_utf8_journal           |917     |889     |28      |382     |2       |0       |
+|    producer                       |b_media_transport              |1676    |1533    |143     |1009    |12      |0       |
+|      image_fifo                   |media_block_fifo               |38      |22      |16      |30      |2       |0       |
+|      pcm_fifo                     |media_block_fifo               |38      |22      |16      |29      |2       |0       |
+|    program_packets                |b_spi_pair_router              |1       |1       |0       |1       |0       |0       |
+|    scheduler                      |b_spi6_scheduler               |1201    |1182    |19      |778     |1       |0       |
+|      master                       |media_spi_master               |1155    |1136    |19      |735     |1       |0       |
+|    uid_envelope$commands          |b_media_commands32             |879     |863     |16      |608     |0       |0       |
+|    uid_envelope$envelope          |b_media_uid_envelope           |77      |69      |8       |68      |0       |0       |
+|    unsupported                    |b_unsupported_analysis_service |37      |37      |0       |35      |0       |0       |
++-------------------------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout     Nets   
+    #1          1       13995  
+    #2          2       4661   
+    #3          3       2106   
+    #4          4       1325   
+    #5        5-10      1846   
+    #6        11-50      936   
+    #7       51-100      98    
+    #8       101-500     23    
+  Average     3.15             

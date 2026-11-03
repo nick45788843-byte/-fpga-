@@ -1,0 +1,23 @@
+Location         : D:\study\version\FPGA_Projects_A97_B108_HMI14\A96\src\td_project\A_Control_UX22_Runs\syn_1
+Running with     : Tang Dynasty v6.2.168116
+                   Copyright (c) 2012-2025 Anlogic Inc.
+Top Model        : top
+Device           : EG4S20BG256
+Speed            : NA
+
+Timing Mode      : basic
+Setup            : WNS -1291ps  TNS   -41312ps  NUM_FEPS    32
+Hold             : WNS   471ps  TNS        0ps  NUM_FEPS     0
+
+Flow Statistics  :
+---------------------------------------------------------------------------------------------------
+     command     |  #calls  |  wall time   |  cpu time(s)  |  used memory(mb)  |  peak memory(mb)  
+---------------------------------------------------------------------------------------------------
+  optimize_gate  |    1     |  7m34s(78%)  |   402(77%)    |        802        |        802        
+  optimize_rtl   |    1     |  2m6s(21%)   |   119(22%)    |        607        |        727        
+  import_device  |    1     |    0s(0%)    |     0(0%)     |        92         |        92         
+    read_adc     |    1     |    0s(0%)    |     0(0%)     |        494        |        494        
+    read_sdc     |    3     |    0s(0%)    |     0(0%)     |        494        |        494        
+---------------------------------------------------------------------------------------------------
+      total      |    7     |    9m40s     |      521      |        802        |        802        
+---------------------------------------------------------------------------------------------------

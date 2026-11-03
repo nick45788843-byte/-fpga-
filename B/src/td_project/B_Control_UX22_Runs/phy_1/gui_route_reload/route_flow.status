@@ -1,0 +1,22 @@
+Location         : D:\study\version\FPGA_Projects_A97_B108_HMI14\B\src\td_project\B_Control_UX22_Runs\phy_1\gui_route_reload
+Running with     : Tang Dynasty v6.2.168116
+                   Copyright (c) 2012-2025 Anlogic Inc.
+Top Model        : top
+Device           : EG4S20BG256
+Speed            : NA
+
+Timing Mode      : final
+Setup            : WNS   141ps  TNS        0ps  NUM_FEPS     0
+Hold             : WNS    30ps  TNS        0ps  NUM_FEPS     0
+
+Flow Statistics  :
+---------------------------------------------------------------------------------------------------
+     command     |  #calls  |  wall time   |  cpu time(s)  |  used memory(mb)  |  peak memory(mb)  
+---------------------------------------------------------------------------------------------------
+      route      |    1     |  15m3s(95%)  |   1140(96%)   |       1189        |       1189        
+    fix_hold     |    1     |   33s(3%)    |    29(2%)     |       1190        |       1190        
+    import_db    |    1     |   14s(1%)    |    13(1%)     |        734        |        734        
+  import_device  |    1     |    0s(0%)    |     0(0%)     |        83         |        83         
+---------------------------------------------------------------------------------------------------
+      total      |    4     |    15m50s    |     1182      |       1190        |       1190        
+---------------------------------------------------------------------------------------------------

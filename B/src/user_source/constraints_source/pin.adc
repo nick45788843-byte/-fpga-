@@ -1,0 +1,17 @@
+set_pin_assignment { clk } { LOCATION = R7; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { rst_n } { LOCATION = E3; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { uart_rx } { LOCATION = F12; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { uart_tx } { LOCATION = D12; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { board_sclk } { LOCATION = T4; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { board_mosi } { LOCATION = R5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { board_miso } { LOCATION = T5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { board_cs_n } { LOCATION = T6; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { board_ready } { LOCATION = T7; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { tf_sclk } { LOCATION = T9; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { tf_cs_n } { LOCATION = R9; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { tf_mosi } { LOCATION = T12; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { tf_miso } { LOCATION = R12; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { flash_cs_n } { LOCATION = T13; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { flash_sclk } { LOCATION = N5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { flash_mosi } { LOCATION = P5; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { flash_miso } { LOCATION = M6; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }

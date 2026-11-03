@@ -1,0 +1,95 @@
+standard
+***Report Model: top Device: EG4S20BG256***
+
+IO Statistics
+#IO                        15
+  #input                    5
+  #output                  10
+  #inout                    0
+
+Gate Statistics
+#Basic gates            26769
+  #and                   4781
+  #nand                     0
+  #or                    2430
+  #nor                      0
+  #xor                    101
+  #xnor                     0
+  #buf                      0
+  #not                   1722
+  #bufif1                   0
+  #MX21                  7497
+  #FADD                     0
+  #DFF                  10238
+  #LATCH                    0
+#MACRO_ADD                528
+#MACRO_EQ                 780
+#MACRO_MULT                11
+#MACRO_MUX               6631
+#MACRO_OTHERS              15
+
+Report Hierarchy Area:
++-------------------------------------------------------------------------------------------+
+|Instance                           |Module                         |gates  |seq    |macros |
++-------------------------------------------------------------------------------------------+
+|top                                |top                            |16531  |10238  |1334   |
+|  media                            |b_media_core_control           |5343   |3122   |442    |
+|    metadata_sectors               |b_program_sd_mux               |29     |68     |3      |
+|    programs                       |b_program_player               |726    |670    |107    |
+|    u_audio                        |wav_file_reader                |1014   |805    |119    |
+|      catalog                      |wav_catalog_read               |308    |315    |53     |
+|      parser                       |wav_pcm_decoder                |354    |290    |38     |
+|      source                       |sector_byte_stream             |234    |113    |21     |
+|    u_images                       |b_sd_card_bmp_control          |3052   |1215   |164    |
+|      bmp_read_m0                  |b_bmp_adaptive_read            |714    |610    |106    |
+|    u_shared                       |b_shared_sd_reader             |495    |362    |49     |
+|      arbiter                      |b_sd_read_arbiter              |155    |151    |13     |
+|      driver                       |sd_card_top                    |323    |176    |36     |
+|        sd_card_cmd_m0             |sd_card_cmd                    |246    |52     |16     |
+|        sd_card_sec_read_write_m0  |sd_card_sec_read_write         |56     |83     |10     |
+|        spi_master_m0              |spi_master                     |20     |41     |10     |
+|  services                         |b_board_services               |10903  |7114   |892    |
+|    adaptive_images$path           |b_adaptive_image_scale         |348    |209    |45     |
+|      queue                        |media_block_fifo               |38     |30     |6      |
+|    all_owners                     |b_control_drain_join           |23     |43     |2      |
+|    analysis_packets               |b_spi_pair_router              |56     |3      |0      |
+|    assembler                      |b_spi_request_front            |255    |241    |47     |
+|    cmd22_font                     |b_cmd22_font_ingress           |56     |125    |18     |
+|    curve                          |b_curve_service                |216    |310    |24     |
+|      gamma_calculation$calculator |b_colour_curve_gamma           |77     |121    |13     |
+|        base_curve                 |b_colour_curve                 |71     |106    |12     |
+|    display_source                 |b_menu_display_source          |118    |227    |25     |
+|    echo                           |b_link_proof_echo              |3      |17     |3      |
+|    font_cancel_stage              |b_font_cancel_boundary         |2      |3      |0      |
+|    font_rpc_packets               |b_spi_arg_pair_router          |36     |3      |0      |
+|    font_stream                    |b_font_stream_service          |641    |335    |81     |
+|      packetizer                   |b_font_stream_packetizer       |382    |192    |44     |
+|      utf8                         |b_utf8_codepoint_stream        |101    |60     |21     |
+|    geometry_control$change        |b_image_geometry_control       |56     |47     |7      |
+|    menu_bridge                    |b_menu_bridge                  |435    |264    |38     |
+|      engine                       |b_menu_engine                  |317    |142    |26     |
+|    menu_packets                   |b_spi_pair_router              |22     |3      |0      |
+|    normal                         |b_normal_services              |4057   |2278   |265    |
+|      config_service               |b_config_service               |3781   |2119   |248    |
+|        backend                    |b_parameter_service            |952    |381    |30     |
+|        font_reader                |b_font_reader                  |445    |157    |43     |
+|        storage                    |flash_config_service           |2137   |1042   |162    |
+|          u_flash_mux              |b_flash_font_mux               |384    |246    |54     |
+|            physical               |flash_spi_transport            |319    |182    |51     |
+|              u_byte               |spi_byte_engine                |42     |34     |6      |
+|      joiner                       |b_control_drain_join           |6      |3      |1      |
+|      text_service                 |b_text_rpc_service             |249    |121    |13     |
+|        rpc                        |b_rpc_response_delivery        |232    |119    |11     |
+|    packet_owners                  |b_spi_pair_router              |6      |2      |0      |
+|    persistence_bridge             |b_cmd22_persistence_bridge     |894    |456    |104    |
+|      journal                      |b_cmd22_utf8_journal           |779    |399    |88     |
+|    producer                       |b_media_transport              |2313   |898    |90     |
+|      image_fifo                   |media_block_fifo               |37     |30     |6      |
+|      pcm_fifo                     |media_block_fifo               |38     |30     |6      |
+|    program_packets                |b_spi_pair_router              |24     |3      |0      |
+|    scheduler                      |b_spi6_scheduler               |302    |829    |34     |
+|      master                       |media_spi_master               |266    |737    |26     |
+|    uid_envelope$commands          |b_media_commands32             |845    |555    |56     |
+|    uid_envelope$envelope          |b_media_uid_envelope           |8      |120    |9      |
+|    unsupported                    |b_unsupported_analysis_service |8      |38     |1      |
++-------------------------------------------------------------------------------------------+

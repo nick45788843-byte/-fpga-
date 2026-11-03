@@ -1,0 +1,236 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:33:59 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.77%
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     
+set_multicycle_path -setup -end -from [get_ports {flash_miso}] 4
+set_multicycle_path -hold -end -from [get_ports {flash_miso}] 3
+
+Type           :     MCP
+
+Statistics:
+Max            : SWNS     47.000ns, STNS      0.000ns,         0 Viol Endpoints,         2 Total Endpoints,         2 Paths Analyzed
+Min            : HWNS      3.830ns, HTNS      0.000ns,         0 Viol Endpoints,         2 Total Endpoints,         2 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 47.000ns
+Begin Point         : flash_miso (falling edge triggered by clock flash_spi_out  { rise@0.000000ns  fall@80.000000ns  period=160.000000 })
+End Point           : services/normal/config_service/storage/u_flash_mux/physical/u_byte/mux25_syn_39.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 80.000ns { clk rising@160.000ns - flash_spi_out falling@80.000ns }
+Data Path Delay     : 28.284ns (cell 27.145ns (95%), net 1.139ns (5%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_sclk_syn_10.osclk
+PAD (clk2q)         x030y071            4.620          8.325          pin: flash_sclk_syn_10.opad
+hierarchy                               0.000          8.325          pin: flash_sclk
+launch edge                            80.000    f    88.325               
+--------------------------------------------------------------------  ---------------
+input               M6                 25.000        113.325          pin: flash_miso
+net (fo=1)                              0.000        113.325          net: flash_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: flash_miso_syn_4.ipad
+PAD                 x028y071            1.831    f   115.156       1  pin: flash_miso_syn_4.di
+net (fo=1)                              1.139        116.295          net: flash_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: services/normal/config_service/storage/u_flash_mux/physical/u_byte/mux25_syn_39.d[0]
+LUT2 (reg)          x013y070z1          0.314    r   116.609       2  net: services/normal/config_service/storage/u_flash_mux/physical/u_byte/rx_shift[0],  ../../../user_source/hdl_source/config/spi_byte_engine.v(26)
+--------------------------------------------------------------------  ---------------
+Arrival                                              116.609               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/storage/u_flash_mux/physical/u_byte/mux25_syn_39.clk
+capture edge                          160.000    r   163.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        163.230               
+clock uncertainty                      -0.100        163.130               
+clock pessimism                         0.479        163.609               
+--------------------------------------------------------------------  ---------------
+Required                                             163.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 47.000               
+
+Slack               : 49.248ns
+Begin Point         : flash_miso (falling edge triggered by clock flash_spi_out  { rise@0.000000ns  fall@80.000000ns  period=160.000000 })
+End Point           : flash_miso_syn_4.ipad (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 80.000ns { clk rising@160.000ns - flash_spi_out falling@80.000ns }
+Data Path Delay     : 26.224ns (cell 26.224ns (99%), net 0.000ns (1%))
+Clock Skew          : 4.688ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_sclk_syn_10.osclk
+PAD (clk2q)         x030y071            4.620          8.325          pin: flash_sclk_syn_10.opad
+hierarchy                               0.000          8.325          pin: flash_sclk
+launch edge                            80.000    f    88.325               
+--------------------------------------------------------------------  ---------------
+input               M6                 25.000        113.325          pin: flash_miso
+net (fo=1)                              0.000        113.325          net: flash_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: flash_miso_syn_4.ipad
+PAD (reg)           x028y071            1.224    f   114.549          net: services/normal/config_service/storage/u_flash_mux/physical/rx[0],  ../../../user_source/hdl_source/config/flash_spi_transport.v(33)
+--------------------------------------------------------------------  ---------------
+Arrival                                              114.549               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.665          3.158          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_miso_syn_4.ipclk
+capture edge                          160.000    r   163.158               
+--------------------------------------------------------------------  ---------------
+setup                                   0.160        163.318               
+clock uncertainty                       0.000        163.318               
+clock pessimism                         0.479        163.797               
+--------------------------------------------------------------------  ---------------
+Required                                             163.797               
+--------------------------------------------------------------------  ---------------
+Slack                                                 49.248               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 3.830ns
+Begin Point         : flash_miso (falling edge triggered by clock flash_spi_out  { rise@0.000000ns  fall@80.000000ns  period=160.000000 })
+End Point           : flash_miso_syn_4.ipad (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { flash_spi_out falling@80.000ns - clk rising@80.000ns }
+Data Path Delay     : 0.852ns (cell 0.852ns (100%), net 0.000ns (0%))
+Clock Skew          : 3.139ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_sclk_syn_10.osclk
+PAD (clk2q)         x030y071            3.143          6.082          pin: flash_sclk_syn_10.opad
+hierarchy                               0.000          6.082          pin: flash_sclk
+launch edge                            80.000    f    86.082               
+--------------------------------------------------------------------  ---------------
+input               M6                  0.000         86.082          pin: flash_miso
+net (fo=1)                              0.000         86.082          net: flash_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: flash_miso_syn_4.ipad
+PAD (reg)           x028y071            0.852    r    86.934          net: services/normal/config_service/storage/u_flash_mux/physical/rx[0],  ../../../user_source/hdl_source/config/flash_spi_transport.v(33)
+--------------------------------------------------------------------  ---------------
+Arrival                                               86.934               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.765          3.067          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_miso_syn_4.ipclk
+capture edge                           80.000    r    83.067               
+--------------------------------------------------------------------  ---------------
+hold                                    0.161         83.228               
+clock uncertainty                       0.000         83.228               
+clock pessimism                        -0.124         83.104               
+--------------------------------------------------------------------  ---------------
+Required                                              83.104               
+--------------------------------------------------------------------  ---------------
+Slack                                                  3.830               
+
+Slack               : 5.028ns
+Begin Point         : flash_miso (falling edge triggered by clock flash_spi_out  { rise@0.000000ns  fall@80.000000ns  period=160.000000 })
+End Point           : services/normal/config_service/storage/u_flash_mux/physical/u_byte/mux25_syn_39.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { flash_spi_out falling@80.000ns - clk rising@80.000ns }
+Data Path Delay     : 2.215ns (cell 1.400ns (63%), net 0.815ns (37%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_sclk_syn_10.osclk
+PAD (clk2q)         x030y071            3.143          6.082          pin: flash_sclk_syn_10.opad
+hierarchy                               0.000          6.082          pin: flash_sclk
+launch edge                            80.000    f    86.082               
+--------------------------------------------------------------------  ---------------
+input               M6                  0.000         86.082          pin: flash_miso
+net (fo=1)                              0.000         86.082          net: flash_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: flash_miso_syn_4.ipad
+PAD                 x028y071            1.184    r    87.266       1  pin: flash_miso_syn_4.di
+net (fo=1)                              0.815         88.081          net: flash_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: services/normal/config_service/storage/u_flash_mux/physical/u_byte/mux25_syn_39.d[0]
+LUT2 (reg)          x013y070z1          0.216    f    88.297       2  net: services/normal/config_service/storage/u_flash_mux/physical/u_byte/rx_shift[0],  ../../../user_source/hdl_source/config/spi_byte_engine.v(26)
+--------------------------------------------------------------------  ---------------
+Arrival                                               88.297               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/storage/u_flash_mux/physical/u_byte/mux25_syn_39.clk
+capture edge                           80.000    r    83.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         83.293               
+clock uncertainty                       0.100         83.393               
+clock pessimism                        -0.124         83.269               
+--------------------------------------------------------------------  ---------------
+Required                                              83.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.028               
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1382 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:32:57 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.77%
+Constraint File     : D:/study/version/FPGA_Projects_A97_B108_HMI14/B/src/user_source/constraints_source/timing.sdc;
+Confidence          : Routed
+Check Corner        : Both (Slow and Fast)
+CRPR Enabled        : Yes
+Report Scheme       : 10 end point(s) per path group, 1 path(s) per end point
+
+
+Check Status
+-------------
+
+Corner   | Max      Min     
+------------------------------------
+Slow     | yes      yes     
+Fast     | yes      yes     
+
+
+Timing Status
+--------------------
+	SWNS: 0.141ns, STNS: 0.000ns
+	HWNS: -0.033ns, HTNS: -0.195ns
+	Period Check WNS: 16.600ns
+
+
+Clock Summary
+--------------------
+
+       Clock-Id:       C-Freq       Fanout   Clock-Name
+--------------------------------------------------------------------------------
+           clk0:       50.000         6958   clk
+           clk1:        8.333            0   board_spi_out
+           clk2:        6.250            0   flash_spi_out
+           clk3:       12.500            0   tf_spi_out
+--------------------------------------------------------------------------------
+
+       Name            Type         Rise(ns)   Fall(ns)          C-Period(ns)     C-Freq(MHz)          R-Period(ns)     R-Freq(MHz)         SWNS(ns)   STNS(ns)         HWNS(ns)   HTNS(ns)         Skew(ns)           Fanout        Max-Level        CC-From    CC-To
+       clk0           local            0.000     10.000                20.000          50.000                19.859          50.355            0.141      0.000           -0.033     -0.195            0.326             6958               17             no       no
+       clk1           local            0.000     60.000               120.000           8.333               120.000           8.333            0.000      0.000            0.000      0.000            0.000                0                0             no       no
+       clk2           local            0.000     80.000               160.000           6.250               160.000           6.250            0.000      0.000            0.000      0.000            0.000                0                0             no       no
+       clk3           local            0.000     40.000                80.000          12.500                80.000          12.500            0.000      0.000            0.000      0.000            0.000                0                0             no       no
+
+Notes
+----------
+C-Period  :  constraint period
+C-Freq    :  constraint freq
+R-Period  :  report min period
+R-Freq    :  report fmax
+CC-From   :  has path(s) from cross-domain clock
+CC-To     :  has path(s) to cross-domain clock
+
+
+*   Clock R-Period data only takes intra-clock timing. SWNS/STNS/HWNS/HTNS take both intra-clock and inter-clock timing.
+*   If there is mismatch between R-Period and SWNS, check inter-clock timing of this clock as capture clock.
+*   SWNS/STNS/HWNS/HTNS of timing exception (SMCP/SMD) only counted in global Timing Status, not counted in Clock Summary.
+
+Intra clock domain timing
+--------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     clk -> clk
+Type           :     Self
+From Clock     :     clk
+To Clock       :     clk
+Min Period     :     19.859ns
+Fmax           :     50.355MHz
+
+Statistics:
+Max            : SWNS      0.141ns, STNS      0.000ns,         0 Viol Endpoints,     23083 Total Endpoints,    185281 Paths Analyzed
+Min            : HWNS     -0.033ns, HTNS     -0.195ns,         9 Viol Endpoints,     23083 Total Endpoints,    185281 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 0.141ns
+Begin Point         : services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/uid_envelope$commands/selected_response_ticket[2]_syn_718.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 19.507ns (cell 4.906ns (25%), net 14.601ns (75%))
+Clock Skew          : 0.136ns
+Logic Level         : 15 ( LUT4=8  LUT2=3  LUT5=2  LUT3=2 )
+Max Fanout          : 82
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x025y041z3          0.146    r     3.868          pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.q[0]
+net (fo=4)                              2.573          6.441          net: services/normal/text_service/rpc/done_token[7],  ../../../user_source/hdl_source/support/b_rpc_response_delivery.v(10)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[0]
+LUT4                x027y040z3          0.262    r     6.703       1  pin: services/captured_pc_uid_reg[6]_syn_4.f[0]
+net (fo=1)                              1.049          7.752          net: media/programs/state_b[0]_syn_244,  NOFILE(0)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[1]
+LUT4                x027y040z3          0.262    r     8.014       2  pin: services/captured_pc_uid_reg[6]_syn_4.f[1]
+net (fo=1)                              0.664          8.678          net: media/programs/state_b[0]_syn_246,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_423.d[1]
+LUT4                x029y041z1          0.205    r     8.883       3  pin: media/programs/state_b[0]_syn_423.f[1]
+net (fo=1)                              0.790          9.673          net: services/rpc_capture_ready_n2,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_385.a[1]
+LUT3                x027y047z3          0.424    f    10.097       4  pin: media/programs/state_b[0]_syn_385.f[1]
+net (fo=2)                              0.953         11.050          net: media/programs/state_b[0]_syn_249,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_383.a[1]
+LUT2                x029y049z3          0.424    f    11.474       5  pin: media/programs/state_b[0]_syn_383.f[1]
+net (fo=3)                              0.468         11.942          net: media/programs/state_b[0]_syn_253,  NOFILE(0)
+                                                                      pin: services/display_source/mux36_syn_290.d[0]
+LUT3                x029y045z2          0.262    r    12.204       6  pin: services/display_source/mux36_syn_290.f[0]
+net (fo=2)                              0.757         12.961          net: services/scheduler/selected_valid_n14,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_387.a[1]
+LUT4                x031y046z3          0.424    f    13.385       7  pin: media/programs/state_b[0]_syn_387.f[1]
+net (fo=31)                             1.102         14.487          net: media/programs/state_b[0]_syn_266,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_373.d[1]
+LUT4                x030y045z1          0.205    r    14.692       8  pin: media/programs/state_b[0]_syn_373.f[1]
+net (fo=12)                             0.547         15.239          net: services/scheduler/arg_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_353.d[1]
+LUT5                x034y045z2          0.262    r    15.501       9  pin: media/programs/state_b[0]_syn_353.f[1]
+net (fo=82)                             0.742         16.243          net: media/programs/state_b[0]_syn_271,  NOFILE(0)
+                                                                      pin: services/scheduler/master/tag[0]_syn_14.d[0]
+LUT2                x035y042z0          0.205    r    16.448      10  pin: services/scheduler/master/tag[0]_syn_14.f[0]
+net (fo=26)                             1.602         18.050          net: services/scheduler/count_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_409.d[1]
+LUT5                x030y044z2          0.262    r    18.312      11  pin: media/programs/state_b[0]_syn_409.f[1]
+net (fo=6)                              1.760         20.072          net: media/programs/state_b[0]_syn_291,  NOFILE(0)
+                                                                      pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.d[0]
+LUT2                x022y033z1          0.205    r    20.277      12  pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.f[0]
+net (fo=3)                              0.544         20.821          net: media/programs/state_b[0]_syn_293,  NOFILE(0)
+                                                                      pin: media/programs/state_b[1]_syn_35.a[1]
+LUT4                x019y027z0          0.408    f    21.229      13  pin: media/programs/state_b[1]_syn_35.f[1]
+net (fo=1)                              0.456         21.685          net: media/programs/state_b[1]_syn_12,  NOFILE(0)
+                                                                      pin: services/producer/selected_operation_value[18]_syn_264.a[0]
+LUT4                x018y025z3          0.424    f    22.109      14  pin: services/producer/selected_operation_value[18]_syn_264.f[0]
+net (fo=1)                              0.594         22.703          net: media/programs/mux230_syn_105,  ../../../user_source/hdl_source/redo/b_program_player.v(113)
+                                                                      pin: services/uid_envelope$commands/selected_response_ticket[2]_syn_718.a[0]
+LUT4 (reg)          x018y026z1          0.526    f    23.229      15  net: media/programs/state[1],  ../../../user_source/hdl_source/redo/b_program_player.v(16)
+--------------------------------------------------------------------  ---------------
+Arrival                                               23.229               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/uid_envelope$commands/selected_response_ticket[2]_syn_718.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.141               
+
+Slack               : 0.388ns
+Begin Point         : services/normal/config_service/state_reg[1]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/all_owners/complete_n_syn_455.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 19.260ns (cell 4.698ns (24%), net 14.562ns (76%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT5=6  LUT4=3  LUT3=2  LUT2=2 )
+Max Fanout          : 45
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/state_reg[1]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x013y040z3          0.146    r     3.868          pin: services/normal/config_service/state_reg[1]_syn_4.q[1]
+net (fo=45)                             1.474          5.342          net: services/normal/config_service/state_reg_syn_1[1],  ../../../user_source/hdl_source/redo/b_config_service.v(148)
+                                                                      pin: services/geometry_control$change/owner_reg[10]_syn_4.c[0]
+LUT3                x019y036z3          0.348    f     5.690       1  pin: services/geometry_control$change/owner_reg[10]_syn_4.f[0]
+net (fo=5)                              2.580          8.270          net: services/geometry_control$change/request_token[8],  ../../../user_source/hdl_source/redo/b_board_services.v(416)
+                                                                      pin: services/producer/tx_uid_reg[16]_syn_4.b[1]
+LUT4                x017y035z3          0.431    f     8.701       2  pin: services/producer/tx_uid_reg[16]_syn_4.f[1]
+net (fo=1)                              0.309          9.010          net: services/normal/config_service/backend/mux87_syn_199,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/backend/mux87_syn_554.a[1]
+LUT4                x017y036z2          0.424    f     9.434       3  pin: services/normal/config_service/backend/mux87_syn_554.f[1]
+net (fo=1)                              1.195         10.629          net: services/normal/config_service/backend/mux87_syn_207,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.c[1]
+LUT4                x017y037z3          0.348    f    10.977       4  pin: services/normal/config_service/command_owner_reg[18]_syn_4.f[1]
+net (fo=2)                              0.560         11.537          net: services/normal/config_service/backend/mux87_syn_209,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.a[0]
+LUT5                x012y037z2          0.424    f    11.961       5  pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.f[0]
+net (fo=7)                              1.866         13.827          net: services/normal/config_service/actuation_done_syn_12,  ../../../user_source/hdl_source/redo/b_config_service.v(10)
+                                                                      pin: services/scheduler/master/reply_body_reg[330]_syn_4.d[1]
+LUT5                x012y036z2          0.262    r    14.089       6  pin: services/scheduler/master/reply_body_reg[330]_syn_4.f[1]
+net (fo=3)                              0.770         14.859          net: services/geometry_control$change/suspend_reg_syn_53,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/producer/curve_error_reg[4]_syn_4.d[0]
+LUT3                x013y032z3          0.262    r    15.121       7  pin: services/producer/curve_error_reg[4]_syn_4.f[0]
+net (fo=4)                              0.928         16.049          net: services/geometry_control$change/suspend_reg_syn_67,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_124.a[1]
+LUT5                x015y026z3          0.424    f    16.473       8  pin: services/geometry_control$change/suspend_reg_syn_124.f[1]
+net (fo=8)                              1.373         17.846          net: services/geometry_control$change/drain_seen_n4,  NOFILE(0)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_126.a[1]
+LUT5                x019y025z3          0.424    f    18.270       9  pin: services/geometry_control$change/suspend_reg_syn_126.f[1]
+net (fo=1)                              0.928         19.198          net: services/geometry_control$change/suspend_reg_syn_80,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.a[0]
+LUT5                x017y027z3          0.424    f    19.622      10  pin: services/geometry_control$change/suspend_reg_syn_128.f[0]
+net (fo=1)                              1.359         20.981          net: services/geometry_control$change/suspend_reg_syn_82,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.d[1]
+LUT5                x017y027z3          0.262    r    21.243      11  pin: services/geometry_control$change/suspend_reg_syn_128.f[1]
+net (fo=6)                              0.319         21.562          net: services/geometry_control$change/drain_seen_i_syn_2,  ../../../user_source/hdl_source/redo/b_board_services.v(442)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.d[0]
+LUT2                x018y027z1          0.205    r    21.767      12  pin: services/geometry_control$change/drain_seen_reg_syn_5.f[0]
+net (fo=5)                              0.901         22.668          net: services/geometry_control$change/suspend_reg_syn_90,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/all_owners/complete_n_syn_455.d[0]
+LUT2 (reg)          x017y025z0          0.314    r    22.982      13  net: media/u_images/bmp_read_m0/soft_cancel,  ../../../user_source/hdl_source/redo/b_bmp_adaptive_read.v(2)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.982               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/all_owners/complete_n_syn_455.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.388               
+
+Slack               : 0.647ns
+Begin Point         : services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/drain_seen_reg_syn_6.mi[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 19.001ns (cell 4.115ns (21%), net 14.886ns (79%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT4=6  LUT2=3  LUT5=2  LUT3=2 )
+Max Fanout          : 82
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x025y041z3          0.146    r     3.868          pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.q[0]
+net (fo=4)                              2.573          6.441          net: services/normal/text_service/rpc/done_token[7],  ../../../user_source/hdl_source/support/b_rpc_response_delivery.v(10)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[0]
+LUT4                x027y040z3          0.262    r     6.703       1  pin: services/captured_pc_uid_reg[6]_syn_4.f[0]
+net (fo=1)                              1.049          7.752          net: media/programs/state_b[0]_syn_244,  NOFILE(0)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[1]
+LUT4                x027y040z3          0.262    r     8.014       2  pin: services/captured_pc_uid_reg[6]_syn_4.f[1]
+net (fo=1)                              0.664          8.678          net: media/programs/state_b[0]_syn_246,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_423.d[1]
+LUT4                x029y041z1          0.205    r     8.883       3  pin: media/programs/state_b[0]_syn_423.f[1]
+net (fo=1)                              0.790          9.673          net: services/rpc_capture_ready_n2,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_385.a[1]
+LUT3                x027y047z3          0.424    f    10.097       4  pin: media/programs/state_b[0]_syn_385.f[1]
+net (fo=2)                              0.953         11.050          net: media/programs/state_b[0]_syn_249,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_383.a[1]
+LUT2                x029y049z3          0.424    f    11.474       5  pin: media/programs/state_b[0]_syn_383.f[1]
+net (fo=3)                              0.468         11.942          net: media/programs/state_b[0]_syn_253,  NOFILE(0)
+                                                                      pin: services/display_source/mux36_syn_290.d[0]
+LUT3                x029y045z2          0.262    r    12.204       6  pin: services/display_source/mux36_syn_290.f[0]
+net (fo=2)                              0.757         12.961          net: services/scheduler/selected_valid_n14,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_387.a[1]
+LUT4                x031y046z3          0.424    f    13.385       7  pin: media/programs/state_b[0]_syn_387.f[1]
+net (fo=31)                             1.102         14.487          net: media/programs/state_b[0]_syn_266,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_373.d[1]
+LUT4                x030y045z1          0.205    r    14.692       8  pin: media/programs/state_b[0]_syn_373.f[1]
+net (fo=12)                             0.547         15.239          net: services/scheduler/arg_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_353.d[1]
+LUT5                x034y045z2          0.262    r    15.501       9  pin: media/programs/state_b[0]_syn_353.f[1]
+net (fo=82)                             0.742         16.243          net: media/programs/state_b[0]_syn_271,  NOFILE(0)
+                                                                      pin: services/scheduler/master/tag[0]_syn_14.d[0]
+LUT2                x035y042z0          0.205    r    16.448      10  pin: services/scheduler/master/tag[0]_syn_14.f[0]
+net (fo=26)                             1.602         18.050          net: services/scheduler/count_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_409.d[1]
+LUT5                x030y044z2          0.262    r    18.312      11  pin: media/programs/state_b[0]_syn_409.f[1]
+net (fo=6)                              1.760         20.072          net: media/programs/state_b[0]_syn_291,  NOFILE(0)
+                                                                      pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.d[0]
+LUT2                x022y033z1          0.205    r    20.277      12  pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.f[0]
+net (fo=3)                              0.987         21.264          net: media/programs/state_b[0]_syn_293,  NOFILE(0)
+                                                                      pin: services/producer/event_data[60]_syn_4.a[0]
+LUT4                x019y026z2          0.424    f    21.688      13  pin: services/producer/event_data[60]_syn_4.f[0]
+net (fo=5)                              0.892         22.580          net: media/programs/state_b[0],  NOFILE(0)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_6.mi[0]
+reg                 x012y028z0          0.143    r    22.723          net: media/programs/state[0]_dup_76,  ../../../user_source/hdl_source/redo/b_program_player.v(16)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.723               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_6.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.647               
+
+Slack               : 0.776ns
+Begin Point         : services/normal/config_service/state_reg[1]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/selected_reg[0]_syn_7.d[1] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.872ns (cell 4.755ns (25%), net 14.117ns (75%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT5=6  LUT4=3  LUT3=3  LUT2=1 )
+Max Fanout          : 45
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/state_reg[1]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x013y040z3          0.146    r     3.868          pin: services/normal/config_service/state_reg[1]_syn_4.q[1]
+net (fo=45)                             1.474          5.342          net: services/normal/config_service/state_reg_syn_1[1],  ../../../user_source/hdl_source/redo/b_config_service.v(148)
+                                                                      pin: services/geometry_control$change/owner_reg[10]_syn_4.c[0]
+LUT3                x019y036z3          0.348    f     5.690       1  pin: services/geometry_control$change/owner_reg[10]_syn_4.f[0]
+net (fo=5)                              2.580          8.270          net: services/geometry_control$change/request_token[8],  ../../../user_source/hdl_source/redo/b_board_services.v(416)
+                                                                      pin: services/producer/tx_uid_reg[16]_syn_4.b[1]
+LUT4                x017y035z3          0.431    f     8.701       2  pin: services/producer/tx_uid_reg[16]_syn_4.f[1]
+net (fo=1)                              0.309          9.010          net: services/normal/config_service/backend/mux87_syn_199,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/backend/mux87_syn_554.a[1]
+LUT4                x017y036z2          0.424    f     9.434       3  pin: services/normal/config_service/backend/mux87_syn_554.f[1]
+net (fo=1)                              1.195         10.629          net: services/normal/config_service/backend/mux87_syn_207,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.c[1]
+LUT4                x017y037z3          0.348    f    10.977       4  pin: services/normal/config_service/command_owner_reg[18]_syn_4.f[1]
+net (fo=2)                              0.560         11.537          net: services/normal/config_service/backend/mux87_syn_209,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.a[0]
+LUT5                x012y037z2          0.424    f    11.961       5  pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.f[0]
+net (fo=7)                              1.866         13.827          net: services/normal/config_service/actuation_done_syn_12,  ../../../user_source/hdl_source/redo/b_config_service.v(10)
+                                                                      pin: services/scheduler/master/reply_body_reg[330]_syn_4.d[1]
+LUT5                x012y036z2          0.262    r    14.089       6  pin: services/scheduler/master/reply_body_reg[330]_syn_4.f[1]
+net (fo=3)                              0.770         14.859          net: services/geometry_control$change/suspend_reg_syn_53,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/producer/curve_error_reg[4]_syn_4.d[0]
+LUT3                x013y032z3          0.262    r    15.121       7  pin: services/producer/curve_error_reg[4]_syn_4.f[0]
+net (fo=4)                              0.928         16.049          net: services/geometry_control$change/suspend_reg_syn_67,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_124.a[1]
+LUT5                x015y026z3          0.424    f    16.473       8  pin: services/geometry_control$change/suspend_reg_syn_124.f[1]
+net (fo=8)                              1.373         17.846          net: services/geometry_control$change/drain_seen_n4,  NOFILE(0)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_126.a[1]
+LUT5                x019y025z3          0.424    f    18.270       9  pin: services/geometry_control$change/suspend_reg_syn_126.f[1]
+net (fo=1)                              0.928         19.198          net: services/geometry_control$change/suspend_reg_syn_80,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.a[0]
+LUT5                x017y027z3          0.424    f    19.622      10  pin: services/geometry_control$change/suspend_reg_syn_128.f[0]
+net (fo=1)                              1.359         20.981          net: services/geometry_control$change/suspend_reg_syn_82,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.d[1]
+LUT5                x017y027z3          0.262    r    21.243      11  pin: services/geometry_control$change/suspend_reg_syn_128.f[1]
+net (fo=6)                              0.319         21.562          net: services/geometry_control$change/drain_seen_i_syn_2,  ../../../user_source/hdl_source/redo/b_board_services.v(442)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.d[0]
+LUT2                x018y027z1          0.205    r    21.767      12  pin: services/geometry_control$change/drain_seen_reg_syn_5.f[0]
+net (fo=5)                              0.456         22.223          net: services/geometry_control$change/suspend_reg_syn_90,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/selected_reg[0]_syn_7.d[1]
+LUT3 (reg)          x018y025z2          0.371    r    22.594      13  net: services/geometry_control$change/selected[0],  ../../../user_source/hdl_source/redo/b_board_services.v(420)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.594               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/selected_reg[0]_syn_7.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.776               
+
+Slack               : 0.818ns
+Begin Point         : services/normal/config_service/state_reg[1]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : media/programs/state_b[1]_syn_39.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.830ns (cell 4.698ns (24%), net 14.132ns (76%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT5=6  LUT4=3  LUT3=2  LUT2=2 )
+Max Fanout          : 45
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/state_reg[1]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x013y040z3          0.146    r     3.868          pin: services/normal/config_service/state_reg[1]_syn_4.q[1]
+net (fo=45)                             1.474          5.342          net: services/normal/config_service/state_reg_syn_1[1],  ../../../user_source/hdl_source/redo/b_config_service.v(148)
+                                                                      pin: services/geometry_control$change/owner_reg[10]_syn_4.c[0]
+LUT3                x019y036z3          0.348    f     5.690       1  pin: services/geometry_control$change/owner_reg[10]_syn_4.f[0]
+net (fo=5)                              2.580          8.270          net: services/geometry_control$change/request_token[8],  ../../../user_source/hdl_source/redo/b_board_services.v(416)
+                                                                      pin: services/producer/tx_uid_reg[16]_syn_4.b[1]
+LUT4                x017y035z3          0.431    f     8.701       2  pin: services/producer/tx_uid_reg[16]_syn_4.f[1]
+net (fo=1)                              0.309          9.010          net: services/normal/config_service/backend/mux87_syn_199,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/backend/mux87_syn_554.a[1]
+LUT4                x017y036z2          0.424    f     9.434       3  pin: services/normal/config_service/backend/mux87_syn_554.f[1]
+net (fo=1)                              1.195         10.629          net: services/normal/config_service/backend/mux87_syn_207,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.c[1]
+LUT4                x017y037z3          0.348    f    10.977       4  pin: services/normal/config_service/command_owner_reg[18]_syn_4.f[1]
+net (fo=2)                              0.560         11.537          net: services/normal/config_service/backend/mux87_syn_209,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.a[0]
+LUT5                x012y037z2          0.424    f    11.961       5  pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.f[0]
+net (fo=7)                              1.866         13.827          net: services/normal/config_service/actuation_done_syn_12,  ../../../user_source/hdl_source/redo/b_config_service.v(10)
+                                                                      pin: services/scheduler/master/reply_body_reg[330]_syn_4.d[1]
+LUT5                x012y036z2          0.262    r    14.089       6  pin: services/scheduler/master/reply_body_reg[330]_syn_4.f[1]
+net (fo=3)                              0.770         14.859          net: services/geometry_control$change/suspend_reg_syn_53,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/producer/curve_error_reg[4]_syn_4.d[0]
+LUT3                x013y032z3          0.262    r    15.121       7  pin: services/producer/curve_error_reg[4]_syn_4.f[0]
+net (fo=4)                              0.928         16.049          net: services/geometry_control$change/suspend_reg_syn_67,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_124.a[1]
+LUT5                x015y026z3          0.424    f    16.473       8  pin: services/geometry_control$change/suspend_reg_syn_124.f[1]
+net (fo=8)                              1.373         17.846          net: services/geometry_control$change/drain_seen_n4,  NOFILE(0)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_126.a[1]
+LUT5                x019y025z3          0.424    f    18.270       9  pin: services/geometry_control$change/suspend_reg_syn_126.f[1]
+net (fo=1)                              0.928         19.198          net: services/geometry_control$change/suspend_reg_syn_80,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.a[0]
+LUT5                x017y027z3          0.424    f    19.622      10  pin: services/geometry_control$change/suspend_reg_syn_128.f[0]
+net (fo=1)                              1.359         20.981          net: services/geometry_control$change/suspend_reg_syn_82,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.d[1]
+LUT5                x017y027z3          0.262    r    21.243      11  pin: services/geometry_control$change/suspend_reg_syn_128.f[1]
+net (fo=6)                              0.319         21.562          net: services/geometry_control$change/drain_seen_i_syn_2,  ../../../user_source/hdl_source/redo/b_board_services.v(442)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.d[0]
+LUT2                x018y027z1          0.205    r    21.767      12  pin: services/geometry_control$change/drain_seen_reg_syn_5.f[0]
+net (fo=5)                              0.471         22.238          net: services/geometry_control$change/suspend_reg_syn_90,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: media/programs/state_b[1]_syn_39.d[0]
+LUT2 (reg)          x018y027z0          0.314    r    22.552      13  net: media/u_images/ctrl_reformat,  ../../../user_source/hdl_source/redo/b_sd_card_bmp_control.v(25)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.552               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: media/programs/state_b[1]_syn_39.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.818               
+
+Slack               : 0.901ns
+Begin Point         : services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/drain_seen_reg_syn_5.mi[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.747ns (cell 4.115ns (21%), net 14.632ns (79%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT4=6  LUT2=3  LUT5=2  LUT3=2 )
+Max Fanout          : 82
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x025y041z3          0.146    r     3.868          pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.q[0]
+net (fo=4)                              2.573          6.441          net: services/normal/text_service/rpc/done_token[7],  ../../../user_source/hdl_source/support/b_rpc_response_delivery.v(10)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[0]
+LUT4                x027y040z3          0.262    r     6.703       1  pin: services/captured_pc_uid_reg[6]_syn_4.f[0]
+net (fo=1)                              1.049          7.752          net: media/programs/state_b[0]_syn_244,  NOFILE(0)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[1]
+LUT4                x027y040z3          0.262    r     8.014       2  pin: services/captured_pc_uid_reg[6]_syn_4.f[1]
+net (fo=1)                              0.664          8.678          net: media/programs/state_b[0]_syn_246,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_423.d[1]
+LUT4                x029y041z1          0.205    r     8.883       3  pin: media/programs/state_b[0]_syn_423.f[1]
+net (fo=1)                              0.790          9.673          net: services/rpc_capture_ready_n2,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_385.a[1]
+LUT3                x027y047z3          0.424    f    10.097       4  pin: media/programs/state_b[0]_syn_385.f[1]
+net (fo=2)                              0.953         11.050          net: media/programs/state_b[0]_syn_249,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_383.a[1]
+LUT2                x029y049z3          0.424    f    11.474       5  pin: media/programs/state_b[0]_syn_383.f[1]
+net (fo=3)                              0.468         11.942          net: media/programs/state_b[0]_syn_253,  NOFILE(0)
+                                                                      pin: services/display_source/mux36_syn_290.d[0]
+LUT3                x029y045z2          0.262    r    12.204       6  pin: services/display_source/mux36_syn_290.f[0]
+net (fo=2)                              0.757         12.961          net: services/scheduler/selected_valid_n14,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_387.a[1]
+LUT4                x031y046z3          0.424    f    13.385       7  pin: media/programs/state_b[0]_syn_387.f[1]
+net (fo=31)                             1.102         14.487          net: media/programs/state_b[0]_syn_266,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_373.d[1]
+LUT4                x030y045z1          0.205    r    14.692       8  pin: media/programs/state_b[0]_syn_373.f[1]
+net (fo=12)                             0.547         15.239          net: services/scheduler/arg_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_353.d[1]
+LUT5                x034y045z2          0.262    r    15.501       9  pin: media/programs/state_b[0]_syn_353.f[1]
+net (fo=82)                             0.742         16.243          net: media/programs/state_b[0]_syn_271,  NOFILE(0)
+                                                                      pin: services/scheduler/master/tag[0]_syn_14.d[0]
+LUT2                x035y042z0          0.205    r    16.448      10  pin: services/scheduler/master/tag[0]_syn_14.f[0]
+net (fo=26)                             1.602         18.050          net: services/scheduler/count_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_409.d[1]
+LUT5                x030y044z2          0.262    r    18.312      11  pin: media/programs/state_b[0]_syn_409.f[1]
+net (fo=6)                              1.760         20.072          net: media/programs/state_b[0]_syn_291,  NOFILE(0)
+                                                                      pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.d[0]
+LUT2                x022y033z1          0.205    r    20.277      12  pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.f[0]
+net (fo=3)                              0.987         21.264          net: media/programs/state_b[0]_syn_293,  NOFILE(0)
+                                                                      pin: services/producer/event_data[60]_syn_4.a[0]
+LUT4                x019y026z2          0.424    f    21.688      13  pin: services/producer/event_data[60]_syn_4.f[0]
+net (fo=5)                              0.638         22.326          net: media/programs/state_b[0],  NOFILE(0)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.mi[0]
+reg                 x018y027z1          0.143    r    22.469          net: media/programs/state[0]_dup_74,  ../../../user_source/hdl_source/redo/b_program_player.v(16)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.469               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.901               
+
+Slack               : 0.966ns
+Begin Point         : services/normal/config_service/state_reg[1]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/selected_reg[1]_syn_7.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.682ns (cell 4.698ns (25%), net 13.984ns (75%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT5=6  LUT4=3  LUT3=3  LUT2=1 )
+Max Fanout          : 45
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/state_reg[1]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x013y040z3          0.146    r     3.868          pin: services/normal/config_service/state_reg[1]_syn_4.q[1]
+net (fo=45)                             1.474          5.342          net: services/normal/config_service/state_reg_syn_1[1],  ../../../user_source/hdl_source/redo/b_config_service.v(148)
+                                                                      pin: services/geometry_control$change/owner_reg[10]_syn_4.c[0]
+LUT3                x019y036z3          0.348    f     5.690       1  pin: services/geometry_control$change/owner_reg[10]_syn_4.f[0]
+net (fo=5)                              2.580          8.270          net: services/geometry_control$change/request_token[8],  ../../../user_source/hdl_source/redo/b_board_services.v(416)
+                                                                      pin: services/producer/tx_uid_reg[16]_syn_4.b[1]
+LUT4                x017y035z3          0.431    f     8.701       2  pin: services/producer/tx_uid_reg[16]_syn_4.f[1]
+net (fo=1)                              0.309          9.010          net: services/normal/config_service/backend/mux87_syn_199,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/backend/mux87_syn_554.a[1]
+LUT4                x017y036z2          0.424    f     9.434       3  pin: services/normal/config_service/backend/mux87_syn_554.f[1]
+net (fo=1)                              1.195         10.629          net: services/normal/config_service/backend/mux87_syn_207,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.c[1]
+LUT4                x017y037z3          0.348    f    10.977       4  pin: services/normal/config_service/command_owner_reg[18]_syn_4.f[1]
+net (fo=2)                              0.560         11.537          net: services/normal/config_service/backend/mux87_syn_209,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.a[0]
+LUT5                x012y037z2          0.424    f    11.961       5  pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.f[0]
+net (fo=7)                              1.866         13.827          net: services/normal/config_service/actuation_done_syn_12,  ../../../user_source/hdl_source/redo/b_config_service.v(10)
+                                                                      pin: services/scheduler/master/reply_body_reg[330]_syn_4.d[1]
+LUT5                x012y036z2          0.262    r    14.089       6  pin: services/scheduler/master/reply_body_reg[330]_syn_4.f[1]
+net (fo=3)                              0.770         14.859          net: services/geometry_control$change/suspend_reg_syn_53,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/producer/curve_error_reg[4]_syn_4.d[0]
+LUT3                x013y032z3          0.262    r    15.121       7  pin: services/producer/curve_error_reg[4]_syn_4.f[0]
+net (fo=4)                              0.928         16.049          net: services/geometry_control$change/suspend_reg_syn_67,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_124.a[1]
+LUT5                x015y026z3          0.424    f    16.473       8  pin: services/geometry_control$change/suspend_reg_syn_124.f[1]
+net (fo=8)                              1.373         17.846          net: services/geometry_control$change/drain_seen_n4,  NOFILE(0)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_126.a[1]
+LUT5                x019y025z3          0.424    f    18.270       9  pin: services/geometry_control$change/suspend_reg_syn_126.f[1]
+net (fo=1)                              0.928         19.198          net: services/geometry_control$change/suspend_reg_syn_80,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.a[0]
+LUT5                x017y027z3          0.424    f    19.622      10  pin: services/geometry_control$change/suspend_reg_syn_128.f[0]
+net (fo=1)                              1.359         20.981          net: services/geometry_control$change/suspend_reg_syn_82,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.d[1]
+LUT5                x017y027z3          0.262    r    21.243      11  pin: services/geometry_control$change/suspend_reg_syn_128.f[1]
+net (fo=6)                              0.319         21.562          net: services/geometry_control$change/drain_seen_i_syn_2,  ../../../user_source/hdl_source/redo/b_board_services.v(442)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.d[0]
+LUT2                x018y027z1          0.205    r    21.767      12  pin: services/geometry_control$change/drain_seen_reg_syn_5.f[0]
+net (fo=5)                              0.323         22.090          net: services/geometry_control$change/suspend_reg_syn_90,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/selected_reg[1]_syn_7.d[0]
+LUT3 (reg)          x018y028z0          0.314    r    22.404      13  net: services/geometry_control$change/selected[2],  ../../../user_source/hdl_source/redo/b_board_services.v(420)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.404               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/selected_reg[1]_syn_7.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.966               
+
+Slack               : 0.966ns
+Begin Point         : services/normal/config_service/state_reg[1]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/selected_reg[1]_syn_7.d[1] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.682ns (cell 4.698ns (25%), net 13.984ns (75%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT5=6  LUT4=3  LUT3=3  LUT2=1 )
+Max Fanout          : 45
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/state_reg[1]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x013y040z3          0.146    r     3.868          pin: services/normal/config_service/state_reg[1]_syn_4.q[1]
+net (fo=45)                             1.474          5.342          net: services/normal/config_service/state_reg_syn_1[1],  ../../../user_source/hdl_source/redo/b_config_service.v(148)
+                                                                      pin: services/geometry_control$change/owner_reg[10]_syn_4.c[0]
+LUT3                x019y036z3          0.348    f     5.690       1  pin: services/geometry_control$change/owner_reg[10]_syn_4.f[0]
+net (fo=5)                              2.580          8.270          net: services/geometry_control$change/request_token[8],  ../../../user_source/hdl_source/redo/b_board_services.v(416)
+                                                                      pin: services/producer/tx_uid_reg[16]_syn_4.b[1]
+LUT4                x017y035z3          0.431    f     8.701       2  pin: services/producer/tx_uid_reg[16]_syn_4.f[1]
+net (fo=1)                              0.309          9.010          net: services/normal/config_service/backend/mux87_syn_199,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/backend/mux87_syn_554.a[1]
+LUT4                x017y036z2          0.424    f     9.434       3  pin: services/normal/config_service/backend/mux87_syn_554.f[1]
+net (fo=1)                              1.195         10.629          net: services/normal/config_service/backend/mux87_syn_207,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.c[1]
+LUT4                x017y037z3          0.348    f    10.977       4  pin: services/normal/config_service/command_owner_reg[18]_syn_4.f[1]
+net (fo=2)                              0.560         11.537          net: services/normal/config_service/backend/mux87_syn_209,  ../../../user_source/hdl_source/redo/b_parameter_service.v(48)
+                                                                      pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.a[0]
+LUT5                x012y037z2          0.424    f    11.961       5  pin: services/normal/config_service/storage/jedec_id_reg[7]_syn_4.f[0]
+net (fo=7)                              1.866         13.827          net: services/normal/config_service/actuation_done_syn_12,  ../../../user_source/hdl_source/redo/b_config_service.v(10)
+                                                                      pin: services/scheduler/master/reply_body_reg[330]_syn_4.d[1]
+LUT5                x012y036z2          0.262    r    14.089       6  pin: services/scheduler/master/reply_body_reg[330]_syn_4.f[1]
+net (fo=3)                              0.770         14.859          net: services/geometry_control$change/suspend_reg_syn_53,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/producer/curve_error_reg[4]_syn_4.d[0]
+LUT3                x013y032z3          0.262    r    15.121       7  pin: services/producer/curve_error_reg[4]_syn_4.f[0]
+net (fo=4)                              0.928         16.049          net: services/geometry_control$change/suspend_reg_syn_67,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_124.a[1]
+LUT5                x015y026z3          0.424    f    16.473       8  pin: services/geometry_control$change/suspend_reg_syn_124.f[1]
+net (fo=8)                              1.373         17.846          net: services/geometry_control$change/drain_seen_n4,  NOFILE(0)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_126.a[1]
+LUT5                x019y025z3          0.424    f    18.270       9  pin: services/geometry_control$change/suspend_reg_syn_126.f[1]
+net (fo=1)                              0.928         19.198          net: services/geometry_control$change/suspend_reg_syn_80,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.a[0]
+LUT5                x017y027z3          0.424    f    19.622      10  pin: services/geometry_control$change/suspend_reg_syn_128.f[0]
+net (fo=1)                              1.359         20.981          net: services/geometry_control$change/suspend_reg_syn_82,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_128.d[1]
+LUT5                x017y027z3          0.262    r    21.243      11  pin: services/geometry_control$change/suspend_reg_syn_128.f[1]
+net (fo=6)                              0.319         21.562          net: services/geometry_control$change/drain_seen_i_syn_2,  ../../../user_source/hdl_source/redo/b_board_services.v(442)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_5.d[0]
+LUT2                x018y027z1          0.205    r    21.767      12  pin: services/geometry_control$change/drain_seen_reg_syn_5.f[0]
+net (fo=5)                              0.323         22.090          net: services/geometry_control$change/suspend_reg_syn_90,  ../../../user_source/hdl_source/redo/b_board_services.v(430)
+                                                                      pin: services/geometry_control$change/selected_reg[1]_syn_7.d[1]
+LUT3 (reg)          x018y028z0          0.314    r    22.404      13  net: services/geometry_control$change/selected[1],  ../../../user_source/hdl_source/redo/b_board_services.v(420)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.404               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/selected_reg[1]_syn_7.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.966               
+
+Slack               : 1.064ns
+Begin Point         : services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/drain_seen_reg_syn_7.mi[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.584ns (cell 4.115ns (22%), net 14.469ns (78%))
+Clock Skew          : 0.136ns
+Logic Level         : 13 ( LUT4=6  LUT2=3  LUT5=2  LUT3=2 )
+Max Fanout          : 82
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x025y041z3          0.146    r     3.868          pin: services/normal/text_service/rpc/snapshot_owner_reg[6]_syn_4.q[0]
+net (fo=4)                              2.573          6.441          net: services/normal/text_service/rpc/done_token[7],  ../../../user_source/hdl_source/support/b_rpc_response_delivery.v(10)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[0]
+LUT4                x027y040z3          0.262    r     6.703       1  pin: services/captured_pc_uid_reg[6]_syn_4.f[0]
+net (fo=1)                              1.049          7.752          net: media/programs/state_b[0]_syn_244,  NOFILE(0)
+                                                                      pin: services/captured_pc_uid_reg[6]_syn_4.d[1]
+LUT4                x027y040z3          0.262    r     8.014       2  pin: services/captured_pc_uid_reg[6]_syn_4.f[1]
+net (fo=1)                              0.664          8.678          net: media/programs/state_b[0]_syn_246,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_423.d[1]
+LUT4                x029y041z1          0.205    r     8.883       3  pin: media/programs/state_b[0]_syn_423.f[1]
+net (fo=1)                              0.790          9.673          net: services/rpc_capture_ready_n2,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_385.a[1]
+LUT3                x027y047z3          0.424    f    10.097       4  pin: media/programs/state_b[0]_syn_385.f[1]
+net (fo=2)                              0.953         11.050          net: media/programs/state_b[0]_syn_249,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_383.a[1]
+LUT2                x029y049z3          0.424    f    11.474       5  pin: media/programs/state_b[0]_syn_383.f[1]
+net (fo=3)                              0.468         11.942          net: media/programs/state_b[0]_syn_253,  NOFILE(0)
+                                                                      pin: services/display_source/mux36_syn_290.d[0]
+LUT3                x029y045z2          0.262    r    12.204       6  pin: services/display_source/mux36_syn_290.f[0]
+net (fo=2)                              0.757         12.961          net: services/scheduler/selected_valid_n14,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_387.a[1]
+LUT4                x031y046z3          0.424    f    13.385       7  pin: media/programs/state_b[0]_syn_387.f[1]
+net (fo=31)                             1.102         14.487          net: media/programs/state_b[0]_syn_266,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_373.d[1]
+LUT4                x030y045z1          0.205    r    14.692       8  pin: media/programs/state_b[0]_syn_373.f[1]
+net (fo=12)                             0.547         15.239          net: services/scheduler/arg_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_353.d[1]
+LUT5                x034y045z2          0.262    r    15.501       9  pin: media/programs/state_b[0]_syn_353.f[1]
+net (fo=82)                             0.742         16.243          net: media/programs/state_b[0]_syn_271,  NOFILE(0)
+                                                                      pin: services/scheduler/master/tag[0]_syn_14.d[0]
+LUT2                x035y042z0          0.205    r    16.448      10  pin: services/scheduler/master/tag[0]_syn_14.f[0]
+net (fo=26)                             1.602         18.050          net: services/scheduler/count_b1_n,  NOFILE(0)
+                                                                      pin: media/programs/state_b[0]_syn_409.d[1]
+LUT5                x030y044z2          0.262    r    18.312      11  pin: media/programs/state_b[0]_syn_409.f[1]
+net (fo=6)                              1.760         20.072          net: media/programs/state_b[0]_syn_291,  NOFILE(0)
+                                                                      pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.d[0]
+LUT2                x022y033z1          0.205    r    20.277      12  pin: services/uid_envelope$commands/image_uid_reg[20]_syn_4.f[0]
+net (fo=3)                              0.987         21.264          net: media/programs/state_b[0]_syn_293,  NOFILE(0)
+                                                                      pin: services/producer/event_data[60]_syn_4.a[0]
+LUT4                x019y026z2          0.424    f    21.688      13  pin: services/producer/event_data[60]_syn_4.f[0]
+net (fo=5)                              0.475         22.163          net: media/programs/state_b[0],  NOFILE(0)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_7.mi[0]
+reg                 x020y028z0          0.143    r    22.306          net: media/programs/state[0]_dup_77,  ../../../user_source/hdl_source/redo/b_program_player.v(16)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.306               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/drain_seen_reg_syn_7.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  1.064               
+
+Slack               : 1.150ns
+Begin Point         : services/uid_envelope$commands/image_wait_reg_syn_306.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/uid_envelope$commands/retry_reg[4]_syn_4.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { clk rising@20.000ns - clk rising@0.000ns }
+Data Path Delay     : 18.498ns (cell 4.778ns (25%), net 13.720ns (75%))
+Clock Skew          : 0.136ns
+Logic Level         : 14 ( LUT4=7  LUT5=4  LUT2=2  LUT3=1 )
+Max Fanout          : 29
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           2.062          3.722          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/uid_envelope$commands/image_wait_reg_syn_306.clk
+launch edge                             0.000    r     3.722               
+--------------------------------------------------------------------  ---------------
+clk2q               x025y036z3          0.146    r     3.868          pin: services/uid_envelope$commands/image_wait_reg_syn_306.q[0]
+net (fo=29)                             2.939          6.807          net: services/all_owners/service_done_tokens[78],  ../../../user_source/hdl_source/support/b_control_drain_join.v(5)
+                                                                      pin: services/unsupported/owner_reg[6]_syn_4.a[1]
+LUT4                x023y040z1          0.408    f     7.215       1  pin: services/unsupported/owner_reg[6]_syn_4.f[1]
+net (fo=1)                              0.307          7.522          net: services/uid_envelope$commands/image_wait_reg_syn_59,  ../../../user_source/hdl_source/redo/b_media_commands32.v(117)
+                                                                      pin: services/unsupported/owner_reg[11]_syn_4.c[1]
+LUT5                x023y041z2          0.348    f     7.870       2  pin: services/unsupported/owner_reg[11]_syn_4.f[1]
+net (fo=1)                              1.992          9.862          net: services/uid_envelope$commands/image_wait_reg_syn_63,  ../../../user_source/hdl_source/redo/b_media_commands32.v(117)
+                                                                      pin: services/normal/flow_owner_reg[24]_syn_4.a[0]
+LUT5                x021y044z2          0.424    f    10.286       3  pin: services/normal/flow_owner_reg[24]_syn_4.f[0]
+net (fo=4)                              0.468         10.754          net: services/unsupported/control_done_n2_syn_2,  NOFILE(0)
+                                                                      pin: services/font_result_owner_reg[0]_syn_4.d[0]
+LUT2                x022y046z0          0.205    r    10.959       4  pin: services/font_result_owner_reg[0]_syn_4.f[0]
+net (fo=3)                              0.307         11.266          net: services/normal/text_service/selected_config_n3,  NOFILE(0)
+                                                                      pin: services/uid_envelope$commands/image_wait_reg_syn_336.a[1]
+LUT4                x022y047z1          0.408    f    11.674       5  pin: services/uid_envelope$commands/image_wait_reg_syn_336.f[1]
+net (fo=9)                              0.459         12.133          net: services/uid_envelope$commands/image_wait_reg_syn_188,  ../../../user_source/hdl_source/redo/b_media_commands32.v(117)
+                                                                      pin: services/uid_envelope$commands/image_wait_reg_syn_346.d[1]
+LUT4                x023y045z0          0.205    r    12.338       6  pin: services/uid_envelope$commands/image_wait_reg_syn_346.f[1]
+net (fo=3)                              2.361         14.699          net: services/uid_envelope$commands/image_wait_reg_syn_204,  ../../../user_source/hdl_source/redo/b_media_commands32.v(117)
+                                                                      pin: services/menu_bridge/floor_reg[27]_syn_4.a[1]
+LUT4                x023y040z2          0.424    f    15.123       7  pin: services/menu_bridge/floor_reg[27]_syn_4.f[1]
+net (fo=1)                              0.832         15.955          net: media/programs/grant_needed_n9,  NOFILE(0)
+                                                                      pin: services/producer/requested_epoch_reg[9]_syn_4.a[0]
+LUT4                x023y028z2          0.424    f    16.379       8  pin: services/producer/requested_epoch_reg[9]_syn_4.f[0]
+net (fo=1)                              0.525         16.904          net: services/uid_envelope$commands/image_wait_reg_syn_213,  ../../../user_source/hdl_source/redo/b_media_commands32.v(117)
+                                                                      pin: media/programs/mux243_syn_128.d[0]
+LUT3                x025y026z2          0.262    r    17.166       9  pin: media/programs/mux243_syn_128.f[0]
+net (fo=3)                              0.847         18.013          net: services/uid_envelope$commands/image_wait_reg_syn_215,  ../../../user_source/hdl_source/redo/b_media_commands32.v(117)
+                                                                      pin: services/uid_envelope$commands/image_wait_reg_syn_294.a[1]
+LUT5                x033y026z2          0.424    f    18.437      10  pin: services/uid_envelope$commands/image_wait_reg_syn_294.f[1]
+net (fo=12)                             0.459         18.896          net: services/uid_envelope$commands/image_seen_n3,  NOFILE(0)
+                                                                      pin: services/uid_envelope$commands/image_ticket_reg[0]_syn_4.d[1]
+LUT4                x035y027z2          0.262    r    19.158      11  pin: services/uid_envelope$commands/image_ticket_reg[0]_syn_4.f[1]
+net (fo=11)                             0.319         19.477          net: services/uid_envelope$commands/mux83_syn_2[11],  ../../../user_source/hdl_source/redo/b_media_commands32.v(139)
+                                                                      pin: services/uid_envelope$commands/image_ticket_reg[9]_syn_4.d[1]
+LUT4                x035y029z0          0.205    r    19.682      12  pin: services/uid_envelope$commands/image_ticket_reg[9]_syn_4.f[1]
+net (fo=11)                             1.107         20.789          net: services/uid_envelope$commands/mux80_syn_2[0],  ../../../user_source/hdl_source/redo/b_media_commands32.v(139)
+                                                                      pin: services/uid_envelope$commands/retry_b[10]_syn_13.d[1]
+LUT5                x038y027z3          0.262    r    21.051      13  pin: services/uid_envelope$commands/retry_b[10]_syn_13.f[1]
+net (fo=11)                             0.798         21.849          net: services/uid_envelope$commands/mux82_syn_39,  ../../../user_source/hdl_source/redo/b_media_commands32.v(139)
+                                                                      pin: services/uid_envelope$commands/retry_reg[4]_syn_4.d[0]
+LUT2 (reg)          x039y026z2          0.371    r    22.220      14  net: services/uid_envelope$commands/retry[5],  ../../../user_source/hdl_source/redo/b_media_commands32.v(36)
+--------------------------------------------------------------------  ---------------
+Arrival                                               22.220               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/uid_envelope$commands/retry_reg[4]_syn_4.clk
+capture edge                           20.000    r    23.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116         23.230               
+clock uncertainty                      -0.100         23.130               
+clock pessimism                         0.240         23.370               
+--------------------------------------------------------------------  ---------------
+Required                                              23.370               
+--------------------------------------------------------------------  ---------------
+Slack                                                  1.150               
+
+
+Period Check
+----------------------------------------------------------------------------------------------------
+    Type       Setting(ns)      Required(ns)         Slack(ns)   Point
+--------------------------------------------------------------------------------
+    ERAM            20.000             3.400            16.600   services/adaptive_images$path/queue/ramread0_syn_26.clkb
+    ERAM            20.000             3.400            16.600   services/producer/image_fifo/ramread0_syn_26.clkb
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_25.clkb
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_25.clka
+    ERAM            20.000             3.400            16.600   services/adaptive_images$path/queue/ramread0_syn_7.clka
+    ERAM            20.000             3.400            16.600   services/adaptive_images$path/queue/ramread0_syn_7.clkb
+    ERAM            20.000             3.400            16.600   services/producer/image_fifo/ramread0_syn_7.clka
+    ERAM            20.000             3.400            16.600   services/producer/image_fifo/ramread0_syn_7.clkb
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_6.clka
+    ERAM            20.000             3.400            16.600   services/producer/pcm_fifo/ramread0_syn_6.clkb
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : -0.033ns
+Begin Point         : services/curve/gamma_calculation$calculator/base_curve/done_n_syn_7.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/actuation_reported_reg_syn_102.sr (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : removal
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.428ns (cell 0.196ns (45%), net 0.232ns (55%))
+Clock Skew          : 0.108ns
+Logic Level         : 0
+Max Fanout          : 16
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/gamma_calculation$calculator/base_curve/done_n_syn_7.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x014y036z2          0.109    f     3.049          pin: services/curve/gamma_calculation$calculator/base_curve/done_n_syn_7.q[0]
+net (fo=16)                             0.232          3.281          net: services/rst_n_dup_42,  ../../../user_source/hdl_source/redo/b_board_services.v(6)
+                                                                      pin: services/producer/actuation_reported_reg_syn_102.sr
+reg                 x014y035z2          0.087    r     3.368               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.368               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/actuation_reported_reg_syn_102.clk
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+removal                                 0.253          3.485               
+clock uncertainty                       0.100          3.585               
+clock pessimism                        -0.184          3.401               
+--------------------------------------------------------------------  ---------------
+Required                                               3.401               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.033               
+
+Slack               : -0.032ns
+Begin Point         : services/geometry_control$change/suspend_reg_syn_132.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/owner_reg[12]_syn_4.sr (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : removal
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.429ns (cell 0.196ns (45%), net 0.233ns (55%))
+Clock Skew          : 0.108ns
+Logic Level         : 0
+Max Fanout          : 12
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_132.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x017y035z0          0.109    f     3.049          pin: services/geometry_control$change/suspend_reg_syn_132.q[0]
+net (fo=12)                             0.233          3.282          net: services/rst_n_dup_59,  ../../../user_source/hdl_source/redo/b_board_services.v(6)
+                                                                      pin: services/geometry_control$change/owner_reg[12]_syn_4.sr
+reg                 x017y037z2          0.087    r     3.369               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.369               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/owner_reg[12]_syn_4.clk
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+removal                                 0.253          3.485               
+clock uncertainty                       0.100          3.585               
+clock pessimism                        -0.184          3.401               
+--------------------------------------------------------------------  ---------------
+Required                                               3.401               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.032               
+
+Slack               : -0.032ns
+Begin Point         : services/geometry_control$change/suspend_reg_syn_132.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/geometry_control$change/owner_reg[14]_syn_4.sr (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : removal
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.429ns (cell 0.196ns (45%), net 0.233ns (55%))
+Clock Skew          : 0.108ns
+Logic Level         : 0
+Max Fanout          : 12
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_132.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x017y035z0          0.109    f     3.049          pin: services/geometry_control$change/suspend_reg_syn_132.q[0]
+net (fo=12)                             0.233          3.282          net: services/rst_n_dup_59,  ../../../user_source/hdl_source/redo/b_board_services.v(6)
+                                                                      pin: services/geometry_control$change/owner_reg[14]_syn_4.sr
+reg                 x017y036z3          0.087    r     3.369               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.369               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/owner_reg[14]_syn_4.clk
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+removal                                 0.253          3.485               
+clock uncertainty                       0.100          3.585               
+clock pessimism                        -0.184          3.401               
+--------------------------------------------------------------------  ---------------
+Required                                               3.401               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.032               
+
+Slack               : -0.032ns
+Begin Point         : services/geometry_control$change/suspend_reg_syn_132.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/normal/config_service/command_owner_reg[18]_syn_4.sr (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : removal
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.429ns (cell 0.196ns (45%), net 0.233ns (55%))
+Clock Skew          : 0.108ns
+Logic Level         : 0
+Max Fanout          : 12
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/geometry_control$change/suspend_reg_syn_132.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x017y035z0          0.109    f     3.049          pin: services/geometry_control$change/suspend_reg_syn_132.q[0]
+net (fo=12)                             0.233          3.282          net: services/rst_n_dup_59,  ../../../user_source/hdl_source/redo/b_board_services.v(6)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.sr
+reg                 x017y037z3          0.087    r     3.369               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.369               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/normal/config_service/command_owner_reg[18]_syn_4.clk
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+removal                                 0.253          3.485               
+clock uncertainty                       0.100          3.585               
+clock pessimism                        -0.184          3.401               
+--------------------------------------------------------------------  ---------------
+Required                                               3.401               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.032               
+
+Slack               : -0.020ns
+Begin Point         : services/adaptive_images$path/queue/wp_reg[2]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/adaptive_images$path/queue/ramread0_syn_26.addra[4] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.325ns (cell 0.109ns (33%), net 0.216ns (67%))
+Clock Skew          : 0.045ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/wp_reg[2]_syn_4.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+ADDER (clk2q)       x031y019z1          0.109    f     3.049          pin: services/adaptive_images$path/queue/wp_reg[2]_syn_4.q[0]
+net (fo=3)                              0.216          3.265          net: services/adaptive_images$path/queue/wp[1],  ../../../user_source/hdl_source/dual/media_block_fifo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_26.addra[4]
+EMB (reg)           x032y018            0.000    f     3.265       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.265               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_26.clka
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          3.432               
+clock uncertainty                       0.100          3.532               
+clock pessimism                        -0.247          3.285               
+--------------------------------------------------------------------  ---------------
+Required                                               3.285               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.020               
+
+Slack               : -0.020ns
+Begin Point         : services/curve/partial_reg[22]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/curve/ramread0_syn_25.dia[5] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.325ns (cell 0.109ns (33%), net 0.216ns (67%))
+Clock Skew          : 0.045ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/partial_reg[22]_syn_4.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x007y035z2          0.109    f     3.049          pin: services/curve/partial_reg[22]_syn_4.q[0]
+net (fo=1)                              0.216          3.265          net: services/curve/partial[23],  ../../../user_source/hdl_source/redo/b_curve_service.v(12)
+                                                                      pin: services/curve/ramread0_syn_25.dia[5]
+EMB (reg)           x008y027            0.000    f     3.265       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.265               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/ramread0_syn_25.clka
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          3.432               
+clock uncertainty                       0.100          3.532               
+clock pessimism                        -0.247          3.285               
+--------------------------------------------------------------------  ---------------
+Required                                               3.285               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.020               
+
+Slack               : -0.011ns
+Begin Point         : services/adaptive_images$path/queue/wp_reg[6]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/adaptive_images$path/queue/ramread0_syn_7.addra[9] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.334ns (cell 0.109ns (32%), net 0.225ns (68%))
+Clock Skew          : 0.045ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/wp_reg[6]_syn_4.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+ADDER (clk2q)       x031y020z1          0.109    f     3.049          pin: services/adaptive_images$path/queue/wp_reg[6]_syn_4.q[0]
+net (fo=3)                              0.225          3.274          net: services/adaptive_images$path/queue/wp[5],  ../../../user_source/hdl_source/dual/media_block_fifo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_7.addra[9]
+EMB (reg)           x032y018            0.000    f     3.274       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.274               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/adaptive_images$path/queue/ramread0_syn_7.clka
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          3.432               
+clock uncertainty                       0.100          3.532               
+clock pessimism                        -0.247          3.285               
+--------------------------------------------------------------------  ---------------
+Required                                               3.285               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.011               
+
+Slack               : -0.011ns
+Begin Point         : services/curve/gamma_calculation$calculator/index_reg[3]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/curve/ramread0_syn_25.addra[6] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.334ns (cell 0.109ns (32%), net 0.225ns (68%))
+Clock Skew          : 0.045ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 2
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/gamma_calculation$calculator/index_reg[3]_syn_4.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x007y034z3          0.109    f     3.049          pin: services/curve/gamma_calculation$calculator/index_reg[3]_syn_4.q[0]
+net (fo=2)                              0.225          3.274          net: services/curve/gamma_calculation$calculator/index[4],  ../../../user_source/hdl_source/redo/b_colour_curve_gamma.v(6)
+                                                                      pin: services/curve/ramread0_syn_25.addra[6]
+EMB (reg)           x008y027            0.000    f     3.274       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.274               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/ramread0_syn_25.clka
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          3.432               
+clock uncertainty                       0.100          3.532               
+clock pessimism                        -0.247          3.285               
+--------------------------------------------------------------------  ---------------
+Required                                               3.285               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.011               
+
+Slack               : -0.004ns
+Begin Point         : services/producer/image_fifo/wp_reg[8]_syn_4.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/image_fifo/ramread0_syn_26.addra[10] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.341ns (cell 0.109ns (31%), net 0.232ns (69%))
+Clock Skew          : 0.045ns
+Logic Level         : 1 ( EMB=1 )
+Max Fanout          : 3
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/image_fifo/wp_reg[8]_syn_4.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+ADDER (clk2q)       x007y029z0          0.109    f     3.049          pin: services/producer/image_fifo/wp_reg[8]_syn_4.q[0]
+net (fo=3)                              0.232          3.281          net: services/producer/image_fifo/wp[7],  ../../../user_source/hdl_source/dual/media_block_fifo.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_26.addra[10]
+EMB (reg)           x008y027            0.000    f     3.281       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.281               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/image_fifo/ramread0_syn_26.clka
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200          3.432               
+clock uncertainty                       0.100          3.532               
+clock pessimism                        -0.247          3.285               
+--------------------------------------------------------------------  ---------------
+Required                                               3.285               
+--------------------------------------------------------------------  ---------------
+Slack                                                 -0.004               
+
+Slack               : 0.010ns
+Begin Point         : services/curve/gamma_calculation$calculator/base_curve/divide_contrast_reg_syn_26.clk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : services/producer/staging_input[9]_syn_27.sr (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : removal
+Process             : fast
+Budget              : 0.000ns { clk rising@0.000ns - clk rising@0.000ns }
+Data Path Delay     : 0.471ns (cell 0.196ns (41%), net 0.275ns (59%))
+Clock Skew          : 0.108ns
+Logic Level         : 0
+Max Fanout          : 65
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.184          1.184          pin: clk_syn_2.di
+net (fo=6958)                           1.756          2.940          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/curve/gamma_calculation$calculator/base_curve/divide_contrast_reg_syn_26.clk
+launch edge                             0.000    r     2.940               
+--------------------------------------------------------------------  ---------------
+clk2q               x004y035z2          0.109    f     3.049          pin: services/curve/gamma_calculation$calculator/base_curve/divide_contrast_reg_syn_26.q[0]
+net (fo=65)                             0.275          3.324          net: services/rst_n_dup_45,  ../../../user_source/hdl_source/redo/b_board_services.v(6)
+                                                                      pin: services/producer/staging_input[9]_syn_27.sr
+reg                 x004y036z3          0.087    r     3.411               
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.411               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/producer/staging_input[9]_syn_27.clk
+capture edge                            0.000    r     3.232               
+--------------------------------------------------------------------  ---------------
+removal                                 0.253          3.485               
+clock uncertainty                       0.100          3.585               
+clock pessimism                        -0.184          3.401               
+--------------------------------------------------------------------  ---------------
+Required                                               3.401               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.010               
+
+
+Inter clock domain timing
+--------------------------------------------------
+
+IP timing
+--------------------------------------------------

@@ -1,0 +1,602 @@
+Table of Contents
+-----------------
+1. checking no clock(0) (HIGH)
+2. checking clock definition(0) (HIGH)
+3. checking dummy node(4) (HIGH)
+4. checking invalid constraint(0) (HIGH)
+5. checking pll/clock buffer clock constraints(0) (HIGH)
+6. checking combinational loops(0) (HIGH)
+7. checking soft fifo timing exception constraints(0) (HIGH)
+8. checking no path constraints(0) (MEDIUM)
+9. checking shadowed/ignored timing exception constraints(0) (MEDIUM)
+10. checking no input delay(7) (MEDIUM)
+11. checking no output delay(29) (MEDIUM)
+12. checking partial input delay(3) (MEDIUM)
+13. checking partial output delay(0) (MEDIUM)
+14. checking abnormal input delay(0) (MEDIUM)
+
+
+1. checking nets with no clock driven. (HIGH)
+---------------------------------------------
+2. checking clock definition problems. (HIGH)
+---------------------------------------------
+2.1 There are 0 leaf clock pins driven by multiple clocks. (HIGH)
+
+
+2.2 There are 0 clocks created on internal clock network. (HIGH)
+
+
+2.3 There are 0 unexpandable clock sets. (HIGH)
+
+
+2.4 There are 0 local clocks. (HIGH)
+
+
+2.5 There are 0 generated clocks that are not connected to their master clocks. (HIGH)
+
+
+3. checking dummy nodes. (HIGH)
+---------------------------------------------
+There are 4 nodes are dangling. (HIGH)
+
+DummyNode in Model: EG_PHY_BRAM32K
+	data_plane/u_osd/emergency_bitmap/page_2_lane_0.dob[9]
+	data_plane/u_osd/emergency_bitmap/page_1_lane_0.dob[9]
+	data_plane/u_osd/emergency_bitmap/page_0_lane_0.dob[9]
+	data_plane/u_osd/emergency_bitmap/page_2_lane_1.dob[9]
+	data_plane/u_osd/emergency_bitmap/page_1_lane_1.dob[9]
+	data_plane/u_osd/emergency_bitmap/page_0_lane_1.dob[9]
+	data_plane/u_osd/emergency_rom/bank_1_0.dob[9]
+	data_plane/u_osd/emergency_rom/bank_0_0.dob[9]
+	data_plane/u_osd/emergency_rom/bank_1_1.dob[9]
+	data_plane/u_osd/emergency_rom/bank_0_1.dob[9]
+	data_plane/u_osd/normal_rom/font_1.dob[9]
+	data_plane/u_osd/normal_rom/font_0.dob[9]
+
+DummyNode in Model: EG_PHY_LSLICE
+	data_plane/u_osd/title1_reg_syn_5.d[0]
+	data_plane/u_osd/title1_reg_syn_5.c[0]
+	media_receive/commit_core/pcm_word_reg[30]_syn_4.d[1]
+	media_receive/commit_core/pcm_word_reg[30]_syn_4.d[0]
+	control_plane/replies/mux14_syn_818.c[1]
+	control_plane/replies/mux14_syn_822.c[1]
+	data_plane/pcm_service/acknowledged_token_reg[15]_syn_4.c[1]
+	data_plane/pcm_service/acknowledged_token_reg[21]_syn_4.c[0]
+	actuator/previous_values_reg[66]_syn_4.c[0]
+	actuator/previous_values_reg[62]_syn_4.c[1]
+	control_plane/replies/metadata_reg[189]_syn_4.d[0]
+	execution/settings_reg[12]_syn_4.b[1]
+	actuator/previous_values_reg[62]_syn_4.b[0]
+	actuator/previous_values_reg[62]_syn_4.a[0]
+	execution/settings_reg[12]_syn_4.a[1]
+	actuator/previous_values_reg[66]_syn_4.d[0]
+	actuator/previous_values_reg[62]_syn_4.d[1]
+	actuator/previous_values_reg[66]_syn_4.b[0]
+	actuator/previous_values_reg[62]_syn_4.b[1]
+	control_plane/replies/metadata_reg[189]_syn_4.c[0]
+	execution/settings_reg[12]_syn_4.d[1]
+	actuator/previous_values_reg[62]_syn_4.d[0]
+	storage/reader/values_reg[52]_syn_4.c[1]
+	control_plane/board_link/mailbox_b_n_syn_9.d[1]
+	control_plane/board_link/mailbox_b_n_syn_9.c[1]
+	control_plane/board_link/mailbox_reg[53]_syn_4.d[1]
+	control_plane/board_link/mailbox_reg[53]_syn_4.c[1]
+	control_plane/portal/replies/source_address_reg[0]_syn_16.mi[1]
+	control_plane/portal/replies/source_byte[1]_syn_93.mi[0]
+	control_plane/portal/replies/source_address_reg[1]_syn_24.mi[0]
+	control_plane/portal/replies/source_address_reg[1]_syn_22.mi[0]
+	control_plane/portal/replies/source_address_reg[1]_syn_22.mi[1]
+	control_plane/portal/replies/source_address_reg[1]_syn_24.mi[1]
+	control_plane/portal/replies/source_address_reg[1]_syn_30.mi[1]
+	control_plane/portal/replies/source_address_reg[0]_syn_16.mi[0]
+	control_plane/replies/mux14_syn_822.d[1]
+	control_plane/replies/mux14_syn_818.d[1]
+	data_plane/pcm_service/acknowledged_token_reg[15]_syn_4.d[1]
+	data_plane/pcm_service/acknowledged_token_reg[21]_syn_4.d[0]
+	data_plane/control_reset_reg[1]_syn_614.mi[1]
+	data_plane/u_osd/colbit[3]_syn_577.mi[0]
+	data_plane/u_osd/erow[4]_syn_38.mi[0]
+	data_plane/control_reset_reg[1]_syn_582.mi[1]
+	data_plane/control_reset_reg[1]_syn_586.mi[1]
+	data_plane/control_reset_reg[1]_syn_602.mi[0]
+	data_plane/u_osd/font_stream_osd/valid_q_n_syn_776.mi[0]
+	emergency_content/upload_reg_syn_77.mi[0]
+	control_plane/requests/external_cancel_reg_syn_146.mi[0]
+	data_plane/control_reset_reg[1]_syn_592.mi[1]
+	data_plane/control_reset_reg[1]_syn_599.mi[0]
+	data_plane/control_reset_reg[1]_syn_635.mi[1]
+	data_plane/control_reset_reg[1]_syn_623.mi[0]
+	data_plane/control_reset_reg[1]_syn_623.mi[1]
+	data_plane/control_reset_reg[1]_syn_635.mi[0]
+	data_plane/control_reset_reg[1]_syn_626.mi[0]
+	data_plane/u_osd/program_bitmap/b1_lane0_n_syn_6.mi[0]
+	data_plane/control_reset_reg[1]_syn_577.mi[1]
+	program_receive/busy_reg_syn_426.mi[0]
+	data_plane/control_reset_reg[1]_syn_572.mi[0]
+	control_plane/requests/state_b[0]_syn_114.mi[0]
+	namespace_control/session_ready_reg_syn_591.mi[0]
+	namespace_control/session_ready_reg_syn_593.mi[0]
+	data_plane/control_reset_reg[1]_syn_632.mi[0]
+	data_plane/control_reset_reg[1]_syn_606.mi[0]
+	storage/transport/mux42_syn_272.mi[0]
+	data_plane/control_reset_reg[1]_syn_569.mi[0]
+	data_plane/control_reset_reg[1]_syn_637.mi[1]
+	data_plane/control_reset_reg[1]_syn_620.mi[1]
+	execution/result_b[0]_syn_15.mi[0]
+	storage/reader/values_reg[52]_syn_4.b[1]
+	data_plane/gallery_commit/local_pipeline$implementation/front_reg[6]_syn_9.mi[0]
+	data_plane/gallery_commit/local_pipeline$implementation/memory_generation_reg[0]_syn_6.mi[0]
+	data_plane/gallery_commit/local_pipeline$implementation/memory_generation_reg[0]_syn_6.mi[1]
+	execution/settings_reg[12]_syn_4.c[1]
+	actuator/previous_values_reg[62]_syn_4.c[0]
+	data_plane/settings_commit/live_reg[30]_syn_4.b[0]
+	data_plane/settings_commit/live_reg[18]_syn_4.b[0]
+	data_plane/pcm_service/descriptor/sent_sync_reg[1]_syn_4.d[1]
+	data_plane/pcm_service/descriptor/held_data_reg[24]_syn_4.d[0]
+	data_plane/pcm_service/descriptor/data_phase$held_phase_reg[31]_syn_4.d[0]
+	data_plane/pcm_service/descriptor/held_data_reg[19]_syn_4.d[0]
+	data_plane/pcm_service/descriptor/sent_sync_reg[1]_syn_4.c[1]
+	data_plane/pcm_service/descriptor/held_data_reg[24]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/data_phase$held_phase_reg[31]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/held_data_reg[19]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/sent_sync_reg[1]_syn_4.b[1]
+	data_plane/pcm_service/descriptor/held_data_reg[24]_syn_4.b[0]
+	data_plane/pcm_service/descriptor/data_phase$held_phase_reg[31]_syn_4.b[0]
+	data_plane/pcm_service/descriptor/held_data_reg[19]_syn_4.b[0]
+	data_plane/settings_commit/live_reg[30]_syn_4.c[0]
+	data_plane/settings_commit/live_reg[18]_syn_4.c[0]
+	data_plane/settings_commit/live_reg[30]_syn_4.e[0]
+	data_plane/settings_commit/live_reg[18]_syn_4.e[0]
+	data_plane/settings_commit/live_reg[30]_syn_4.d[0]
+	data_plane/settings_commit/live_reg[18]_syn_4.d[0]
+	data_plane/gallery_commit/local_pipeline$implementation/memory_generation_reg[18]_syn_4.c[0]
+	data_plane/U3/u2_ram/u2_wrrd/app_wr_en_sft_reg[5]_syn_4.c[1]
+	data_plane/u_hdmi2phy_wrapper/u0_lane_lvds_8_1/S_odd_even_1d_reg_syn_4.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_63.mi[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_66.mi[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_66.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_63.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_77.mi[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_81.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_96.mi[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_73.mi[0]
+	data_plane/u_osd/title_bitmap/config_clk_syn_1044.mi[0]
+	data_plane/u_osd/glyph[2]_syn_35.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_data_distribution/O_island_valid_reg_syn_5.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_assemble/S_island_packet_req_2d_reg_syn_15.mi[1]
+	media_receive/commit_core/pcm_word_reg[30]_syn_4.c[0]
+	media_receive/commit_core/pcm_word_reg[30]_syn_4.c[1]
+	data_plane/U3/u2_ram/u2_wrrd/app_wr_en_sft_reg[5]_syn_4.d[1]
+	data_plane/gallery_commit/local_pipeline$implementation/memory_generation_reg[18]_syn_4.d[0]
+	font_stream_receive/state_reg[2]_syn_9.mi[0]
+	data_plane/settings_commit/live_reg[30]_syn_4.a[0]
+	data_plane/settings_commit/live_reg[18]_syn_4.a[0]
+	local_control/results/mux17_syn_930.b[1]
+	local_control/results/mux17_syn_930.e[1]
+	local_control/results/mux17_syn_930.d[1]
+	local_control/results/mux17_syn_930.c[1]
+	data_plane/u_colour_display/raw1_reg[6]_syn_4.d[1]
+	data_plane/u_colour_display/raw1_reg[6]_syn_4.b[1]
+	data_plane/u_colour_display/raw1_reg[6]_syn_4.c[1]
+	storage/reader/values_reg[52]_syn_4.a[1]
+	storage/reader/values_reg[52]_syn_4.d[1]
+	local_control/results/mux17_syn_930.a[1]
+	program_receive/upload_uid_reg[12]_syn_4.b[0]
+	program_receive/upload_uid_reg[25]_syn_4.b[0]
+	program_receive/upload_uid_reg[12]_syn_4.d[0]
+	program_receive/upload_uid_reg[25]_syn_4.d[0]
+	program_receive/upload_uid_reg[12]_syn_4.c[0]
+	program_receive/upload_uid_reg[25]_syn_4.c[0]
+	storage/reader/saved_values_reg[67]_syn_4.c[0]
+	storage/reader/saved_values_reg[65]_syn_4.c[0]
+	storage/reader/saved_values_reg[67]_syn_4.b[0]
+	storage/reader/saved_values_reg[65]_syn_4.b[0]
+	storage/reader/marker_reg[3]_syn_4.d[0]
+	storage/shared_store_crc$table_pair/crc_a_b[7]_syn_85.d[0]
+	storage/reader/marker_reg[3]_syn_4.c[0]
+	storage/shared_store_crc$table_pair/crc_a_b[7]_syn_85.c[0]
+	storage/reader/marker_reg[3]_syn_4.e[0]
+	storage/shared_store_crc$table_pair/crc_a_b[7]_syn_85.e[0]
+	storage/reader/marker_reg[3]_syn_4.b[0]
+	storage/shared_store_crc$table_pair/crc_a_b[7]_syn_85.b[0]
+	storage/reader/marker_reg[3]_syn_4.a[0]
+	storage/shared_store_crc$table_pair/crc_a_b[7]_syn_85.a[0]
+	storage/reader/saved_values_reg[67]_syn_4.d[0]
+	storage/reader/saved_values_reg[65]_syn_4.d[0]
+	storage/writer/mux134_syn_856.d[0]
+	commits/held_values_reg[5]_syn_4.d[1]
+	storage/writer/mux134_syn_856.b[0]
+	commits/held_values_reg[5]_syn_4.b[1]
+	commits/held_values_reg[5]_syn_4.c[1]
+	storage/writer/mux134_syn_856.c[0]
+	control_plane/portal/receiver/packet_valid_n_syn_14.b[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_gen/U_audio_sample_packet_2_channel/S_packet_body_1d_reg[39]_syn_4.b[1]
+	control_plane/portal/receiver/packet_valid_n_syn_12.b[1]
+	data_plane/u_osd/fg[5]_syn_31.b[0]
+	control_plane/portal/receiver/packet_valid_n_syn_14.a[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_gen/U_audio_sample_packet_2_channel/S_packet_body_1d_reg[39]_syn_4.a[1]
+	control_plane/portal/receiver/packet_valid_n_syn_12.a[1]
+	data_plane/u_osd/fg[5]_syn_31.a[0]
+	control_plane/portal/receiver/packet_valid_n_syn_14.c[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_gen/U_audio_sample_packet_2_channel/S_packet_body_1d_reg[39]_syn_4.c[1]
+	control_plane/portal/receiver/packet_valid_n_syn_12.c[1]
+	data_plane/u_osd/fg[5]_syn_31.c[0]
+	control_plane/portal/receiver/packet_valid_n_syn_14.d[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_gen/U_audio_sample_packet_2_channel/S_packet_body_1d_reg[39]_syn_4.d[1]
+	control_plane/portal/receiver/packet_valid_n_syn_12.d[1]
+	data_plane/u_osd/fg[5]_syn_31.d[0]
+
+DummyNode in Model: EG_PHY_MSLICE
+	data_plane/u_pcm_audio/sample_l_b1[3]_syn_4.d[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_gen/U_audio_sample_packet_2_channel/S_audio_right_data_1d_reg[10]_syn_4.d[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_gen/U_audio_sample_packet_2_channel/S_audio_right_data_1d_reg[10]_syn_4.c[1]
+	data_plane/u_pcm_audio/sample_l_b1[3]_syn_4.c[0]
+	control_plane/replies/mux14_syn_816.c[1]
+	emergency_content/program_lease_reg_syn_182.d[0]
+	media_receive/commit_core/acknowledged_uid_reg[26]_syn_4.d[0]
+	data_plane/pcm_service/acknowledged_token_reg[29]_syn_4.c[0]
+	data_plane/u_colour_display/held_token_reg[26]_syn_4.d[0]
+	data_plane/u_colour_display/held_descriptor_reg[26]_syn_4.c[0]
+	data_plane/pcm_service/completed_token_reg[29]_syn_4.d[0]
+	data_plane/u_colour_display/applied_style_reg[10]_syn_4.d[1]
+	data_plane/u_colour_display/applied_style_reg[10]_syn_4.c[1]
+	commits/settings_epoch_reg[16]_syn_4.c[0]
+	data_plane/settings_commit/held_reg[11]_syn_4.c[0]
+	commits/settings_epoch_reg[16]_syn_4.d[0]
+	data_plane/settings_commit/held_reg[11]_syn_4.d[0]
+	data_plane/control_reset_reg[1]_syn_675.c[1]
+	storage/reader/saved_values_reg[60]_syn_4.c[0]
+	storage/reader/saved_values_reg[46]_syn_4.c[1]
+	menu_display_receive/low_word_reg[8]_syn_4.d[0]
+	menu_display_receive/low_word_reg[10]_syn_4.d[0]
+	control_plane/portal/control/body_owned_n_syn_768.d[1]
+	menu_display_receive/low_word_reg[8]_syn_4.c[0]
+	menu_display_receive/low_word_reg[10]_syn_4.c[0]
+	control_plane/portal/control/body_owned_n_syn_768.c[1]
+	control_plane/portal/replies/source_byte[5]_syn_102.mi[0]
+	data_plane/u_colour_display/held_descriptor_reg[26]_syn_4.d[0]
+	data_plane/pcm_service/acknowledged_token_reg[29]_syn_4.d[0]
+	control_plane/replies/mux14_syn_816.d[1]
+	data_plane/frame_read_write_m0/write_buf/rd_to_wr_cross_inst/primary_addr_gray_sync_reg[0]_syn_4.c[0]
+	data_plane/control_reset_reg[1]_syn_661.mi[0]
+	data_plane/control_reset_reg[1]_syn_824.mi[0]
+	data_plane/u_osd/base1_b[6]_syn_75.mi[0]
+	data_plane/u_osd/colbit[3]_syn_585.mi[0]
+	data_plane/control_reset_reg[1]_syn_661.mi[1]
+	data_plane/u_osd/ink_n_syn_132.mi[0]
+	control_plane/portal/control/body_owned_n_syn_708.mi[0]
+	data_plane/u_osd/glyph[6]_syn_17.mi[0]
+	data_plane/u_osd/fg[20]_syn_21.mi[0]
+	data_plane/control_reset_reg[1]_syn_812.mi[0]
+	control_plane/portal/control/abort_pending_reg_syn_41.mi[0]
+	data_plane/control_reset_reg[1]_syn_740.mi[0]
+	program_receive/busy_reg_syn_436.mi[0]
+	data_plane/u_pcm_audio/sample_l_b1[3]_syn_4.mi[0]
+	program_receive/busy_reg_syn_434.mi[0]
+	data_plane/control_reset_reg[1]_syn_729.mi[1]
+	data_plane/u_pcm_audio/sample_r_b1[13]_syn_66.mi[0]
+	data_plane/u_osd/program_scroll_b[12]_syn_129.mi[0]
+	data_plane/u_osd/font_stream_osd/valid_q_n_syn_792.mi[0]
+	data_plane/u_osd/font_stream_osd/valid_q_n_syn_796.mi[0]
+	data_plane/control_reset_reg[1]_syn_816.mi[0]
+	data_plane/control_reset_reg[1]_syn_733.mi[1]
+	data_plane/control_reset_reg[1]_syn_733.mi[0]
+	proof/primed_reg_syn_562.mi[0]
+	data_plane/control_reset_reg[1]_syn_707.mi[0]
+	control_plane/requests/external_cancel_reg_syn_156.mi[0]
+	control_plane/replies/choice_header[39]_syn_8.mi[0]
+	control_plane/portal/replies/source_byte[7]_syn_71.mi[0]
+	data_plane/control_reset_reg[1]_syn_746.mi[0]
+	data_plane/control_reset_reg[1]_syn_746.mi[1]
+	data_plane/control_reset_reg[1]_syn_783.mi[0]
+	data_plane/control_reset_reg[1]_syn_721.mi[0]
+	data_plane/control_reset_reg[1]_syn_865.mi[0]
+	data_plane/control_reset_reg[1]_syn_743.mi[0]
+	data_plane/control_reset_reg[1]_syn_712.mi[0]
+	data_plane/control_reset_reg[1]_syn_737.mi[0]
+	data_plane/control_reset_reg[1]_syn_687.mi[0]
+	data_plane/control_reset_reg[1]_syn_800.mi[1]
+	data_plane/control_reset_reg[1]_syn_800.mi[0]
+	data_plane/control_reset_reg[1]_syn_900.mi[0]
+	data_plane/control_reset_reg[1]_syn_880.mi[0]
+	data_plane/control_reset_reg[1]_syn_712.mi[1]
+	media_receive/commit_core/mux123_syn_174.mi[0]
+	data_plane/control_reset_reg[1]_syn_841.mi[0]
+	proof/primed_reg_syn_560.mi[0]
+	image_actions/finished_reg_syn_137.mi[0]
+	media_receive/guard/mux6_syn_462.mi[0]
+	execution/mux99_syn_457.mi[0]
+	media_commands/image_offer_reg_syn_106.mi[0]
+	program_receive/sub2_syn_53.mi[0]
+	execution/mux99_syn_459.mi[0]
+	execution/result_b[3]_syn_97.mi[0]
+	data_plane/control_reset_reg[1]_syn_757.mi[0]
+	media_commands/restore_offer_reg_syn_104.mi[0]
+	data_plane/control_reset_reg[1]_syn_646.mi[1]
+	media_receive/guard/reject_error_reg[1]_syn_175.mi[0]
+	data_plane/control_reset_reg[1]_syn_772.mi[0]
+	data_plane/u_osd/font_stream_osd/render_error_sticky_reg[1]_syn_90.mi[0]
+	control_plane/portal/replies/source_byte[1]_syn_99.mi[0]
+	emergency_content/result_valid_reg_syn_301.mi[0]
+	control_plane/portal/replies/source_byte[7]_syn_75.mi[0]
+	control_plane/portal/replies/source_byte[1]_syn_97.mi[0]
+	control_plane/portal/replies/source_byte[4]_syn_75.mi[0]
+	emergency_content/mux162_syn_61.mi[0]
+	namespace_control/session_ready_reg_syn_605.mi[0]
+	namespace_control/session_ready_reg_syn_609.mi[0]
+	control_plane/requests/external_cancel_reg_syn_154.mi[0]
+	data_plane/control_reset_reg[1]_syn_698.mi[1]
+	data_plane/control_reset_reg[1]_syn_698.mi[0]
+	local_control/authority/target_reg[1]_syn_15.mi[0]
+	data_plane/u_pcm_audio/increment[18]_syn_7.mi[0]
+	data_plane/u_osd/emergency_bitmap/write_address[8]_syn_4.mi[0]
+	control_plane/portal/replies/source_byte[5]_syn_98.mi[0]
+	data_plane/u_pcm_audio/increment[18]_syn_9.mi[0]
+	data_plane/control_reset_reg[1]_syn_854.mi[1]
+	media_receive/commit_core/abort_requested_reg_syn_300.mi[0]
+	storage/reader/corrupt_seen_reg_syn_191.mi[0]
+	storage/writer/blank_reg_syn_14.mi[0]
+	storage/reader/mux73_syn_321.mi[0]
+	storage/writer/mux135_syn_781.mi[0]
+	local_control/media_effects/response_valid_reg_syn_380.mi[0]
+	local_control/authority/mux112_syn_133.mi[0]
+	local_control/authority/pc_active_reg_syn_21.mi[0]
+	local_control/authority/response_valid_reg_syn_243.mi[0]
+	data_plane/u_osd/emergency_bitmap/lower_n3_syn_4.mi[0]
+	storage/reader/mux26_syn_143.mi[0]
+	storage/writer/mux150_syn_49.mi[0]
+	storage/reader/length_reg[6]_syn_9.mi[0]
+	storage/transport/mux167_syn_25.mi[0]
+	data_plane/control_reset_reg[1]_syn_666.mi[0]
+	data_plane/control_reset_reg[1]_syn_680.mi[1]
+	data_plane/control_reset_reg[1]_syn_680.mi[0]
+	data_plane/control_reset_reg[1]_syn_716.mi[1]
+	data_plane/control_reset_reg[1]_syn_716.mi[0]
+	data_plane/control_reset_reg[1]_syn_859.mi[0]
+	namespace_control/session_ready_reg_syn_607.mi[0]
+	namespace_control/session_ready_reg_syn_613.mi[0]
+	data_plane/control_reset_reg[1]_syn_780.mi[0]
+	data_plane/control_reset_reg[1]_syn_907.mi[0]
+	data_plane/control_reset_reg[1]_syn_643.mi[0]
+	data_plane/control_reset_reg[1]_syn_819.mi[0]
+	data_plane/control_reset_reg[1]_syn_819.mi[1]
+	data_plane/control_reset_reg[1]_syn_890.mi[1]
+	data_plane/control_reset_reg[1]_syn_668.mi[0]
+	data_plane/control_reset_reg[1]_syn_655.mi[0]
+	control_plane/shared_crc_table$table_pair/ib[1]_syn_67.mi[0]
+	local_control/authority/persist_values_reg[0]_syn_44.mi[0]
+	namespace_control/mux19_syn_330.mi[0]
+	data_plane/control_reset_reg[1]_syn_675.mi[1]
+	data_plane/control_reset_reg[1]_syn_882.mi[0]
+	storage/transport/ms_counter_b[14]_syn_25.mi[0]
+	storage/transport/ms_counter_b[14]_syn_23.mi[0]
+	namespace_control/mux19_syn_328.mi[0]
+	namespace_control/mux19_syn_332.mi[0]
+	storage/writer/mux135_syn_777.mi[0]
+	data_plane/control_reset_reg[1]_syn_658.mi[0]
+	data_plane/control_reset_reg[1]_syn_658.mi[1]
+	storage/writer/mux135_syn_779.mi[0]
+	control_plane/shared_crc_table$table_pair/ib[7]_syn_63.mi[0]
+	data_plane/u_pcm_audio/gain_b1[8]_syn_62.mi[0]
+	data_plane/u_osd/ecol[3]_syn_14.mi[0]
+	control_plane/portal/receiver/version_ok_reg_syn_15.mi[0]
+	data_plane/core_sync_reg[1]_syn_4.mi[0]
+	data_plane/u_osd/program_phase_b[23]_syn_109.mi[0]
+	stream_text_store/requested_offset[3]_syn_4.mi[0]
+	data_plane/video_reset_pipe_reg[1]_syn_91.mi[0]
+	data_plane/control_reset_reg[1]_syn_675.b[1]
+	storage/reader/saved_values_reg[60]_syn_4.b[0]
+	storage/reader/saved_values_reg[46]_syn_4.b[1]
+	data_plane/frame_read_write_m0/write_buf/rd_to_wr_cross_inst/primary_addr_gray_sync_reg[0]_syn_4.d[0]
+	data_plane/gallery_commit/local_pipeline$implementation/front_reg[42]_syn_4.mi[0]
+	data_plane/gallery_commit/local_pipeline$implementation/memory_generation_reg[1]_syn_8.mi[0]
+	data_plane/pcm_memory/state_reg[1]_syn_10.mi[0]
+	data_plane/pcm_memory/state_reg[1]_syn_13.mi[0]
+	data_plane/u_colour_display/held_token_reg[26]_syn_4.c[0]
+	media_receive/commit_core/acknowledged_uid_reg[26]_syn_4.c[0]
+	data_plane/pcm_service/completed_token_reg[29]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/held_data_reg[30]_syn_4.d[0]
+	data_plane/pcm_service/input_fifo/storage/rd_to_wr_cross_inst/sync_r1_reg[5]_syn_4.d[0]
+	data_plane/pcm_service/descriptor/valid_sync_reg[0]_syn_4.d[0]
+	data_plane/pcm_service/input_fifo/storage/rd_to_wr_cross_inst/sync_r1_reg[5]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/held_data_reg[30]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/valid_sync_reg[0]_syn_4.c[0]
+	data_plane/pcm_service/descriptor/held_data_reg[30]_syn_4.b[0]
+	data_plane/pcm_service/input_fifo/storage/rd_to_wr_cross_inst/sync_r1_reg[5]_syn_4.b[0]
+	data_plane/pcm_service/descriptor/valid_sync_reg[0]_syn_4.b[0]
+	data_plane/settings_commit/live_reg[16]_syn_4.d[0]
+	data_plane/settings_commit/held_reg[38]_syn_4.d[0]
+	data_plane/settings_commit/live_reg[16]_syn_4.c[0]
+	data_plane/settings_commit/held_reg[38]_syn_4.c[0]
+	data_plane/u_osd/out_rgb_b[4]_syn_16.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_90.mi[1]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u0_reset_sync/O_sync_reset_reg_syn_90.mi[0]
+	data_plane/u_hdmi_1_4b_transmitter_core_wrapper/u_hdmi_tx_controller_wrapper/u_hdmi_island_data_assemble/S_island_packet_req_1d_reg_syn_14.mi[0]
+	data_plane/u_colour_display/held_token_reg[26]_syn_4.b[0]
+	media_receive/commit_core/acknowledged_uid_reg[26]_syn_4.b[0]
+	data_plane/pcm_service/completed_token_reg[29]_syn_4.b[0]
+	data_plane/u_colour_display/held_token_reg[26]_syn_4.a[0]
+	media_receive/commit_core/acknowledged_uid_reg[26]_syn_4.a[0]
+	data_plane/pcm_service/completed_token_reg[29]_syn_4.a[0]
+	emergency_content/program_lease_reg_syn_182.c[0]
+	emergency_content/program_lease_reg_syn_182.a[0]
+	data_plane/control_reset_reg[1]_syn_675.a[1]
+	storage/reader/saved_values_reg[60]_syn_4.a[0]
+	storage/reader/saved_values_reg[46]_syn_4.a[1]
+	data_plane/control_reset_reg[1]_syn_675.d[1]
+	storage/reader/saved_values_reg[60]_syn_4.d[0]
+	storage/reader/saved_values_reg[46]_syn_4.d[1]
+	emergency_content/program_lease_reg_syn_182.b[0]
+	program_receive/upload_uid_reg[2]_syn_4.b[1]
+	control_plane/board_link/mailbox_phase_reg[61]_syn_4.b[0]
+	font_stream_receive/expected_utf8_reg[0]_syn_4.b[0]
+	program_receive/upload_uid_reg[2]_syn_4.d[1]
+	control_plane/board_link/mailbox_phase_reg[61]_syn_4.d[0]
+	font_stream_receive/expected_utf8_reg[0]_syn_4.d[0]
+	program_receive/upload_uid_reg[2]_syn_4.c[1]
+	control_plane/board_link/mailbox_phase_reg[61]_syn_4.c[0]
+	font_stream_receive/expected_utf8_reg[0]_syn_4.c[0]
+
+DummyNode in Model: EG_PHY_PAD
+	sd_dclk_syn_32.opad
+	sd_miso_syn_2.ipad
+	sd_mosi_syn_12.opad
+	sd_ncs_syn_1.opad
+	seg_data[7]_syn_1.opad
+	seg_data[6]_syn_1.opad
+	seg_data[5]_syn_1.opad
+	seg_data[4]_syn_1.opad
+	seg_data[3]_syn_1.opad
+	seg_data[2]_syn_1.opad
+	seg_data[1]_syn_1.opad
+	seg_data[0]_syn_1.opad
+	seg_sel[7]_syn_35.opad
+	seg_sel[6]_syn_1.opad
+	seg_sel[5]_syn_1.opad
+	seg_sel[4]_syn_1.opad
+	seg_sel[3]_syn_1.opad
+	seg_sel[2]_syn_1.opad
+	seg_sel[1]_syn_1.opad
+	seg_sel[0]_syn_1.opad
+	user_flash_hold_n_syn_1.opad
+	user_flash_wp_n_syn_1.opad
+	data_plane/U3/sdram_syn_5.opad
+	data_plane/U3/sdram_syn_10.opad
+
+4. checking invalid constraints. (HIGH)
+---------------------------------------------
+There are 0 invalid constraints. (HIGH)
+
+
+5. checking PLL/buffer clocks. (HIGH)
+---------------------------------------------
+PLL/buffer inst: data_plane/sys_pll_m0/pll_inst
+{
+	There are 0 clock pins that have no clock constraints. (HIGH)
+
+
+	There are 0 clocks whose clock frequency do not match the PLL setting. (HIGH)
+
+
+}
+
+PLL/buffer inst: data_plane/u_audio_pll/pll_inst
+{
+	There are 0 clock pins that have no clock constraints. (HIGH)
+
+
+	There are 0 clocks whose clock frequency do not match the PLL setting. (HIGH)
+
+
+}
+
+PLL/buffer inst: data_plane/video_pll_m0/pll_inst
+{
+	There are 0 clock pins that have no clock constraints. (HIGH)
+
+
+	There are 0 clocks whose clock frequency do not match the PLL setting. (HIGH)
+
+
+}
+
+6. checking combinational loops. (HIGH)
+---------------------------------------------
+There are 0 combinational loops. (HIGH)
+
+
+7. checking soft fifo set_max_delay constraints. (HIGH)
+---------------------------------------------
+There are 0 max-delay datapath-only paths that are part of the provided async clock paths, whereas the timing between other registers is not relaxed or ignored. (HIGH)
+
+
+8. checking no path constraints. (MEDIUM)
+---------------------------------------------
+There are 0 constraints that have no timing paths. (MEDIUM)
+
+
+9. checking path exception constraints shadowed/ignored by other constraints. (MEDIUM)
+---------------------------------------------
+
+MCP/SMD Summary
+--------------------
+
+		Max Check
+		--------------------
+		     Total    Dominated     Shadowed      Ignored   Constraint
+		         4            4            0            0   set_multicycle_path -setup -end -from [get_ports {user_flash_miso}] 4
+		        36           36            0            0   set_max_delay -from [get_regs -nowarn {*/primary_addr_gray_reg[*]}] -to [get_regs -nowarn {*/sync_r1[*]}] -datapath_only 19.700
+		        36           36            0            0   set_max_delay -from [get_regs -nowarn {*/primary_addr_gray_reg[*]}] -to [get_regs -nowarn {*/sync_r1[*]}] -datapath_only 19.700
+		        36           36            0            0   set_max_delay -from [get_regs -nowarn {*/primary_addr_gray_reg[*]}] -to [get_regs -nowarn {*/sync_r1[*]}] -datapath_only 19.700
+		        36           36            0            0   set_max_delay -from [get_regs -nowarn {*/primary_addr_gray_reg[*]}] -to [get_regs -nowarn {*/sync_r1[*]}] -datapath_only 19.700
+
+		Min Check
+		--------------------
+		     Total    Dominated     Shadowed      Ignored   Constraint
+		         4            4            0            0   set_multicycle_path -hold -end -from [get_ports {user_flash_miso}] 3
+		         4            4            0            0   set_multicycle_path -hold -start -to [get_ports {user_flash_mosi user_flash_cs_n}] 4
+
+10. checking no input delay (MEDIUM)
+--------------------------
+There are 7 input ports that with no input delay specified. (MEDIUM)
+
+	HDMI_DDC_SDA
+	key1
+	key2
+	key3
+	rst_n
+	sd_miso
+	uart_rx
+
+11. checking no output delay (MEDIUM)
+--------------------------
+There are 29 output ports that with no output delay specified. (MEDIUM)
+
+	HDMI_CLK_P
+	HDMI_D0_P
+	HDMI_D1_P
+	HDMI_D2_P
+	HDMI_DDC_SCL
+	HDMI_DDC_SDA
+	board_ready
+	sd_dclk
+	sd_mosi
+	sd_ncs
+	seg_data[7]
+	seg_data[6]
+	seg_data[5]
+	seg_data[4]
+	seg_data[3]
+	seg_data[2]
+	seg_data[1]
+	seg_data[0]
+	seg_sel[7]
+	seg_sel[6]
+	seg_sel[5]
+	seg_sel[4]
+	seg_sel[3]
+	seg_sel[2]
+	seg_sel[1]
+	seg_sel[0]
+	uart_tx
+	user_flash_hold_n
+	user_flash_wp_n
+
+12. checking partial input delay (MEDIUM)
+--------------------------
+There are 3 input ports with partial input delay specified. (MEDIUM)
+
+	board_cs_n
+	board_mosi
+	user_flash_miso
+
+13. checking partial output delay (MEDIUM)
+--------------------------
+There are 0 output ports with partial output delay specified. (MEDIUM)
+
+
+14. checking abnormal set_input_delay constraints. (MEDIUM)
+---------------------------------------------
+There are 0 abnormal set_input_delay constraints. (MEDIUM)
+
+

@@ -1,0 +1,133 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:34:00 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.77%
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     
+set_multicycle_path -hold -start -to [get_ports {flash_mosi flash_cs_n}] 4
+
+Type           :     MCP
+
+Statistics:
+Max            : SWNS      9.469ns, STNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+Min            : HWNS     79.544ns, HTNS      0.000ns,         0 Viol Endpoints,         1 Total Endpoints,         1 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 9.469ns
+Begin Point         : flash_mosi_syn_4.osclk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : flash_mosi (rising edge triggered by clock flash_spi_out  { rise@0.000000ns  fall@80.000000ns  period=160.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns { flash_spi_out rising@160.000ns - clk rising@140.000ns }
+Data Path Delay     : 14.620ns (cell 14.620ns (100%), net 0.000ns (0%))
+Clock Skew          : 4.089ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.513          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_mosi_syn_4.osclk
+launch edge                           140.000    r   143.513               
+--------------------------------------------------------------------  ---------------
+PAD (clk2q)         x030y071            4.620    f   148.133          pin: flash_mosi_syn_4.opad
+net (fo=1)          P5                  0.000        148.133          net: flash_mosi,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: flash_mosi
+--------------------------------------------------------------------  ---------------
+Arrival                                              148.133               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.665          3.158          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_sclk_syn_10.osclk
+PAD (clk2q)         x030y071            4.089          7.247          pin: flash_sclk_syn_10.opad
+hierarchy                               0.000          7.247          pin: flash_sclk
+capture edge                          160.000    r   167.247               
+--------------------------------------------------------------------  ---------------
+output              P5                -10.000        157.247               
+clock uncertainty                       0.000        157.247               
+clock pessimism                         0.355        157.602               
+--------------------------------------------------------------------  ---------------
+Required                                             157.602               
+--------------------------------------------------------------------  ---------------
+Slack                                                  9.469               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 79.544ns
+Begin Point         : flash_mosi_syn_4.osclk (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+End Point           : flash_mosi (rising edge triggered by clock flash_spi_out  { rise@0.000000ns  fall@80.000000ns  period=160.000000 })
+Check Type          : hold
+Process             : slow
+Budget              : 80.000ns { clk rising@80.000ns - flash_spi_out rising@0.000ns }
+Data Path Delay     : 4.089ns (cell 4.089ns (100%), net 0.000ns (0%))
+Clock Skew          : 4.545ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.665          3.158          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_mosi_syn_4.osclk
+launch edge                            80.000    r    83.158               
+--------------------------------------------------------------------  ---------------
+PAD (clk2q)         x030y071            4.089    r    87.247          pin: flash_mosi_syn_4.opad
+net (fo=1)          P5                  0.000         87.247          net: flash_mosi,  ../../../user_source/hdl_source/system/top_b_redo.v(9)
+                                                                      pin: flash_mosi
+--------------------------------------------------------------------  ---------------
+Arrival                                               87.247               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.660          1.660          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.513          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: flash_sclk_syn_10.osclk
+PAD (clk2q)         x030y071            4.545          8.058          pin: flash_sclk_syn_10.opad
+hierarchy                               0.000          8.058          pin: flash_sclk
+capture edge                            0.000    r     8.058               
+--------------------------------------------------------------------  ---------------
+output              P5                  0.000          8.058               
+clock uncertainty                       0.000          8.058               
+clock pessimism                        -0.355          7.703               
+--------------------------------------------------------------------  ---------------
+Required                                               7.703               
+--------------------------------------------------------------------  ---------------
+Slack                                                 79.544               
+
+
+
+
+
+
+

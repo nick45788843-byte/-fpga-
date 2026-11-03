@@ -1,0 +1,452 @@
+Table of Contents
+-----------------
+1. checking no clock(0) (HIGH)
+2. checking clock definition(0) (HIGH)
+3. checking dummy node(5) (HIGH)
+4. checking invalid constraint(0) (HIGH)
+5. checking pll/clock buffer clock constraints(0) (HIGH)
+6. checking combinational loops(0) (HIGH)
+7. checking soft fifo timing exception constraints(0) (HIGH)
+8. checking no path constraints(0) (MEDIUM)
+9. checking shadowed/ignored timing exception constraints(0) (MEDIUM)
+10. checking no input delay(3) (MEDIUM)
+11. checking no output delay(1) (MEDIUM)
+12. checking partial input delay(3) (MEDIUM)
+13. checking partial output delay(0) (MEDIUM)
+14. checking abnormal input delay(0) (MEDIUM)
+
+
+1. checking nets with no clock driven. (HIGH)
+---------------------------------------------
+2. checking clock definition problems. (HIGH)
+---------------------------------------------
+2.1 There are 0 leaf clock pins driven by multiple clocks. (HIGH)
+
+
+2.2 There are 0 clocks created on internal clock network. (HIGH)
+
+
+2.3 There are 0 unexpandable clock sets. (HIGH)
+
+
+2.4 There are 0 local clocks. (HIGH)
+
+
+2.5 There are 0 generated clocks that are not connected to their master clocks. (HIGH)
+
+
+3. checking dummy nodes. (HIGH)
+---------------------------------------------
+There are 5 nodes are dangling. (HIGH)
+
+DummyNode in Model: EG_PHY_BRAM32K
+	media/programs/entry_upper.dob[9]
+	media/programs/entry_lower.dob[9]
+	services/font_stream/codepoint_ram.dob[9]
+
+DummyNode in Model: EG_PHY_LSLICE
+	media/u_audio/source/mux35_syn_772.mi[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux25_syn_731.mi[0]
+	reset_pipe_reg[1]_syn_516.mi[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux2_syn_61.mi[0]
+	reset_pipe_reg[1]_syn_466.mi[0]
+	media/u_images/diag_report_word[80]_syn_7.mi[0]
+	services/curve/affected_registered_n_syn_55.mi[0]
+	services/curve/affected_registered_n_syn_53.mi[0]
+	services/producer/selected_operation_value[12]_syn_17.mi[0]
+	services/uid_envelope$commands/selected_response_ticket[2]_syn_584.mi[0]
+	services/producer/got_reply_reg_syn_93.mi[0]
+	services/producer/selected_operation_value[18]_syn_234.mi[0]
+	services/producer/image_active_reg_syn_27.mi[0]
+	services/scheduler/master/read_word[16]_syn_19.mi[0]
+	services/producer/audio_block_ready_n_syn_164.mi[0]
+	al_2495.mi[0]
+	media/u_audio/mux34_syn_93.mi[0]
+	reset_pipe_reg[1]_syn_454.mi[1]
+	reset_pipe_reg[1]_syn_454.mi[0]
+	services/producer/audio_block_ready_n_syn_168.mi[0]
+	services/producer/mux291_syn_80.mi[0]
+	services/producer/staging_input[28]_syn_18.mi[0]
+	services/scheduler/master/read_word[19]_syn_17.mi[0]
+	services/normal/config_service/backend/timer_reg[29]_syn_161.mi[0]
+	services/normal/config_service/backend/timer_reg[29]_syn_167.mi[0]
+	reset_pipe_reg[1]_syn_448.mi[1]
+	services/normal/config_service/storage/mux202_syn_306.mi[0]
+	services/normal/config_service/storage/mux194_syn_235.mi[0]
+	services/normal/config_service/storage/mux176_syn_1122.mi[0]
+	services/normal/config_service/storage/mux189_syn_1117.mi[0]
+	services/normal/config_service/storage/error_code_b[5]_syn_24.mi[0]
+	services/cmd22_font/result_error_b[2]_syn_6.mi[0]
+	services/normal/config_service/font_reader/state_b[1]_syn_333.mi[0]
+	services/normal/text_service/rpc/mux17_syn_818.mi[0]
+	services/normal/config_service/storage/mux206_syn_1691.mi[0]
+	reset_pipe_reg[1]_syn_535.mi[1]
+	reset_pipe_reg[1]_syn_535.mi[0]
+	reset_pipe_reg[1]_syn_648.mi[1]
+	reset_pipe_reg[1]_syn_649.mi[1]
+	media/u_shared/arbiter/pending_image_reg_syn_49.mi[0]
+	media/u_images/load_failed_reg_syn_101.mi[0]
+	media/u_images/diagnostic_data_b1[99]_syn_22.mi[0]
+	media/u_images/diagnostic_data_b1[98]_syn_13.mi[0]
+	media/u_audio/catalog/found_reg_syn_27.mi[0]
+	media/programs/got_ack_reg_syn_188.mi[0]
+	services/producer/event_data[5]_syn_4.mi[0]
+	media/u_images/mux337_syn_597.mi[0]
+	services/assembler/descriptor_ok_n5_syn_22.mi[0]
+	reset_pipe_reg[1]_syn_445.mi[0]
+	reset_pipe_reg[1]_syn_445.mi[1]
+	services/assembler/ack_captured_n3_syn_375.mi[0]
+	services/normal/config_service/storage/u_flash_mux/physical/mux41_syn_446.mi[0]
+	services/font_cancel_stage/cancel_match_syn_95.mi[0]
+	reset_pipe_reg[1]_syn_624.mi[1]
+	reset_pipe_reg[1]_syn_624.mi[0]
+	reset_pipe_reg[1]_syn_462.mi[1]
+	reset_pipe_reg[1]_syn_462.mi[0]
+	reset_pipe_reg[1]_syn_451.mi[0]
+	services/persistence_bridge/journal/mux59_syn_681.mi[0]
+	services/font_stream/mux49_syn_211.mi[0]
+	services/assembler/ack_captured_n3_syn_369.mi[0]
+	services/uid_envelope$commands/selected_held_ticket[12]_syn_6.mi[0]
+	reset_pipe_reg[1]_syn_427.mi[0]
+	services/uid_envelope$commands/selected_response_ticket[2]_syn_582.mi[0]
+	reset_pipe_reg[1]_syn_442.mi[0]
+	reset_pipe_reg[1]_syn_442.mi[1]
+	services/assembler/ack_captured_n3_syn_371.mi[0]
+	services/uid_envelope$commands/auto_value_reg_syn_82.mi[0]
+	services/producer/selected_operation_value[18]_syn_298.mi[0]
+	media/programs/rate16_b3[0]_syn_38.mi[0]
+	services/producer/sent_dims_reg[3]_syn_5.c[1]
+	services/producer/sent_dims_reg[3]_syn_5.d[1]
+	services/producer/sent_dims_reg[3]_syn_5.a[1]
+	services/producer/sent_dims_reg[3]_syn_5.b[1]
+	media/u_images/bmp_read_m0/source_pixels_b1[11]_syn_18.mi[0]
+	media/u_images/diagnostic_valid_reg_syn_14.mi[1]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_11.mi[1]
+	media/u_images/bmp_read_m0/state_reg[1]_syn_9.mi[1]
+	services/producer/sent_dims_reg[3]_syn_5.mi[0]
+	services/producer/sent_dims_reg[3]_syn_5.mi[1]
+	services/all_owners/complete_n_syn_461.b[1]
+	services/all_owners/complete_n_syn_461.a[1]
+	services/all_owners/complete_n_syn_461.a[0]
+	services/all_owners/complete_n_syn_461.b[0]
+	services/all_owners/complete_n_syn_461.c[0]
+	services/all_owners/complete_n_syn_461.d[0]
+	services/font_stream/source_error_b[1]_syn_248.a[0]
+	services/assembler/complete_pending_reg_syn_282.mi[0]
+	services/assembler/ack_error_b2[0]_syn_5.mi[0]
+	services/font_stream/source_error_b[1]_syn_248.b[0]
+	services/font_stream/source_error_b[1]_syn_248.c[0]
+	services/font_stream/packetizer/mux217_syn_89.mi[0]
+	services/font_stream/source_error_b[1]_syn_248.d[0]
+	services/font_stream/source_error_b[1]_syn_248.e[0]
+	reset_pipe_reg[1]_syn_648.b[0]
+	reset_pipe_reg[1]_syn_649.b[0]
+	reset_pipe_reg[1]_syn_648.b[1]
+	reset_pipe_reg[1]_syn_649.b[1]
+	reset_pipe_reg[1]_syn_648.a[0]
+	reset_pipe_reg[1]_syn_649.a[0]
+	reset_pipe_reg[1]_syn_648.a[1]
+	reset_pipe_reg[1]_syn_649.a[1]
+	reset_pipe_reg[1]_syn_648.d[1]
+	reset_pipe_reg[1]_syn_648.d[0]
+	reset_pipe_reg[1]_syn_649.d[1]
+	reset_pipe_reg[1]_syn_649.d[0]
+	reset_pipe_reg[1]_syn_648.c[1]
+	reset_pipe_reg[1]_syn_648.c[0]
+	reset_pipe_reg[1]_syn_649.c[1]
+	reset_pipe_reg[1]_syn_649.c[0]
+	services/normal/config_service/storage/state_reg[3]_syn_10.mi[1]
+	services/normal/config_service/storage/mux175_syn_1221.mi[0]
+	services/normal/config_service/storage/state_reg[5]_syn_17.mi[0]
+	services/normal/config_service/storage/state_reg[5]_syn_17.mi[1]
+	services/normal/config_service/storage/mux177_syn_1970.mi[0]
+	services/uid_envelope$commands/image_wait_reg_syn_298.mi[0]
+	services/producer/selected_operation_value[18]_syn_298.c[1]
+	services/producer/staging_input[13]_syn_23.mi[0]
+	services/producer/fill_index_reg[0]_syn_17.mi[1]
+	services/producer/fill_index_reg[5]_syn_4.mi[0]
+	services/producer/selected_operation_value[18]_syn_298.d[1]
+	services/geometry_control$change/suspend_reg_syn_124.mi[0]
+	services/all_owners/complete_n_syn_461.d[1]
+	services/all_owners/complete_n_syn_461.c[1]
+
+DummyNode in Model: EG_PHY_MSLICE
+	reset_pipe_reg[1]_syn_531.mi[1]
+	media/u_audio/source/mux42_syn_130.mi[0]
+	media/u_audio/source/mux42_syn_128.mi[0]
+	media/u_audio/source/mux35_syn_770.mi[0]
+	media/u_images/diag_report_word[70]_syn_7.mi[0]
+	media/u_shared/arbiter/pending_image_reg_syn_47.mi[0]
+	reset_pipe_reg[1]_syn_531.mi[0]
+	services/curve/gamma_calculation$calculator/base_curve/multiplier_b[6]_syn_4.mi[0]
+	services/producer/audio_block_ready_n_syn_166.mi[0]
+	services/producer/staging_input[14]_syn_24.mi[0]
+	services/normal/config_service/snapshot_valid_reg_syn_397.mi[0]
+	reset_pipe_reg[1]_syn_500.mi[1]
+	services/scheduler/master/read_word[29]_syn_35.mi[0]
+	reset_pipe_reg[1]_syn_617.mi[0]
+	services/menu_bridge/engine/waiting_reg_syn_101.mi[0]
+	services/all_owners/complete_n_syn_377.mi[0]
+	services/producer/staging_input[2]_syn_27.mi[0]
+	services/normal/config_service/snapshot_valid_reg_syn_401.mi[0]
+	services/normal/config_service/snapshot_valid_reg_syn_399.mi[0]
+	services/normal/config_service/snapshot_valid_reg_syn_395.mi[0]
+	reset_pipe_reg[1]_syn_489.mi[1]
+	reset_pipe_reg[1]_syn_489.mi[0]
+	services/normal/config_service/storage/mux183_syn_1461.mi[0]
+	services/normal/config_service/backend/mux87_syn_443.mi[0]
+	services/menu_bridge/engine/request_arguments_b[31]_syn_6.mi[0]
+	services/normal/config_service/font_reader/result_b[5]_syn_26.mi[0]
+	reset_pipe_reg[1]_syn_650.mi[0]
+	media/programs/mux71_syn_28.mi[0]
+	media/u_audio/done_n_syn_6.mi[0]
+	media/programs/mux12_syn_211.mi[0]
+	reset_pipe_reg[1]_syn_494.mi[1]
+	services/scheduler/master/read_word[14]_syn_17.mi[0]
+	services/font_stream/packetizer/mux208_syn_211.mi[0]
+	services/assembler/mux180_syn_181.mi[0]
+	services/persistence_bridge/journal/verifying_reg_syn_93.mi[0]
+	services/font_stream/packetizer/tx_finished_reg_syn_59.mi[0]
+	media/programs/state_b[0]_syn_437.mi[0]
+	services/assembler/ack_captured_n3_syn_367.mi[0]
+	services/font_stream/packetizer/pending_error_reg[6]_syn_283.mi[0]
+	services/font_stream/utf8/continuation_count_reg[0]_syn_63.mi[0]
+	media/programs/state_b[0]_syn_363.mi[0]
+	services/scheduler/master/value[11]_syn_15.mi[0]
+	media/u_shared/image_pending_reg_syn_16.mi[0]
+	media/u_shared/image_pending_reg_syn_18.mi[0]
+	services/producer/abort_pending_reg_syn_32.mi[0]
+	media/programs/state_b[0]_syn_363.d[1]
+	media/programs/state_b[0]_syn_437.a[0]
+	media/u_images/bmp_read_m0/mux68_syn_231.mi[0]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_15.d[0]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_15.d[1]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_15.c[1]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_15.b[1]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_15.a[1]
+	media/u_images/bmp_read_m0/state_reg[2]_syn_15.c[0]
+	media/u_shared/image_pending_reg_syn_16.c[0]
+	media/u_shared/image_pending_reg_syn_18.c[0]
+	media/u_shared/image_pending_reg_syn_16.b[0]
+	media/u_shared/image_pending_reg_syn_18.b[0]
+	media/u_shared/image_pending_reg_syn_16.a[0]
+	media/u_shared/image_pending_reg_syn_18.a[0]
+	media/u_shared/image_pending_reg_syn_16.d[0]
+	media/u_shared/image_pending_reg_syn_18.d[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.a[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.a[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.a[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.a[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.b[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.b[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.b[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.b[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.b[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.b[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.b[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.b[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.a[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.a[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.a[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.a[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.d[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.d[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.d[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.d[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.c[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.c[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.c[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.c[0]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.d[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.d[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.d[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.d[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_457.c[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_458.c[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_459.c[1]
+	media/u_shared/driver/sd_card_cmd_m0/mux24_syn_460.c[1]
+	services/all_owners/complete_n_syn_462.b[1]
+	services/all_owners/complete_n_syn_462.a[1]
+	services/all_owners/complete_n_syn_462.b[0]
+	services/all_owners/complete_n_syn_462.d[1]
+	services/all_owners/complete_n_syn_462.a[0]
+	services/all_owners/complete_n_syn_462.c[1]
+	services/assembler/complete_pending_reg_syn_304.mi[0]
+	services/assembler/cursor_reg[1]_syn_13.mi[0]
+	services/assembler/cursor_reg[1]_syn_13.mi[1]
+	services/assembler/mux180_syn_204.d[1]
+	services/assembler/mux180_syn_205.d[1]
+	services/assembler/mux180_syn_204.c[1]
+	services/assembler/mux180_syn_205.c[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_5.mi[0]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_6.mi[0]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_5.mi[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_6.mi[1]
+	services/assembler/mux180_syn_204.b[1]
+	services/assembler/mux180_syn_205.b[1]
+	media/programs/state_b[0]_syn_437.c[0]
+	services/geometry_control$change/drain_seen_reg_syn_6.d[1]
+	services/geometry_control$change/drain_seen_reg_syn_6.d[0]
+	services/geometry_control$change/drain_seen_reg_syn_7.d[1]
+	services/geometry_control$change/drain_seen_reg_syn_7.d[0]
+	services/geometry_control$change/drain_seen_reg_syn_6.c[1]
+	services/geometry_control$change/drain_seen_reg_syn_6.c[0]
+	services/geometry_control$change/drain_seen_reg_syn_7.c[1]
+	services/geometry_control$change/drain_seen_reg_syn_7.c[0]
+	services/all_owners/complete_n_syn_462.d[0]
+	services/all_owners/complete_n_syn_462.c[0]
+	services/scheduler/master/reply_body_reg[317]_syn_5.d[1]
+	services/scheduler/master/reply_body_reg[317]_syn_6.d[1]
+	services/normal/config_service/snapshot_valid_reg_syn_509.a[1]
+	services/normal/config_service/snapshot_valid_reg_syn_509.b[1]
+	services/normal/config_service/snapshot_valid_reg_syn_509.c[1]
+	services/normal/config_service/snapshot_valid_reg_syn_509.d[1]
+	services/normal/config_service/snapshot_valid_reg_syn_509.b[0]
+	services/normal/config_service/snapshot_valid_reg_syn_509.a[0]
+	services/scheduler/master/reply_body_reg[317]_syn_5.c[1]
+	services/scheduler/master/reply_body_reg[317]_syn_6.c[1]
+	services/normal/config_service/previous_snapshot_reg[124]_syn_6.mi[1]
+	services/normal/config_service/previous_snapshot_reg[124]_syn_6.mi[0]
+	services/scheduler/master/reply_body_reg[317]_syn_5.b[1]
+	services/scheduler/master/reply_body_reg[317]_syn_6.b[1]
+	services/normal/config_service/snapshot_valid_reg_syn_509.d[0]
+	services/normal/config_service/snapshot_valid_reg_syn_509.c[0]
+	reset_pipe_reg[1]_syn_650.d[1]
+	reset_pipe_reg[1]_syn_650.c[1]
+	services/normal/config_service/storage/state_reg[5]_syn_21.a[1]
+	services/normal/config_service/storage/mux176_syn_1138.mi[0]
+	services/normal/config_service/storage/state_reg[5]_syn_21.b[1]
+	services/normal/config_service/storage/state_reg[5]_syn_21.d[1]
+	services/normal/config_service/storage/state_reg[5]_syn_21.c[1]
+	reset_pipe_reg[1]_syn_650.b[0]
+	reset_pipe_reg[1]_syn_650.c[0]
+	services/normal/config_service/storage/state_reg[5]_syn_21.c[0]
+	reset_pipe_reg[1]_syn_650.d[0]
+	services/normal/config_service/storage/state_reg[5]_syn_21.d[0]
+	reset_pipe_reg[1]_syn_650.a[0]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_5.d[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_6.d[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_5.c[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_6.c[1]
+	services/producer/fill_index_reg[0]_syn_20.mi[0]
+	services/normal/config_service/previous_snapshot_reg[124]_syn_6.c[1]
+	services/normal/config_service/previous_snapshot_reg[124]_syn_6.d[1]
+	services/normal/config_service/previous_snapshot_reg[124]_syn_6.a[1]
+	services/normal/config_service/previous_snapshot_reg[124]_syn_6.b[1]
+	media/programs/state_b[0]_syn_363.c[1]
+	media/programs/state_b[0]_syn_437.d[0]
+	media/programs/state_b[0]_syn_437.b[0]
+	services/scheduler/master/sequence_id[13]_syn_8.mi[0]
+	services/menu_bridge/engine/waiting_reg_syn_117.mi[0]
+	services/scheduler/master/reply_body_reg[317]_syn_5.mi[0]
+	services/scheduler/master/reply_body_reg[317]_syn_6.mi[0]
+	services/scheduler/master/reply_body_reg[317]_syn_5.mi[1]
+	services/scheduler/master/reply_body_reg[317]_syn_6.mi[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_5.b[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_6.b[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_5.a[1]
+	services/cmd22_font/utf8_bytes_reg[4]_syn_6.a[1]
+
+DummyNode in Model: EG_PHY_MULT18
+	media/u_images/bmp_read_m0/mult3_syn_6.p[9]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[8]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[7]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[6]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[5]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[4]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[3]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[2]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[1]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[0]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[26]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[25]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[24]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[23]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[22]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[21]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[20]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[19]
+	media/u_images/bmp_read_m0/mult3_syn_6.p[18]
+
+DummyNode in Model: EG_PHY_PAD
+	board_ready_syn_2.ipad
+	uart_rx_syn_2.ipad
+	uart_tx_syn_39.opad
+
+4. checking invalid constraints. (HIGH)
+---------------------------------------------
+There are 0 invalid constraints. (HIGH)
+
+
+5. checking PLL/buffer clocks. (HIGH)
+---------------------------------------------
+6. checking combinational loops. (HIGH)
+---------------------------------------------
+There are 0 combinational loops. (HIGH)
+
+
+7. checking soft fifo set_max_delay constraints. (HIGH)
+---------------------------------------------
+There are 0 max-delay datapath-only paths that are part of the provided async clock paths, whereas the timing between other registers is not relaxed or ignored. (HIGH)
+
+
+8. checking no path constraints. (MEDIUM)
+---------------------------------------------
+There are 0 constraints that have no timing paths. (MEDIUM)
+
+
+9. checking path exception constraints shadowed/ignored by other constraints. (MEDIUM)
+---------------------------------------------
+
+MCP/SMD Summary
+--------------------
+
+		Max Check
+		--------------------
+		     Total    Dominated     Shadowed      Ignored   Constraint
+		        14           14            0            0   set_multicycle_path -setup -end -from [get_ports {board_miso}] 3
+		         4            4            0            0   set_multicycle_path -setup -end -from [get_ports {flash_miso}] 4
+		         0            0            0            0   set_multicycle_path -setup -end -from [get_ports {tf_miso}] 2
+
+		Min Check
+		--------------------
+		     Total    Dominated     Shadowed      Ignored   Constraint
+		        14           14            0            0   set_multicycle_path -hold -end -from [get_ports {board_miso}] 2
+		         4            4            0            0   set_multicycle_path -hold -end -from [get_ports {flash_miso}] 3
+		         0            0            0            0   set_multicycle_path -hold -end -from [get_ports {tf_miso}] 1
+		         4            4            0            0   set_multicycle_path -hold -start -to [get_ports {board_mosi board_cs_n}] 3
+		         4            4            0            0   set_multicycle_path -hold -start -to [get_ports {flash_mosi flash_cs_n}] 4
+		         4            4            0            0   set_multicycle_path -hold -start -to [get_ports {tf_mosi tf_cs_n}] 2
+
+10. checking no input delay (MEDIUM)
+--------------------------
+There are 3 input ports that with no input delay specified. (MEDIUM)
+
+	board_ready
+	rst_n
+	uart_rx
+
+11. checking no output delay (MEDIUM)
+--------------------------
+There is 1 output port that with no output delay specified. (MEDIUM)
+
+	uart_tx
+
+12. checking partial input delay (MEDIUM)
+--------------------------
+There are 3 input ports with partial input delay specified. (MEDIUM)
+
+	board_miso
+	flash_miso
+	tf_miso
+
+13. checking partial output delay (MEDIUM)
+--------------------------
+There are 0 output ports with partial output delay specified. (MEDIUM)
+
+
+14. checking abnormal set_input_delay constraints. (MEDIUM)
+---------------------------------------------
+There are 0 abnormal set_input_delay constraints. (MEDIUM)
+
+

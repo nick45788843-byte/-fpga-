@@ -1,0 +1,178 @@
+standard
+***Report Model: top Device: EG4S20BG256***
+
+IO Statistics
+#IO                        44   out of    188   23.40%
+  #input                   11
+  #output                  32
+  #inout                    1
+
+LUT Statistics
+#Total_luts             16071
+  #lut4                 13705
+  #lut5                  2342
+  #lut6                    24
+  #lut5_mx41                0
+  #lut4_alu1b               0
+
+Utilization Statistics
+#lut                    17235   out of  19600   87.93%
+#reg                    12652   out of  19600   64.55%
+#bram                      59   out of     64   92.19%
+  #bram9k                  59
+  #fifo9k                   0
+#bram32k                   14   out of     16   87.50%
+#dsp                        2   out of     29    6.90%
+#pad                       48   out of    188   25.53%
+  #ireg                     6
+  #oreg                     8
+  #treg                     1
+#pll                        3   out of      4   75.00%
+#gclk                       1   out of     16    6.25%
+
+Report Hierarchy Area:
++--------------------------------------------------------------------------------------------------------------------------------------------+
+|Instance                                    |Module                                            |lut     |ripple  |seq     |bram    |dsp     |
++--------------------------------------------------------------------------------------------------------------------------------------------+
+|top                                         |top                                               |16665   |570     |12667   |73      |2       |
+|  actuator                                  |a_config_actuator                                 |345     |8       |244     |0       |0       |
+|  commits                                   |a_board_commit_state                              |81      |36      |354     |1       |0       |
+|  control_plane                             |a_control_plane                                   |2610    |74      |1968    |7       |0       |
+|    board_link                              |a_spi_mailbox6                                    |131     |0       |501     |2       |0       |
+|    polls                                   |a_spi_poll_event                                  |0       |0       |3       |0       |0       |
+|    portal                                  |a_control_portal                                  |1339    |68      |850     |2       |0       |
+|      control                               |a_command_control                                 |548     |18      |365     |0       |0       |
+|      receiver                              |a_packet_receiver                                 |339     |41      |363     |1       |0       |
+|        receiver                            |uart_rx_byte                                      |37      |0       |33      |0       |0       |
+|      replies                               |a_reply_store                                     |452     |9       |122     |1       |0       |
+|        transmitter                         |uart_tx_byte                                      |67      |9       |48      |0       |0       |
+|    replies                                 |a_spi_reply_mux_ram                               |463     |0       |268     |0       |0       |
+|      builder                               |a_spi_reply_writer                                |16      |0       |9       |0       |0       |
+|    reply_store                             |a_spi_reply_store6                                |66      |0       |40      |1       |0       |
+|    requests                                |a_request_sender                                  |194     |6       |128     |0       |0       |
+|    rpc                                     |a_remote_reply_port                               |5       |0       |83      |0       |0       |
+|    rpc_receipts                            |a_glyph_result_fragment                           |34      |0       |36      |0       |0       |
+|    shared_crc_table$table_pair             |crc_byte_bram_pair                                |372     |0       |18      |2       |0       |
+|  data_plane                                |a_board_data_plane                                |6706    |279     |5258    |62      |2       |
+|    U3                                      |sdram                                             |184     |10      |480     |0       |0       |
+|      u2_ram                                |sdr_as_ram                                        |167     |10      |469     |0       |0       |
+|        u1_init_ref                         |sdr_init_ref                                      |30      |10      |81      |0       |0       |
+|        u2_wrrd                             |sdr_wrrd                                          |63      |0       |388     |0       |0       |
+|      u_refresh_request                     |sdram_refresh_request                             |17      |0       |11      |0       |0       |
+|    fault_commit                            |a_frame_apply_local                               |0       |0       |4       |0       |0       |
+|    frame_read_write_m0                     |frame_read_write                                  |395     |53      |501     |4       |0       |
+|      frame_fifo_read_m0                    |frame_fifo_read                                   |96      |11      |211     |0       |0       |
+|      frame_fifo_write_m0                   |frame_fifo_write                                  |110     |22      |86      |0       |0       |
+|      read_buf                              |rfifo_32_32_512                                   |68      |10      |94      |2       |0       |
+|        ram_inst                            |ram_infer_rfifo_32_32_512                         |0       |0       |0       |2       |0       |
+|        rd_to_wr_cross_inst                 |fifo_cross_domain_addr_process_al_rfifo_32_32_512 |16      |0       |36      |0       |0       |
+|        wr_to_rd_cross_inst                 |fifo_cross_domain_addr_process_al_rfifo_32_32_512 |16      |0       |36      |0       |0       |
+|      u_write_cancel                        |frame_write_cancel                                |7       |0       |11      |0       |0       |
+|      write_buf                             |wfifo_32_32_512                                   |78      |10      |94      |2       |0       |
+|        ram_inst                            |ram_infer_wfifo_32_32_512                         |0       |0       |0       |2       |0       |
+|        rd_to_wr_cross_inst                 |fifo_cross_domain_addr_process_al_wfifo_32_32_512 |16      |0       |36      |0       |0       |
+|        wr_to_rd_cross_inst                 |fifo_cross_domain_addr_process_al_wfifo_32_32_512 |16      |0       |36      |0       |0       |
+|    gallery_commit                          |a_gallery_transition                              |112     |0       |126     |0       |0       |
+|      local_pipeline$implementation         |a_gallery_same_clock                              |112     |0       |126     |0       |0       |
+|    menu_display_commit                     |a_menu_frame_local                                |2       |0       |43      |0       |0       |
+|    mode_commit                             |a_frame_apply_local                               |29      |0       |77      |0       |0       |
+|    pcm_memory                              |audio_memory_router                               |42      |0       |8       |0       |0       |
+|    pcm_service                             |a_pcm_playback32                                  |1101    |81      |836     |6       |0       |
+|      cache                                 |audio_sdram_cache                                 |470     |54      |250     |2       |0       |
+|        transfer                            |audio_memory_transfer                             |116     |9       |105     |0       |0       |
+|      descriptor                            |config_bundle_cdc                                 |27      |0       |118     |0       |0       |
+|      error_return                          |config_bundle_cdc                                 |8       |0       |32      |0       |0       |
+|      input_fifo                            |pcm_frame_fifo                                    |80      |10      |102     |2       |0       |
+|        storage                             |wfifo_32_32_512                                   |79      |10      |94      |2       |0       |
+|          ram_inst                          |ram_infer_wfifo_32_32_512                         |0       |0       |0       |2       |0       |
+|          rd_to_wr_cross_inst               |fifo_cross_domain_addr_process_al_wfifo_32_32_512 |16      |0       |36      |0       |0       |
+|          wr_to_rd_cross_inst               |fifo_cross_domain_addr_process_al_wfifo_32_32_512 |16      |0       |36      |0       |0       |
+|      output_fifo                           |pcm_frame_fifo                                    |79      |10      |94      |2       |0       |
+|        storage                             |wfifo_32_32_512                                   |79      |10      |94      |2       |0       |
+|          ram_inst                          |ram_infer_wfifo_32_32_512                         |0       |0       |0       |2       |0       |
+|          rd_to_wr_cross_inst               |fifo_cross_domain_addr_process_al_wfifo_32_32_512 |16      |0       |36      |0       |0       |
+|          wr_to_rd_cross_inst               |fifo_cross_domain_addr_process_al_wfifo_32_32_512 |16      |0       |36      |0       |0       |
+|    settings_commit                         |a_frame_apply_local                               |47      |0       |137     |0       |0       |
+|    sys_pll_m0                              |sys_pll                                           |0       |0       |0       |0       |0       |
+|    u_audio_arc_calculate                   |audio_arc_calculate                               |41      |11      |47      |0       |0       |
+|    u_audio_pll                             |PLL_HDMI_AUDIO                                    |0       |0       |0       |0       |0       |
+|    u_colour_display                        |a_colour_lut                                      |190     |7       |348     |3       |0       |
+|    u_hdmi2phy_wrapper                      |hdmi_phy_wrapper                                  |34      |0       |47      |0       |0       |
+|      u0_lane_lvds_8_1                      |lane_lvds_10_1                                    |12      |0       |18      |0       |0       |
+|      u1_lane_lvds_8_1                      |lane_lvds_10_1                                    |10      |0       |12      |0       |0       |
+|      u2_lane_lvds_8_1                      |lane_lvds_10_1                                    |10      |0       |12      |0       |0       |
+|      u3_lane_lvds_8_1                      |lane_lvds_10_1                                    |2       |0       |5       |0       |0       |
+|    u_hdmi_1_4b_transmitter_core_wrapper    |hdmi_1_4b_transmitter_core_wrapper                |1220    |27      |1567    |16      |0       |
+|      u0_reset_sync                         |hdmi_1_4b_tx_reset_sync                           |0       |0       |2       |0       |0       |
+|      u_hdmi_edid_wrapper                   |hdmi_edid_wrapper                                 |211     |27      |155     |2       |0       |
+|        u_hdmi_edid_read_controller         |hdmi_edid_read_controller                         |14      |0       |11      |0       |0       |
+|        u_iic_master_wrapper                |iic_master_wrapper                                |197     |27      |144     |2       |0       |
+|          u_iic_bit_transmitter             |iic_bit_transmitter                               |69      |9       |31      |0       |0       |
+|          u_iic_transmitter_controller      |iic_transmitter_controller                        |128     |18      |113     |2       |0       |
+|            u_iic_w11_d1024_fifo            |iic_w11_d1024_fifo                                |29      |0       |55      |2       |0       |
+|      u_hdmi_tx_controller_wrapper          |hdmi_tx_controller_wrapper                        |1009    |0       |1410    |14      |0       |
+|        u0_hdmi_tmds_encode                 |hdmi_tmds_encode                                  |103     |0       |160     |0       |0       |
+|        u1_hdmi_tmds_encode                 |hdmi_tmds_encode                                  |97      |0       |108     |0       |0       |
+|        u2_hdmi_tmds_encode                 |hdmi_tmds_encode                                  |100     |0       |108     |0       |0       |
+|        u_hdmi_data_distribution            |hdmi_data_distribution                            |2       |0       |43      |0       |0       |
+|        u_hdmi_island_data_assemble         |hdmi_island_data_assemble                         |277     |0       |418     |0       |0       |
+|        u_hdmi_island_data_gen              |hdmi_island_data_gen                              |335     |0       |438     |11      |0       |
+|          U_audio_sample_packet_2_channel   |audio_sample_packet_2_channel                     |158     |0       |235     |11      |0       |
+|            u_w96_d1024_fifo                |w96_d1024_fifo                                    |24      |0       |55      |11      |0       |
+|            u_BCH_32_24_encode              |BCH_32_24_encode                                  |0       |0       |1       |0       |0       |
+|            u_BCH_64_56_encode              |BCH_64_56_encode                                  |0       |0       |8       |0       |0       |
+|          u_audio_clock_regeneration_packet |audio_clock_regeneration_packet                   |25      |0       |63      |0       |0       |
+|            u_BCH_64_56_encode              |BCH_64_56_encode                                  |0       |0       |8       |0       |0       |
+|        u_hdmi_video_data_assemble          |hdmi_video_data_assemble                          |0       |0       |40      |0       |0       |
+|        u_hdmi_video_source                 |hdmi_video_source                                 |68      |0       |38      |0       |0       |
+|        u_video_axi_stream_receiver         |video_axi_stream_receiver                         |27      |0       |57      |3       |0       |
+|          u_w24_d1024_fifo                  |w24_d1024_fifo                                    |25      |0       |55      |3       |0       |
+|    u_osd                                   |emergency_osd                                     |2744    |50      |701     |33      |0       |
+|      emergency_bitmap                      |a_emergency_bitmap32                              |15      |0       |8       |6       |0       |
+|      emergency_rom                         |a_emergency_font32_rom                            |67      |0       |1       |4       |0       |
+|      font_stream_osd                       |a_font_stream_osd                                 |524     |12      |141     |8       |0       |
+|      normal_rom                            |a_static_normal_font16_rom                        |8       |0       |1       |2       |0       |
+|      pcm_waveform_enabled$wave             |a_pcm_waveform                                    |50      |0       |32      |2       |0       |
+|      product_alert_font                    |a_product_alert64                                 |0       |0       |0       |2       |0       |
+|      product_public_font                   |a_product_public32                                |0       |0       |0       |2       |0       |
+|      program_bitmap                        |a_program_bitmap16                                |19      |0       |1       |4       |0       |
+|      title_bitmap                          |a_title_bitmap16                                  |157     |0       |72      |2       |0       |
+|    u_pcm_audio                             |emergency_pcm_audio                               |451     |29      |167     |0       |2       |
+|    u_startup_pulse                         |startup_pulse                                     |25      |11      |22      |0       |0       |
+|    u_video_rgb_to_axis_640x480             |video_rgb_to_axis_640x480                         |2       |0       |28      |0       |0       |
+|    video_delay_m0                          |video_delay                                       |24      |0       |66      |0       |0       |
+|    video_pll_m0                            |video_pll                                         |0       |0       |0       |0       |0       |
+|    video_timing_data_m0                    |video_timing_data                                 |51      |0       |33      |0       |0       |
+|      color_bar_m0                          |color_bar                                         |48      |0       |28      |0       |0       |
+|    writer_owners                           |frame_source_arbiter                              |11      |0       |2       |0       |0       |
+|  emergency_content                         |a_emergency_content                               |474     |15      |278     |2       |0       |
+|  execution                                 |a_settings_colour_port                            |328     |7       |418     |0       |0       |
+|  font_stream_receive                       |a_font_stream_receive                             |302     |26      |292     |0       |0       |
+|  geometry_guard                            |a_geometry_apply_guard                            |28      |0       |40      |0       |0       |
+|  image_actions                             |a_image_action32                                  |262     |0       |136     |0       |0       |
+|  keys                                      |a_board_keys                                      |118     |0       |76      |0       |0       |
+|  local_control                             |a_local_control                                   |777     |0       |411     |0       |0       |
+|    authority                               |a_emergency_authority                             |271     |0       |103     |0       |0       |
+|    media_effects                           |a_media_actions                                   |255     |0       |109     |0       |0       |
+|    results                                 |a_local_reply                                     |251     |0       |199     |0       |0       |
+|  media_commands                            |a_media_commands32                                |284     |0       |178     |0       |0       |
+|  media_receive                             |a_media_receive32                                 |941     |60      |738     |0       |0       |
+|    commit_core                             |a_media_commit32                                  |752     |60      |594     |0       |0       |
+|    guard                                   |a_media_uid_guard                                 |124     |0       |89      |0       |0       |
+|    results                                 |a_media_ack32                                     |65      |0       |55      |0       |0       |
+|  menu_display_receive                      |a_menu_display_receive                            |189     |0       |135     |0       |0       |
+|  namespace_control                         |a_namespace_control                               |538     |0       |105     |0       |0       |
+|  pcm_bridge                                |a_pcm_control32                                   |42      |0       |116     |0       |0       |
+|  product_scale_hint                        |a_scale_hint                                      |35      |0       |18      |0       |0       |
+|  product_size_text                         |a_size_text                                       |169     |8       |103     |0       |0       |
+|  program_receive                           |a_program_receive                                 |327     |6       |334     |0       |0       |
+|  proof                                     |a_link_proof                                      |255     |9       |19      |0       |0       |
+|  storage                                   |a_flash_store                                     |1403    |28      |985     |0       |0       |
+|    reader                                  |a_record_scan                                     |344     |19      |465     |0       |0       |
+|    shared_store_crc$table_pair             |crc_byte_lut_pair                                 |217     |0       |32      |0       |0       |
+|    transport                               |flash_spi_transport                               |276     |0       |160     |0       |0       |
+|      u_byte                                |spi_byte_engine                                   |38      |0       |32      |0       |0       |
+|    writer                                  |a_necessary_record_writer                         |545     |9       |291     |0       |0       |
+|  stream_text_store                         |a_font_stream_text_store                          |202     |5       |298     |1       |0       |
+|  watchdog                                  |link_watchdog                                     |23      |0       |14      |0       |0       |
++--------------------------------------------------------------------------------------------------------------------------------------------+

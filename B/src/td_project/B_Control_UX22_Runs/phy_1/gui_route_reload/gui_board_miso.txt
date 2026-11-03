@@ -1,0 +1,1184 @@
+Created by          : Tang Dynasty v6.2.168116
+                    : Copyright (c) 2012-2025 Anlogic Inc.
+Generated           : Tue Nov  3 18:34:00 2026
+
+Top Model           : top
+Device              : EG4S20BG256
+Speed               : NA
+STA coverage        : 99.77%
+
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     
+set_multicycle_path -setup -end -from [get_ports {board_miso}] 3
+set_multicycle_path -hold -end -from [get_ports {board_miso}] 2
+
+Type           :     MCP
+
+Statistics:
+Max            : SWNS     23.724ns, STNS      0.000ns,         0 Viol Endpoints,        11 Total Endpoints,        11 Paths Analyzed
+Min            : HWNS      3.834ns, HTNS      0.000ns,         0 Viol Endpoints,        11 Total Endpoints,        11 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 23.724ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_index_reg[1]_syn_4.ce (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 31.560ns (cell 27.944ns (88%), net 3.616ns (12%))
+Clock Skew          : 4.500ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.573         96.729          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.408    f    97.137       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.456         97.593          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[1]
+LUT5                x038y061z0          0.618    f    98.211       3  pin: services/scheduler/master/copy_state_reg[0]_syn_4.fx[0]
+net (fo=3)                              1.587         99.798          net: services/scheduler/master/mux91_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_index_reg[1]_syn_4.ce
+reg                 x039y056z1          0.087    r    99.885               
+--------------------------------------------------------------------  ---------------
+Arrival                                               99.885               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_index_reg[1]_syn_4.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 23.724               
+
+Slack               : 24.360ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_index_reg[2]_syn_4.ce (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 30.924ns (cell 27.944ns (90%), net 2.980ns (10%))
+Clock Skew          : 4.500ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.573         96.729          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.408    f    97.137       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.456         97.593          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[1]
+LUT5                x038y061z0          0.618    f    98.211       3  pin: services/scheduler/master/copy_state_reg[0]_syn_4.fx[0]
+net (fo=3)                              0.951         99.162          net: services/scheduler/master/mux91_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_index_reg[2]_syn_4.ce
+reg                 x038y056z1          0.087    r    99.249               
+--------------------------------------------------------------------  ---------------
+Arrival                                               99.249               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_index_reg[2]_syn_4.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 24.360               
+
+Slack               : 24.523ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_index_reg[3]_syn_4.ce (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 30.761ns (cell 27.944ns (90%), net 2.817ns (10%))
+Clock Skew          : 4.500ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.573         96.729          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.408    f    97.137       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.456         97.593          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[1]
+LUT5                x038y061z0          0.618    f    98.211       3  pin: services/scheduler/master/copy_state_reg[0]_syn_4.fx[0]
+net (fo=3)                              0.788         98.999          net: services/scheduler/master/mux91_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_index_reg[3]_syn_4.ce
+reg                 x038y057z1          0.087    r    99.086               
+--------------------------------------------------------------------  ---------------
+Arrival                                               99.086               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_index_reg[3]_syn_4.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 24.523               
+
+Slack               : 25.284ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_state_reg[0]_syn_4.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 30.000ns (cell 27.971ns (93%), net 2.029ns (7%))
+Clock Skew          : 4.500ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.573         96.729          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.408    f    97.137       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.456         97.593          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[0]
+LUT5 (reg)          x038y061z0          0.732    f    98.325       3  net: services/scheduler/master/copy_state_reg_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(52)
+--------------------------------------------------------------------  ---------------
+Arrival                                               98.325               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 25.284               
+
+Slack               : 25.866ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_102.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 29.418ns (cell 27.373ns (93%), net 2.045ns (7%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT4=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              2.045         97.201          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_102.a[0]
+LUT4 (reg)          x038y062z3          0.542    f    97.743       2  net: services/scheduler/master/rx_crc[12],  ../../../user_source/hdl_source/redo/media_spi_master.v(15)
+--------------------------------------------------------------------  ---------------
+Arrival                                               97.743               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_102.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 25.866               
+
+Slack               : 25.929ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/ramread0_syn_6.dia[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 29.221ns (cell 26.831ns (91%), net 2.390ns (9%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  EMB=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              2.390         97.546          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/ramread0_syn_6.dia[0]
+EMB (reg)           x032y045            0.000    f    97.546       2       
+--------------------------------------------------------------------  ---------------
+Arrival                                               97.546               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/ramread0_syn_6.clka
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.250        123.096               
+clock uncertainty                      -0.100        122.996               
+clock pessimism                         0.479        123.475               
+--------------------------------------------------------------------  ---------------
+Required                                             123.475               
+--------------------------------------------------------------------  ---------------
+Slack                                                 25.929               
+
+Slack               : 26.163ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_100.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 29.121ns (cell 27.373ns (93%), net 1.748ns (7%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT4=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.748         96.904          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_100.a[0]
+LUT4 (reg)          x038y062z2          0.542    f    97.446       2  net: services/scheduler/master/rx_crc[5],  ../../../user_source/hdl_source/redo/media_spi_master.v(15)
+--------------------------------------------------------------------  ---------------
+Arrival                                               97.446               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_100.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 26.163               
+
+Slack               : 26.502ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_88.mi[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 28.782ns (cell 27.236ns (94%), net 1.546ns (6%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              0.952         96.108          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_104.d[0]
+LUT2                x038y064z3          0.262    r    96.370       2  pin: services/scheduler/master/mux91_syn_104.f[0]
+net (fo=1)                              0.594         96.964          net: services/scheduler/master/mux69_syn_20,  ../../../user_source/hdl_source/redo/media_spi_master.v(69)
+                                                                      pin: services/scheduler/master/mux91_syn_88.mi[0]
+reg                 x038y066z2          0.143    r    97.107          net: services/scheduler/master/received_header[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(16)
+--------------------------------------------------------------------  ---------------
+Arrival                                               97.107               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_88.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 26.502               
+
+Slack               : 26.590ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/rx_crc_reg[13]_syn_4.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 28.694ns (cell 27.145ns (94%), net 1.549ns (6%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT3=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.549         96.705          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/rx_crc_reg[13]_syn_4.d[0]
+LUT3 (reg)          x039y064z0          0.314    r    97.019       2  net: services/scheduler/master/rx_crc[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(15)
+--------------------------------------------------------------------  ---------------
+Arrival                                               97.019               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/rx_crc_reg[13]_syn_4.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 26.590               
+
+Slack               : 27.130ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_104.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 28.154ns (cell 27.202ns (96%), net 0.952ns (4%))
+Clock Skew          : 4.500ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.831    f    95.156       1  pin: board_miso_syn_4.di
+net (fo=6)                              0.952         96.108          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_104.d[0]
+LUT2 (reg)          x038y064z3          0.371    r    96.479       2  net: services/scheduler/master/rx_shift[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(14)
+--------------------------------------------------------------------  ---------------
+Arrival                                               96.479               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.853          3.346          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_104.clk
+capture edge                          120.000    r   123.346               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.116        123.230               
+clock uncertainty                      -0.100        123.130               
+clock pessimism                         0.479        123.609               
+--------------------------------------------------------------------  ---------------
+Required                                             123.609               
+--------------------------------------------------------------------  ---------------
+Slack                                                 27.130               
+
+Slack               : 29.316ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : board_miso_syn_4.ipad (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : setup
+Process             : slow
+Budget              : 60.000ns { clk rising@120.000ns - board_spi_out falling@60.000ns }
+Data Path Delay     : 26.224ns (cell 26.224ns (99%), net 0.000ns (1%))
+Clock Skew          : 4.620ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.831          1.831          pin: clk_syn_2.di
+net (fo=6958)                           1.874          3.705          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            4.620          8.325          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          8.325          pin: board_sclk
+launch edge                            60.000    f    68.325               
+--------------------------------------------------------------------  ---------------
+input               T5                 25.000         93.325          pin: board_miso
+net (fo=1)                              0.000         93.325          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD (reg)           x032y071            1.224    f    94.549          net: services/scheduler/master/rx_crc_low[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(14)
+--------------------------------------------------------------------  ---------------
+Arrival                                               94.549               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.493          1.493          pin: clk_syn_2.di
+net (fo=6958)                           1.665          3.158          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipclk
+capture edge                          120.000    r   123.158               
+--------------------------------------------------------------------  ---------------
+setup                                   0.160        123.318               
+clock uncertainty                       0.000        123.318               
+clock pessimism                         0.547        123.865               
+--------------------------------------------------------------------  ---------------
+Required                                             123.865               
+--------------------------------------------------------------------  ---------------
+Slack                                                 29.316               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 3.834ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : board_miso_syn_4.ipad (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 0.852ns (cell 0.852ns (100%), net 0.000ns (0%))
+Clock Skew          : 3.143ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD (reg)           x032y071            0.852    r    66.934          net: services/scheduler/master/rx_crc_low[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(14)
+--------------------------------------------------------------------  ---------------
+Arrival                                               66.934               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.765          3.067          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipclk
+capture edge                           60.000    r    63.067               
+--------------------------------------------------------------------  ---------------
+hold                                    0.161         63.228               
+clock uncertainty                       0.000         63.228               
+clock pessimism                        -0.128         63.100               
+--------------------------------------------------------------------  ---------------
+Required                                              63.100               
+--------------------------------------------------------------------  ---------------
+Slack                                                  3.834               
+
+Slack               : 4.935ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_104.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 2.122ns (cell 1.453ns (68%), net 0.669ns (32%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              0.669         67.935          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_104.d[0]
+LUT2 (reg)          x038y064z3          0.269    f    68.204       2  net: services/scheduler/master/rx_shift[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(14)
+--------------------------------------------------------------------  ---------------
+Arrival                                               68.204               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_104.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  4.935               
+
+Slack               : 5.286ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/rx_crc_reg[13]_syn_4.d[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 2.473ns (cell 1.400ns (56%), net 1.073ns (44%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT3=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.073         68.339          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/rx_crc_reg[13]_syn_4.d[0]
+LUT3 (reg)          x039y064z0          0.216    f    68.555       2  net: services/scheduler/master/rx_crc[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(15)
+--------------------------------------------------------------------  ---------------
+Arrival                                               68.555               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/rx_crc_reg[13]_syn_4.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.286               
+
+Slack               : 5.330ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_88.mi[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 2.517ns (cell 1.458ns (57%), net 1.059ns (43%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              0.669         67.935          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_104.d[0]
+LUT2                x038y064z3          0.179    f    68.114       2  pin: services/scheduler/master/mux91_syn_104.f[0]
+net (fo=1)                              0.390         68.504          net: services/scheduler/master/mux69_syn_20,  ../../../user_source/hdl_source/redo/media_spi_master.v(69)
+                                                                      pin: services/scheduler/master/mux91_syn_88.mi[0]
+reg                 x038y066z2          0.095    f    68.599          net: services/scheduler/master/received_header[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(16)
+--------------------------------------------------------------------  ---------------
+Arrival                                               68.599               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_88.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.330               
+
+Slack               : 5.552ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/ramread0_syn_6.dia[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 2.878ns (cell 1.184ns (41%), net 1.694ns (59%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  EMB=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.694         68.960          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/ramread0_syn_6.dia[0]
+EMB (reg)           x032y045            0.000    f    68.960       2       
+--------------------------------------------------------------------  ---------------
+Arrival                                               68.960               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/ramread0_syn_6.clka
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.200         63.432               
+clock uncertainty                       0.100         63.532               
+clock pessimism                        -0.124         63.408               
+--------------------------------------------------------------------  ---------------
+Required                                              63.408               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.552               
+
+Slack               : 5.632ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_100.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 2.819ns (cell 1.584ns (56%), net 1.235ns (44%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT4=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.235         68.501          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_100.a[0]
+LUT4 (reg)          x038y062z2          0.400    r    68.901       2  net: services/scheduler/master/rx_crc[5],  ../../../user_source/hdl_source/redo/media_spi_master.v(15)
+--------------------------------------------------------------------  ---------------
+Arrival                                               68.901               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_100.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.632               
+
+Slack               : 5.842ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/mux91_syn_102.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 3.029ns (cell 1.584ns (52%), net 1.445ns (48%))
+Clock Skew          : 2.974ns
+Logic Level         : 2 ( PAD=1  LUT4=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.445         68.711          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_102.a[0]
+LUT4 (reg)          x038y062z3          0.400    r    69.111       2  net: services/scheduler/master/rx_crc[12],  ../../../user_source/hdl_source/redo/media_spi_master.v(15)
+--------------------------------------------------------------------  ---------------
+Arrival                                               69.111               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_102.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  5.842               
+
+Slack               : 6.222ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_state_reg[0]_syn_4.a[0] (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 3.409ns (cell 1.980ns (58%), net 1.429ns (42%))
+Clock Skew          : 2.974ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.115         68.381          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.282    r    68.663       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.314         68.977          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[0]
+LUT5 (reg)          x038y061z0          0.514    r    69.491       3  net: services/scheduler/master/copy_state_reg_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(52)
+--------------------------------------------------------------------  ---------------
+Arrival                                               69.491               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  6.222               
+
+Slack               : 6.728ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_index_reg[3]_syn_4.ce (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 3.915ns (cell 1.952ns (49%), net 1.963ns (51%))
+Clock Skew          : 2.974ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.115         68.381          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.282    r    68.663       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.314         68.977          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[1]
+LUT5                x038y061z0          0.433    r    69.410       3  pin: services/scheduler/master/copy_state_reg[0]_syn_4.fx[0]
+net (fo=3)                              0.534         69.944          net: services/scheduler/master/mux91_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_index_reg[3]_syn_4.ce
+reg                 x038y057z1          0.053    f    69.997               
+--------------------------------------------------------------------  ---------------
+Arrival                                               69.997               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_index_reg[3]_syn_4.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  6.728               
+
+Slack               : 6.836ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_index_reg[2]_syn_4.ce (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 4.023ns (cell 1.952ns (48%), net 2.071ns (52%))
+Clock Skew          : 2.974ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.115         68.381          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.282    r    68.663       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.314         68.977          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[1]
+LUT5                x038y061z0          0.433    r    69.410       3  pin: services/scheduler/master/copy_state_reg[0]_syn_4.fx[0]
+net (fo=3)                              0.642         70.052          net: services/scheduler/master/mux91_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_index_reg[2]_syn_4.ce
+reg                 x038y056z1          0.053    f    70.105               
+--------------------------------------------------------------------  ---------------
+Arrival                                               70.105               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_index_reg[2]_syn_4.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  6.836               
+
+Slack               : 7.263ns
+Begin Point         : board_miso (falling edge triggered by clock board_spi_out  { rise@0.000000ns  fall@60.000000ns  period=120.000000 })
+End Point           : services/scheduler/master/copy_index_reg[1]_syn_4.ce (rising edge triggered by clock clk  { rise@0.000000ns  fall@10.000000ns  period=20.000000 })
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns { board_spi_out falling@60.000ns - clk rising@60.000ns }
+Data Path Delay     : 4.450ns (cell 1.952ns (43%), net 2.498ns (57%))
+Clock Skew          : 2.974ns
+Logic Level         : 3 ( PAD=1  LUT5=1  LUT2=1 )
+Max Fanout          : 6
+Clock Uncertainty   : 0.100ns (sdc uncertainty: 0.000ns, default uncertainty: 0.100ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.311          1.311          pin: clk_syn_2.di
+net (fo=6958)                           1.628          2.939          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_sclk_syn_24.osclk
+PAD (clk2q)         x033y071            3.143          6.082          pin: board_sclk_syn_24.opad
+hierarchy                               0.000          6.082          pin: board_sclk
+launch edge                            60.000    f    66.082               
+--------------------------------------------------------------------  ---------------
+input               T5                  0.000         66.082          pin: board_miso
+net (fo=1)                              0.000         66.082          net: board_miso,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: board_miso_syn_4.ipad
+PAD                 x032y071            1.184    r    67.266       1  pin: board_miso_syn_4.di
+net (fo=6)                              1.115         68.381          net: board_miso_dup_3,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/mux91_syn_115.a[1]
+LUT2                x039y062z0          0.282    r    68.663       2  pin: services/scheduler/master/mux91_syn_115.f[1]
+net (fo=2)                              0.314         68.977          net: services/scheduler/master/mux91_syn_31,  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_state_reg[0]_syn_4.a[1]
+LUT5                x038y061z0          0.433    r    69.410       3  pin: services/scheduler/master/copy_state_reg[0]_syn_4.fx[0]
+net (fo=3)                              1.069         70.479          net: services/scheduler/master/mux91_syn_1[0],  ../../../user_source/hdl_source/redo/media_spi_master.v(60)
+                                                                      pin: services/scheduler/master/copy_index_reg[1]_syn_4.ce
+reg                 x039y056z1          0.053    f    70.532               
+--------------------------------------------------------------------  ---------------
+Arrival                                               70.532               
+
+source latency                          0.000          0.000               
+port                R7                  0.000          0.000          pin: clk
+hierarchy                               0.000          0.000          pin: clk_syn_2.ipad
+PAD                 x020y071            1.302          1.302          pin: clk_syn_2.di
+net (fo=6958)                           1.930          3.232          net: clk_dup_1,  ../../../user_source/hdl_source/system/top_b_redo.v(6)
+                                                                      pin: services/scheduler/master/copy_index_reg[1]_syn_4.clk
+capture edge                           60.000    r    63.232               
+--------------------------------------------------------------------  ---------------
+hold                                    0.061         63.293               
+clock uncertainty                       0.100         63.393               
+clock pessimism                        -0.124         63.269               
+--------------------------------------------------------------------  ---------------
+Required                                              63.269               
+--------------------------------------------------------------------  ---------------
+Slack                                                  7.263               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
